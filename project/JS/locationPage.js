@@ -33,6 +33,12 @@ const moveCurrnet = () => {
         naver.maps.Event.addListener(marker, "click", function () {
           infoWindow.open(map, marker);
         });
+        // 원하는 위치에 마커표시
+        naver.maps.Event.addListener(map, "click", function (e) {
+          marker.setPosition(e.coord);
+          map.panTo(e.coord);
+          document.getElementById("address").value = "이동한 위치 주소";
+        });
       },
       function (error) {
         let errorMessage = "";
@@ -60,35 +66,29 @@ const moveCurrnet = () => {
     alert("이 브라우저는 위치 정보를 지원하지 않습니다.");
   }
 };
+
 window.onload = () => {
   moveCurrnet(); //현재위치 보여주는 지도
 };
+
+//주소-좌표 변환 객체를 생성
+function changeInputtext() {
+  new daum.Postcode({
+    oncomplete: function (data) {
+      var addr = data.address; // 최종 주소 변수
+
+      // 주소 정보를 해당 필드에 넣는다.
+      document.getElementById("address").value = addr;
+    },
+  }).open();
+}
+
+// 현재위치 버튼 클릭시 현재위치로 이동
 document.getElementById("showMap").addEventListener("click", function (e) {
   e.preventDefault();
-
   moveCurrnet();
+  document.getElementById("address").value = "현재 위치 주소";
 });
-
-// 주소를 좌표로 변환하는 함수
-function searchAddressToCoordinate(address) {
-  naver.maps.Service.geocode(
-    {
-      query: "불정로 6",
-    },
-    function (status, response) {
-      if (status !== naver.maps.Service.Status.OK) {
-        return alert("주소를 찾을 수 없습니다");
-      }
-      var result = response.v2,
-        items = result.addresses;
-      var lat = items.y;
-      var lng = items.x;
-
-      insertAddress(result.roadAddress, lat, lng);
-      moveMap(lat, lng);
-    }
-  );
-}
 
 // 검색창에 검색한 주소 넣기
 const addAddress = (address) => {

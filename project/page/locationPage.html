@@ -6,9 +6,10 @@
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ukwvgxtrv"></script>
 	<script type="text/javascript"
 		src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ukwvgxtrv&submodules=geocoder"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>배달의 민족</title>
 </head>
 
 <body>
@@ -35,7 +36,8 @@
 				</div>
 				<div id="adressContaioner">
 					<input id="address" type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
-					<img id="submit" src="../image/search.png" alt="검색" />
+					<!-- <select id="address"></select> -->
+					<img id="submit" src="../image/search.png" alt="검색" onclick="changeInputtext()" />
 
 				</div>
 
@@ -47,11 +49,11 @@
 
 
 
-			<!-- <div class="foodtype">
-                  <ul class="menu" id="foodtypeList">
-                    JS로 list 추가
-                  </ul>
-                </div> -->
+			<div class="foodtype">
+				<ul class="menu" id="foodtypeList">
+					JS로 list 추가
+				</ul>
+			</div>
 
 		</div>
 	</div>
