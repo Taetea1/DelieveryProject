@@ -1,4 +1,3 @@
-moveCurrnet(); //현재위치 보여주는 지도
 const moveCurrnet = () => {
   // 위치 정보를 얻기 위해 Geolocation API 사용
   if (navigator.geolocation) {
@@ -60,6 +59,9 @@ const moveCurrnet = () => {
   } else {
     alert("이 브라우저는 위치 정보를 지원하지 않습니다.");
   }
+};
+window.onload = () => {
+  moveCurrnet(); //현재위치 보여주는 지도
 };
 document.getElementById("showMap").addEventListener("click", function (e) {
   e.preventDefault();
