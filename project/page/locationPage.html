@@ -4,6 +4,8 @@
 <head>
 	<link rel="stylesheet" href="../CSS/locationPage.css" />
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ukwvgxtrv"></script>
+	<script type="text/javascript"
+		src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ukwvgxtrv&submodules=geocoder"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
@@ -31,7 +33,12 @@
 				<div id="showMap">
 					<img src="../image/currentlocation.png" alt="현재위치" class="cl" />
 				</div>
-				<input type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
+				<div id="adressContaioner">
+					<input id="address" type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
+					<img id="submit" src="../image/search.png" alt="검색" />
+
+				</div>
+
 			</div>
 			<!-- 지도 영역 -->
 			<div class="mapbox">

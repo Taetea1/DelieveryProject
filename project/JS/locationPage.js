@@ -47,7 +47,7 @@ const moveCurrnet = () => {
             break;
           case error.TIMEOUT:
             errorMessage =
-              "위치 정보를 가져오는 데 시간이 너무 걸렸습니다. 다시 시도해 주세요.";
+              "위치 정보를 가져오는데 시간이 너무 걸렸습니다. 다시 시도해 주세요.";
             break;
           default:
             errorMessage = "알 수 없는 오류가 발생했습니다.";
@@ -68,6 +68,62 @@ document.getElementById("showMap").addEventListener("click", function (e) {
 
   moveCurrnet();
 });
+
+// 주소를 좌표로 변환하는 함수
+function searchAddressToCoordinate(address) {
+  naver.maps.Service.geocode(
+    {
+      query: "불정로 6",
+    },
+    function (status, response) {
+      if (status !== naver.maps.Service.Status.OK) {
+        return alert("주소를 찾을 수 없습니다");
+      }
+      var result = response.v2,
+        items = result.addresses;
+      var lat = items.y;
+      var lng = items.x;
+
+      insertAddress(result.roadAddress, lat, lng);
+      moveMap(lat, lng);
+    }
+  );
+}
+
+// 검색창에 검색한 주소 넣기
+const addAddress = (address) => {
+  document.getElementById("address").value += address;
+};
+
+// 지도에 마커를 표시하는 함수
+function insertAddress(address, latitude, longitude) {
+  addAddress(address);
+  var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(latitude, longitude),
+    map: map,
+    title: address,
+  });
+}
+
+// 주소 검색 이벤트(엔터)
+document.getElementById("address").addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    // Enter 키 눌렀을 때
+    searchAddressToCoordinate(document.getElementById("address").value);
+  }
+});
+// 주소 검색 이벤트(검색버튼)
+document.getElementById("submit").addEventListener("click", function (event) {
+  event.preventDefault();
+  searchAddressToCoordinate(document.getElementById("address").value);
+});
+
+// 지도를 이동시키는 함수
+function moveMap(lat, lng) {
+  var center = new naver.maps.LatLng(lat, lng);
+  map.panTo(center);
+  map.setZoom(17);
+}
 
 // 음식 종류 박스 넣기
 // let open = false;
