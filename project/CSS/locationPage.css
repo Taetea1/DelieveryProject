@@ -1,0 +1,142 @@
+/* 헤더 */
+.header {
+  width: 100%;
+  background-color: black;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+/* 헤더 안 상자 */
+.nav {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 배달의 민족 글자 이미지 */
+.headname {
+  max-width: 200px;
+  height: auto;
+}
+/* 로그인 버튼 상자 */
+#loginBtn {
+  width: fit-content;
+  height: auto;
+}
+/* 로그인 버튼 */
+.login {
+  color: white;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 20px 50px;
+  margin: 20px 0px;
+}
+.login:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+
+/* 모바일버전 로그인버튼 */
+.loginicon {
+  display: none;
+  width: 50px;
+}
+.loginicon:hover {
+  background-color: gray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#map {
+  width: 50%;
+  height: 300px;
+}
+.mapbox {
+  display: flex;
+  justify-content: center;
+}
+.nowlocation {
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+}
+
+.cl {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 2px solid;
+  padding: 5px;
+}
+.cl:hover {
+  cursor: pointer;
+  background-color: rgb(206, 205, 205);
+}
+.controlBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+input {
+  height: 40px;
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  #loginBtn {
+    display: none;
+  }
+  .headname {
+    width: 130px;
+  }
+  .header {
+    height: 100px;
+  }
+  .loginicon {
+    display: block;
+  }
+  .nav {
+    width: 90%;
+  }
+  #map {
+    height: 500px;
+  }
+  .controlBtn {
+    padding: 30px;
+  }
+}
+
+/* 음식 메뉴 */
+
+.foodtype {
+  width: 100%;
+  background-color: gray;
+}
+*/ .menu {
+  overflow: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 20%);
+  /* grid-template-rows: 200px 200px; */
+  /* justify-items: stretch; */
+  gap: 10px;
+}
+.list:hover {
+  cursor: pointer;
+  background-color: #e8e8e8;
+}
+
+.list {
+  /* width: 150px;
+  height: 150px; */
+  border: 1px solid white;
+  /* display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; */
+  list-style-type: none;
+  /* padding: 10px; */
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="../CSS/locationPage.css" />
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ukwvgxtrv"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="boxWrap">
+		<!-- 헤더 -->
+		<div class="header">
+			<div class="nav">
+				<img src="../image/headname.png" alt="headname" class="headname" />
+				<div>
+					<img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" />
+				</div>
+				<div id="loginBtn">
+					<div class="login">로그인</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="whereBox">
+			<!-- 버튼 -->
+			<div class="controlBtn">
+				<div id="showMap">
+					<img src="../image/currentlocation.png" alt="현재위치" class="cl" />
+				</div>
+				<input type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
+			</div>
+			<!-- 지도 영역 -->
+			<div class="mapbox">
+				<div id="map"></div>
+			</div>
+
+
+
+			<!-- <div class="foodtype">
+                  <ul class="menu" id="foodtypeList">
+                    JS로 list 추가
+                  </ul>
+                </div> -->
+
+		</div>
+	</div>
+</body>
+<script src="../JS/locationPage.js"></script>
+
+</html>
