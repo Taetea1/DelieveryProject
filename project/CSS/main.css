@@ -6,7 +6,7 @@ body {
     margin:0;
     border:0;
     padding:0;
-    overflow: hidden;
+    overflow:hidden;
 }
 .wrap {
     position: relative;
@@ -15,17 +15,24 @@ body {
     height:100%;
     transition: 0.5s;
 }
-
+.zindex{
+    z-index: 2;
+}
 .containerFirst{
     Background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: center;
     width:100%;
     height:100%;
     transform: scale(1);
     }
 .containerSecond{
-    background-color: orange;
+    Background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: rgb(35, 40, 40);
     width:100%;
     height:100%;}
 .containerThree{
@@ -38,8 +45,44 @@ body {
     width:100%;
     height:100%;
 }
- 
+/* footer */
+.footerlist{
+    list-style: none;
+}
+.footerimg{
+    width: 200px;
+    height: 70px;
+}
+.footerbox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top:30px;
+    padding: 10%;
+}
+.footericon{
+    display: flex;
+    flex-direction: row;
+}
+.footerlogo{
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    right: 30%;
+}
+
 .firstpage{
+    width: 80%;
+    height: 80%;
+    padding-left:15%;
+    padding-right:15%;
+    padding-top:15%;
+    display: flex;
+    flex-direction: column;
+}
+.secondpage{
     width: 80%;
     height: 80%;
     padding-left:15%;
@@ -52,6 +95,10 @@ body {
 .head{
     width: 30%;
     height: 50%;
+}
+p{
+    margin : 0px 0px 0px 0px;
+    line-height: 140%;
 }
 .p{
     margin-top:30px;
@@ -67,6 +114,9 @@ body {
     font-weight: bolder;
     color: white;
 }
+.p3{
+    color:white;
+}
 .a{
     display: flex;
     justify-content: space-between;
@@ -80,17 +130,19 @@ body {
 .image1 {
     width: 100px;
     height: 100px;
-}
+}   
+    .Navibox{
+        padding-left:15%;
+    }
     .Navibar{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         /* justify-content: center; */
-        width: 80%;
+        width: 60%;
         padding-top: 70px;
-        margin-left: 10%;
         position: fixed;
-        z-index: 1;
+        z-index: 2;
     }
     .headb{
         height: 40px;
@@ -107,9 +159,14 @@ body {
         margin-left: 10px;
         display : none;
     }
+    .icon3{
+        width: 40px;
+        height: 40px;
+        margin: 3px;
+    }
     .scroll{
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         left: 50%;
         bottom: 0;
         width: 100px;
@@ -124,9 +181,15 @@ body {
         .icon{
             display:none;
         }
+        .dot{
+            display:none;
+        }
+        .footerlogo{
+            display:none;
+        }
     }
     .dot{
-        z-index : 1;
+        z-index : 2;
         position: fixed;
         list-style: none;
         right : 0;
@@ -147,7 +210,7 @@ body {
 
     .dropdown{
         /* display:flex; */
-        z-index: 1;
+        z-index: 2;
         position: fixed;
         max-width: 250px;
         max-height: 100px;
@@ -190,3 +253,16 @@ body {
             cursor: pointer;
         }
     
+
+/* second */
+.imgB{
+    width:  650px;
+    height: 700px;
+    position:absolute;
+    bottom: 0;
+    z-index: 1;
+    right : 0%;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 3s ease, opacity 3s ease;
+}

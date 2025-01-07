@@ -7,14 +7,16 @@
     <title>delevery</title>
 </head>
 <body>
-    <div class = "Navibar"> <!-- 배달의 민족 헤드-->
-        <div><img class = "headb"src="../image/headname.png" alt = "headname"/></div>
-        <div class="iconset">
-            <img class = "icon" src="../image/facebook.png" alt = "headb"/>
-            <img class = "icon" src="../image/camera.png" alt = "headb"/>
-            <img class = "icon" src="../image/blog.png" alt = "headb"/>
-            <img class = "icon" src="../image/youtube.png" alt = "headb"/>
-            <img class = "icon2" src="../image/downloadbtn.png" alt = "headb"/>
+    <div class ="Navibox">
+        <div class = "Navibar"> <!-- 배달의 민족 헤드-->
+            <div><img class = "headb"src="../image/headname.png" alt = "headname"/></div>
+            <div class="iconset">
+                <img class = "icon" src="../image/facebook.png" alt = "headb"/>
+                <img class = "icon" src="../image/camera.png" alt = "headb"/>
+                <img class = "icon" src="../image/blog.png" alt = "headb"/>
+                <img class = "icon" src="../image/youtube.png" alt = "headb"/>
+                <img class = "icon2" src="../image/downloadbtn.png" alt = "headb"/>
+            </div>
         </div>
     </div>
     <div class = "dropdown"> <!-- 스크롤시 나타나는 dropdown 메뉴-->
@@ -31,21 +33,45 @@
     <div></div>
     <div class="wrap">
         <!-- 첫번째 페이지 -->
-        <div class="containerFirst"><div class = "firstpage">
-                <img class = "head" src="../image/image1white.png" alt = "head"/>
+        <div class="containerFirst">
+            <div class = "firstpage">
+                <img class = "head" src="..." alt = "head"/>
                 <p class="p">앱 스토어 다운로드</p>
                 <div class="a"><div><img onclick = "store('app')" class = "image" src="../image/App store.png" alt = "app"/><img onclick = "store('google')" class = "image" src="../image/googleplay.png" alt="googleplay"/></div>
                 <p class = "p2">QR 코드 다운로드 <img class ="image1" src="../image/qr.png" alt = "qr" /></p></div>
-                </div>
+            </div>
         </div>
         <!-- 두번째 페이지 -->
         <div class="containerSecond">
-           
+            <div class = "secondpage">
+                <img class = "head zindex" src="../image/fastdelevery.png" alt = "head"/>
+                <p class="p3 zindex">배민이 직접 배달을 챙기니까 더 좋아졌어요!</p>
+                <p class="p3 zindex">저렴해서 좋은 알뜰배달, 빨라서 좋은 한집배달</p>
+                <p class="p3 zindex">상황에 맞게 원하는 대로 골라 주문해보세요</p>
+                <div class = "bp"><img class = "imgB" src = "../image/img-baedal-tablet.9c0d4f3c.png" alt = "baedal"/></div>
+            </div>
         </div>
         <!-- 세번째 페이지 -->
         <div class="containerThree"></div>
         <!-- 네번째 페이지 -->
         <div class="containerFour"></div>
+            <footer class ="footerbox">
+                <ul class="footerlist">
+                    <li><img  class = "footerimg" src="../image/footer1.png" alt = "footer" /></li>
+                    <li><img  class = "footerimg" src="../image/footer2.png" alt = "footer" /></li>
+                    <li><img  class = "footerimg" src="../image/footer3.png" alt = "footer" /></li>
+                </ul>
+                <div class = "footericon">
+                    <img class = "icon3" src="../image/blackfacebook.png" alt = "facebook"/>
+                    <img class = "icon3" src="../image/blackcamera.png" alt = "facebook"/>
+                    <img class = "icon3" src="../image/blackblog.png" alt = "facebook"/>
+                    <img class = "icon3" src="../image/blackyoutube.png" alt = "facebook"/>
+                </div>
+                <img  class = "footerlogo" src="../image/footerimg.png" alt = "footer" />
+                <div>
+                    <p></p>
+                </div>
+            </footer>
     </div>
     <script src = "../JS/mainpage.js"></script>
 </body>
