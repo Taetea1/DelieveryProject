@@ -1,0 +1,145 @@
+html {
+    height:100%;
+}
+body {
+    height:100%;
+    margin:0;
+    border:0;
+    padding:0;
+    overflow: hidden;
+}
+.wrap {
+    position: relative;
+    top:0;
+    width:100%;
+    height:100%;
+    transition: 0.5s;
+}
+
+.containerFirst{
+    Background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+    transform: scale(1);
+    }
+.containerSecond{
+    background-color: orange;
+    width:100%;
+    height:100%;}
+.containerThree{
+    background-color: yellow;
+    width:100%;
+    height:100%;
+    }
+.containerFour{
+    background-color: red;
+    width:100%;
+    height:100%;
+}
+ 
+.firstpage{
+    width: 80%;
+    height: 80%;
+    padding-left:15%;
+    padding-right:15%;
+    padding-top:15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.head{
+    width: 30%;
+    height: 50%;
+}
+.p{
+    margin-top:30px;
+    font-weight:bold;
+    color: white;
+}
+.p2{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50%;
+    font-weight: bolder;
+    color: white;
+}
+.a{
+    display: flex;
+    justify-content: space-between;
+}
+
+.image{
+    width: 180px;
+    margin-left: 20px;
+    height: 70px;
+}
+.image1 {
+    width: 100px;
+    height: 100px;
+}
+    .Navibar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        /* justify-content: center; */
+        width: 80%;
+        padding-top: 70px;
+        margin-left: 10%;
+        position: fixed;
+        z-index: 1;
+    }
+    .headb{
+        height: 40px;
+    }
+    .icon{
+        width: 40px;
+        height: 40px;
+        margin: 3px;
+    }
+    .icon2{
+        width: 140px;
+        height: 50px;
+        margin: auto;
+        display: none;
+    }
+    .scroll{
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 0;
+        width: 100px;
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width:768px){
+        .Navibar{
+        padding-top: 20px;
+        margin : 0;
+          }
+        
+        .icon{
+            display:none;
+        }
+    }
+    .dot{
+        z-index : 1;
+        position: fixed;
+        list-style: none;
+        right : 0;
+        bottom : 35%;
+    }
+    .image:hover{
+        cursor: pointer;
+    }
+    .btn:hover{
+        cursor: pointer;
+        content: url("../deleveryp/delevery/dotSelect@2x.c333164a.png");
+        transform:scale(1.0)
+    }
+    .icon:hover{
+        transform: scale(0.9);
+        cursor: pointer;
+    }

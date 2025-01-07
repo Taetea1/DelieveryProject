@@ -1,14 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
+    <link rel = "stylesheet" href ="../page/main.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>delevery</title>
 </head>
-
 <body>
-
+    <div class = "Navibar"> <!-- 배달의 민족 헤드-->
+        <div><img class = "headb"src="../image/headname.png" alt = "headb"/></div>
+        <div class="iconset">
+            <img class = "icon" src="../image/facebook.png" alt = "headb"/>
+            <img class = "icon" src="../image/camera.png" alt = "headb"/>
+            <img class = "icon" src="../image/blog.png" alt = "headb"/>
+            <img class = "icon" src="../image/youtube.png" alt = "headb"/>
+            <img class = "icon2" src="../image/downloadbtn.png" alt = "headb"/>
+        </div>
+    </div>
+    <div class = "scroll"><img class = "scroll" src = "../image/scroll.png" alt="scroll" /></div>
+    <ul class ="dot">
+        <li><img class="btn" onclick="scrollClick('1')" src ="../image/dotScroll02@2x.32b98ae6.png" alt ="dot"/></li>
+        <li><img class="btn" onclick="scrollClick('2')" src ="../image/dotScroll02@2x.32b98ae6.png" alt ="dot"/></li>
+        <li><img class="btn" onclick="scrollClick('3')" src ="../image/dotScroll02@2x.32b98ae6.png" alt ="dot"/></li>
+        <li><img class="btn" onclick="scrollClick('4')" src ="../image/dotScroll02@2x.32b98ae6.png" alt ="dot"/></li>
+    </ul>
+    <div></div>
+    <div class="wrap">
+        <!-- 첫번째 페이지 -->
+        <div class="containerFirst"><div class = "firstpage">
+                <img class = "head" src="../image/image1white.png" alt = "head"/>
+                <p class="p">앱 스토어 다운로드</p>
+                <div class="a"><div><img onclick = "store('app')" class = "image" src="../image/App store.png" alt = "app"/><img onclick = "store('google')" class = "image" src="../image/googleplay.png" alt="googleplay"/></div>
+                <p class = "p2">QR 코드 다운로드 <img class ="image1" src="../image/qr.png" alt = "qr" /></p></div>
+                </div>
+        </div>
+        <!-- 두번째 페이지 -->
+        <div class="containerSecond">
+           
+        </div>
+        <!-- 세번째 페이지 -->
+        <div class="containerThree"></div>
+        <!-- 네번째 페이지 -->
+        <div class="containerFour"></div>
+    </div>
+    <script src = "../JS/mainpage.js"></script>
 </body>
-
 </html>
