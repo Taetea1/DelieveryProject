@@ -9,7 +9,7 @@
 <body>
     <div class ="Navibox">
         <div class = "Navibar"> <!-- 배달의 민족 헤드-->
-            <div><img class = "headb"src="../image/headname.png" alt = "headname"/></div>
+            <div><a href ="http://127.0.0.1:5500/project/page/mainpage.html"><img class = "headb"src="../image/headname.png" alt = "headname"/></a></div>
             <div class="iconset">
                 <img class = "icon" src="../image/facebook.png" alt = "headb"/>
                 <img class = "icon" src="../image/camera.png" alt = "headb"/>
@@ -21,7 +21,7 @@
     </div>
     <div class = "dropdown"> <!-- 스크롤시 나타나는 dropdown 메뉴-->
         <div class = "dropdown-menu"><img class = "rider" src="../image/rider.png" alt = "rider" /></div>
-        <div class = "dropdown-menu"><div class="menu-content">주문하기</div><div class="menu-content">라이더 모집</div></div>
+        <div class = "dropdown-menu"><div class="menu-content">주문하기</div><div class="menu-content">배민 커넥트</div></div>
     </div>
     <div class = "scroll"><img class = "scroll" src = "../image/scroll.png" alt="scroll" /></div>
     <ul class ="dot">
@@ -30,12 +30,12 @@
         <li><img class="btn" onclick="scrollClick('3')" src ="../image/dotScroll02@2x.32b98ae6.png" alt ="dot"/></li>
         <li><img class="btn" onclick="scrollClick('4')" src ="../image/dotScroll02@2x.32b98ae6.png" alt ="dot"/></li>
     </ul>
-    <div></div>
+    <img class = "upicon" onclick = "scrollClick('1')"src = "../image/up.png" alt = "up" />
     <div class="wrap">
         <!-- 첫번째 페이지 -->
         <div class="containerFirst">
             <div class = "firstpage">
-                <img class = "head" src="..." alt = "head"/>
+                <img class = "head" src="../image/2148900644.jpg" alt = "head"/>
                 <p class="p">앱 스토어 다운로드</p>
                 <div class="a"><div><img onclick = "store('app')" class = "image" src="../image/App store.png" alt = "app"/><img onclick = "store('google')" class = "image" src="../image/googleplay.png" alt="googleplay"/></div>
                 <p class = "p2">QR 코드 다운로드 <img class ="image1" src="../image/qr.png" alt = "qr" /></p></div>
@@ -52,15 +52,31 @@
             </div>
         </div>
         <!-- 세번째 페이지 -->
-        <div class="containerThree"></div>
+        <div class="containerThird">
+            <div class = "thirdpage">
+                <img class = "head zindex" src="../image/membership.png" alt = "head"/>
+                <p class="p3 zindex">배민클럽 표시가 있는 가게에서</p>
+                <p class="p3 zindex">알뜰배달은 배달비 무료,</p>
+                <p class="p3 zindex">한집 배달은 배달비 할인을 받을 수 있어요</p>
+                <p class="p3 zindex">지금 바로 가입하고 혜택을 받으세요</p>
+                <div class = "bp"><img class = "imgB2" src = "../image/img-club-tablet.a3b019a1.png" alt = "club"/></div>
+            </div>
+        </div>
         <!-- 네번째 페이지 -->
-        <div class="containerFour"></div>
+        <div class="containerFourth">
+            <div class = "thirdpage test1"><img class = "test"src="../image/batang.jpg" alt = "head"/>
+                <img class = "head zindex" src="../image/baminconnect.png" alt = "head"/>
+                <p class="p3 zindex">오늘도 당신에게 행복을 배달 중입니다.</p>
+                <div class = "bp"><img class = "imgB3" src = "../image/headname.png" alt = "club"/></div>
+            </div>
+        </div>
             <footer class ="footerbox">
-                <ul class="footerlist">
+                <!-- <ul class="footerlist">
                     <li><img  class = "footerimg" src="../image/footer1.png" alt = "footer" /></li>
                     <li><img  class = "footerimg" src="../image/footer2.png" alt = "footer" /></li>
                     <li><img  class = "footerimg" src="../image/footer3.png" alt = "footer" /></li>
-                </ul>
+                    <li><hr></li>
+                </ul> -->
                 <div class = "footericon">
                     <img class = "icon3" src="../image/blackfacebook.png" alt = "facebook"/>
                     <img class = "icon3" src="../image/blackcamera.png" alt = "facebook"/>
@@ -69,7 +85,13 @@
                 </div>
                 <img  class = "footerlogo" src="../image/footerimg.png" alt = "footer" />
                 <div>
-                    <p></p>
+                    <br>
+                    <p>(주)우아한 형제들</p>
+                    <p>서울시 송파구 위례성대로 2 장은빌딩 18층</p><br>
+                    <p>사업자번호 : 120-87-65763 사업자정보확인</p>
+                    <p>통신판매업 : 서울 송파-0515</p><br>
+                    <p>전자금융분쟁처리 TEL : 1600-0987 FAX : 02-532-5854</p>
+                    <p>MAIL : help@woowahan.com</p>
                 </div>
             </footer>
     </div>

@@ -31,10 +31,10 @@ window.addEventListener(
   { passive: false }
 ); // 디폴트 기능 제거 - 스크롤
 function scrollClick(scroll) {
-  if (scroll == "1") wrap.style.top = 0 + "vh";
-  else if (scroll == "2") wrap.style.top = -100 + "vh";
-  else if (scroll == "3") wrap.style.top = -200 + "vh";
-  else if (scroll == "4") wrap.style.top = -300 + "vh";
+  if (scroll == "1") wrap.style.top = 0 + "vh",page = 0, scrollvh();
+  else if (scroll == "2") wrap.style.top = -100 + "vh",page = 1, scrollvh();
+  else if (scroll == "3") wrap.style.top = -200 + "vh",page = 2, scrollvh();
+  else if (scroll == "4") wrap.style.top = -300 + "vh",page = 3, scrollvh();
 }
 
 function randomBackground() {
@@ -90,26 +90,57 @@ function store(item) {
 }
 function scrollvh() {
   // 페이지 별 메뉴 등장 or 없애기
-  const bodywrap = document.documentElement.scrollTop || document.body.scrollTop;
+  // const bodywrap = document.documentElement.scrollTop || document.body.scrollTop;
   const appDownload = document.getElementsByClassName("icon2")[0];
+  const upicon = document.querySelector(".upicon");
   const imgB = document.getElementsByClassName("imgB")[0];
+  const imgB2 = document.getElementsByClassName("imgB2")[0];
+  const imgB3 = document.getElementsByClassName("imgB3")[0];
    
     if (page >= 1) {
     appDownload.style.display = "inline";
+    upicon.style.display = "inline"
     }
     else {
     appDownload.style.display = "none"; // 숨기기
+    upicon.style.display = "none"
     };
 
     if (page === 1) {
         imgB.style.right = "30%" 
-        imgB.style.transition = "right 1s ease-in-out"
-        imgB.style.transform = "scale(1)"
-        imgB.style.opacity = "1"}
+        imgB.style.opacity = "1"
+        imgB.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out"
+    }
+    else if (page !== 1) {
+      imgB.style.opacity = "0"
+      imgB.style.transition = "opacity 1s ease-in-out"
+    }
 
+    if (page === 2) {
+      console.log("2")
+      imgB2.style.right = "30%" 
+      imgB2.style.opacity = "1"
+      imgB2.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out"
+    }
+    else if(page !== 2){
+      imgB2.style.opacity = "0"
+      imgB2.style.transition = "opacity 1s ease-in-out"
+    }
+
+    if (page === 3) {
+      console.log("2")
+      imgB3.style.right = "45%" 
+      imgB3.style.opacity = "1"
+      imgB3.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out"
+    }
+    else if(page !== 2){
+      imgB3.style.opacity = "0"
+      imgB3.style.transition = "opacity 1s ease-in-out"
+    }
+    
 
     const footerDropdown = document.querySelector(".dropdown") //position:fixd 
-    const footerDot = document.querySelector(".Navibox")
+    const footerDot = document.querySelector(".Navibar")
     const footerNavibar = document.querySelector(".dot")
     const footerScroll = document.querySelector(".scroll")
 
@@ -133,7 +164,7 @@ function scrollvh() {
         footerNavibar.style.opacity = "1"
         footerScroll.style.opacity = "1"
     }
-    }
+} //scrollvh() end
 
 const riderBtn = document.querySelector(".rider"); // 메뉴 아이콘 선택
 riderBtn.addEventListener("click", () => {
@@ -144,11 +175,11 @@ riderBtn.addEventListener("click", () => {
 
   console.log(dropdown.style.right);
   if (open === false) {
-    dropdown.style.right = "0";
+    dropdown.style.right = "-10px";
     dropdown.style.transition = "right 0.5s ease-in-out";
     event.stopPropagation();
   } else if (open === true) {
-    dropdown.style.right = "-160px";
+    dropdown.style.right = "-170px";
     dropdown.style.transition = "right 0.5s ease-in-out";
     event.stopPropagation();
   }

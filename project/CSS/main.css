@@ -35,23 +35,24 @@ body {
     background-color: rgb(35, 40, 40);
     width:100%;
     height:100%;}
-.containerThree{
-    background-color: yellow;
+.containerThird{
+    background-color: rgb(35, 40, 40);
     width:100%;
     height:100%;
     }
-.containerFour{
-    background-color: red;
+.containerFourth{
+    background-color: rgb(35, 40, 40);
     width:100%;
     height:100%;
 }
 /* footer */
 .footerlist{
     list-style: none;
+    width: 200px;
 }
 .footerimg{
-    width: 200px;
-    height: 70px;
+    width: 140px;
+    height: 50px;
 }
 .footerbox{
     position: relative;
@@ -67,12 +68,26 @@ body {
     flex-direction: row;
 }
 .footerlogo{
-    width: 500px;
-    height: 400px;
+    width: 350px;
+    height: 300px;
     position: absolute;
+    top: 20%;
     right: 30%;
 }
 
+/* up */
+.upicon{
+    position: fixed;
+    bottom : 3%;
+    right : 3%;
+    z-index: 1;
+    width: 30px;
+    height: 45px;
+    display: none;
+}
+.upicon:hover{
+    cursor: pointer;
+}
 .firstpage{
     width: 80%;
     height: 80%;
@@ -90,6 +105,17 @@ body {
     padding-top:15%;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+.thirdpage{
+    width: 80%;
+    height: 80%;
+    padding-left:15%;
+    padding-right:15%;
+    padding-top:15%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .head{
@@ -143,6 +169,7 @@ p{
         padding-top: 70px;
         position: fixed;
         z-index: 2;
+        box-shadow: 0px 8px 6px -6px #666
     }
     .headb{
         height: 40px;
@@ -171,6 +198,12 @@ p{
         bottom: 0;
         width: 100px;
         margin-bottom: 10px;
+        box-shadow: 0px 8px 6px -6px #666
+    }
+    @media screen and (max-width:1100px){
+        .footerlogo{
+            display:none;
+        }
     }
     @media screen and (max-width:768px){
         .Navibar{
@@ -184,9 +217,16 @@ p{
         .dot{
             display:none;
         }
-        .footerlogo{
+        .imgB{
             display:none;
         }
+        .imgB2{
+            display:none;
+        }
+        .imgB3{
+            display:none;
+        }
+ 
     }
     .dot{
         z-index : 2;
@@ -212,7 +252,7 @@ p{
         /* display:flex; */
         z-index: 2;
         position: fixed;
-        max-width: 250px;
+        max-width: 260px;
         max-height: 100px;
         width: 100%;
         height: 100%;
@@ -220,10 +260,11 @@ p{
         border-top-left-radius: 24px;
         border-bottom-left-radius: 16px;
         /* right: -100px; */
-        right: -160px;
+        right: -170px;
         top: 10%;
         display: flex;
         flex-direction: row;
+        box-shadow: inset 0px 0px 10px #666;
     }
     .dropdown-menu{
         max-height:200px;
@@ -231,6 +272,7 @@ p{
         width: 50%;
         background-color: none;
         align-content: center;
+        ;
     }
     .menu-content{
         color:white;
@@ -243,6 +285,7 @@ p{
         .menu-content:hover{
             transform: scale(1.1);
             cursor: pointer;
+            text-decoration:underline;
         }
     .rider{
         width: 100px;
@@ -259,10 +302,45 @@ p{
     width:  650px;
     height: 700px;
     position:absolute;
-    bottom: 0;
+    bottom: 30px;
     z-index: 1;
     right : 0%;
     opacity: 0;
-    transform: scale(0);
-    transition: transform 3s ease, opacity 3s ease;
+}
+
+/* third */
+
+.imgB2{
+    width:  650px;
+    height: 700px;
+    position:absolute;
+    bottom: 30px;
+    z-index: 1;
+    right : 0%;
+    opacity: 0;
+}
+
+/* fourth */
+
+.imgB3{
+    width:  350px;
+    height: 75px;
+    position:absolute;
+    bottom: 25%;
+    z-index: 1;
+    right : 20%;
+    opacity: 0;
+}
+
+.test1{
+    position: relative;
+}
+.test{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
