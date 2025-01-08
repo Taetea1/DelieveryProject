@@ -12,9 +12,9 @@ h3{
 button{
     border: none;
 }
-li{
+/* li{
     float:left;
-}
+} */
 
 .fixed-btn{
     position: fixed;
@@ -67,7 +67,7 @@ li{
     font-weight: 400r;
 }
 .intro-btn{
-    background-color: rgb(62, 165, 206);
+    background-color: #00c4bd;
     font-size: 20px;
     color : white;
     font-weight: 400r;
@@ -135,7 +135,7 @@ li{
 
 /* 세번째 뷰 */
 .containerSecond{
-    padding: 160px 0 160px;
+    padding: 50px 0 70px;
     width: 100%;
     height: 700px;
     display:flex;
@@ -148,4 +148,175 @@ li{
     font-weight: 1000;
     display:flex;
     justify-content: center;
+}
+.sp-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.sp-box-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    margin-top:40px;
+}
+.sp-box-box1{
+    margin-top:40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+    margin-left: 100px;
+}
+.sp-box-inbox{
+    display:flex;
+    justify-content: center;
+    width: 250px;
+}
+.sp-p{
+    font-size: 23px;
+    font-weight: 1000;
+}
+.sp-spanbox{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.sp-count{
+    display : block;
+}
+.sp-num{
+    list-style: none;
+    font-size: 45px;
+    font-weight: 1000;
+}
+.sp-text{
+    font-size: 45px;
+    font-weight: 1000;
+}
+.sp-text1{
+    font-size: 45px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.sp-num1{
+    list-style: none;
+}
+.sp-num2{
+    list-style: none;
+}
+.sp-box-img{
+    width:  120px;
+    height: 120px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 5px 5px 3px #666;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.sp-box-column{
+    text-align: center;
+}
+.sp-box-text{
+    color: #9FA9AB;
+    font-size: 18px;
+    font-weight: 700;
+}
+.sp-centerline{
+    content: '';
+    position: absolute;
+    left: -64px;
+    width: 1px;
+    height: 100%;
+    background-color: #d9d9d9;
+}
+
+/* 네번째 뷰 */
+.thp-text{
+    font-size: 70px;
+    font-weight: 1000;
+    display:flex;
+    justify-content: center;
+}
+.thp-text1{
+    font-size: 40px;
+    font-weight: 1000;
+    display:flex;
+    justify-content: center;
+    color: #00c4bd;
+}
+.containerThird{
+    padding: 160px 0 0px;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+}
+.thp-box-box{
+    width: 970px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 80px auto 0;
+}
+.thp-img{
+    width: 140px;
+    height: 140px;
+}
+.thp-tag{
+    width: 110px;
+    height: 42px;
+    background-image: url(../image/icon__trans-tag.png);
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+}
+.thp-line{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 11px;
+    height: 100%;
+    background-size: 80% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../image/icon__trans-line02.png);
+}
+.thp-content-box{
+    position: relative;
+    padding-left:45px;
+    padding-right:45px;
+}
+
+/* 다섯번째 뷰 */
+.fop-text{
+    font-size: 70px;
+    font-weight: 1000;
+    display:flex;
+    justify-content: center;
+}
+.fop-text1{
+    font-size: 30px;
+    font-weight: 1000;
+    display:flex;
+    justify-content: center;
+    color: #00c4bd;
+}
+.containerFourth{
+    padding: 0 0 160px;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
 }
