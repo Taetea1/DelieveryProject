@@ -1,0 +1,151 @@
+body {
+    height:100%;
+    margin:0;
+    border:0;
+    padding:0;
+    overflow-x:hidden;
+}
+h3{
+    margin: 0;
+    padding: 0;
+}
+button{
+    border: none;
+}
+li{
+    float:left;
+}
+
+.fixed-btn{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 46px;
+    display: inline-block;
+    min-width: 320px;
+    padding: 19px 50px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    border-radius: 38px;
+    background-color: #282F32;
+    box-shadow: 0px 8px 12px 0px #00000052;
+    opacity: 0;
+    cursor: pointer;
+    transition: vsibility 4s, opacity .4s ease;
+    z-index: 999;
+}
+
+
+/* 첫번째 뷰 */
+
+.intro-box{
+    width: 100%;
+    height: 800px;
+    padding-left : 5%;
+    background-image: url("../image/batang.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.intro-img{
+    margin-top: 10%;
+    margin-bottom: 50px;
+    width: 320px;
+    height: 60px;
+}
+.intro-headtext{
+    font-size: 70px;
+    margin-top : 10px;
+    color : white;
+    font-weight: bolder;
+}
+.intro-text{
+    font-size: 20px;
+    color : white;
+    font-weight: 400r;
+}
+.intro-btn{
+    background-color: rgb(62, 165, 206);
+    font-size: 20px;
+    color : white;
+    font-weight: 400r;
+    border-radius: 32.5px;
+    border : none;
+    width: 220px;
+    height: 65px;
+}
+
+/* 두번째 뷰 */
+
+.containerFirst{
+    padding: 160px 0 160px;
+    width: 100%;
+    height: 700px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fp-text{
+    font-size: 70px;
+    font-weight: 1000;
+    display:flex;
+    justify-content: center;
+}
+.fp-ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap : 60px;
+    margin-top : 60px;
+}
+.fp-li{
+    width:220px;
+    height:300px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.fp-li-num{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+}
+.fp-imgicon{
+    width:  30px;
+    height: 30px;
+    position: absolute;
+}
+.fp-p{
+    margin-top: 20%;
+    font-size: 25px;
+    font-weight: bold;
+}
+.fp-p-text{
+    font-size: 17px;
+    font-weight: 200;
+}
+.fp-margin{
+    margin-left: 30px;
+}
+
+/* 세번째 뷰 */
+.containerSecond{
+    padding: 160px 0 160px;
+    width: 100%;
+    height: 700px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+.sp-text{
+    font-size: 70px;
+    font-weight: 1000;
+    display:flex;
+    justify-content: center;
+}

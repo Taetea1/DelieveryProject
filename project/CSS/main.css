@@ -265,11 +265,20 @@ p{
         display: flex;
         flex-direction: row;
         box-shadow: inset 0px 0px 10px #666;
+        visibility: visible;
     }
-    .dropdown-menu{
+    .dropdown-menu-box1{
         max-height:200px;
         height: 100%;
-        width: 50%;
+        width: 40%;
+        background-color: none;
+        align-content: center;
+        ;
+    }
+    .dropdown-menu-box2{
+        max-height:200px;
+        height: 100%;
+        width: 60%;
         background-color: none;
         align-content: center;
         ;

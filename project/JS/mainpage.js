@@ -25,7 +25,7 @@ window.addEventListener(
     } else if (page > lastPage) {
       page = lastPage + 1; // 마지막 페이지보다 더 넘어가지지 않도록
     }
-    scrollvh();
+    scrollvh(); //스크롤을 했을 때 페이지 컨텐츠 추가 
     wrap.style.top = page * -100 + "vh";
   },
   { passive: false }
@@ -144,21 +144,29 @@ function scrollvh() {
     const footerNavibar = document.querySelector(".dot")
     const footerScroll = document.querySelector(".scroll")
 
-    if (footer <= page){  //마지막 페이지에서 사라지게
-        footerDropdown.style.transition = "opacity 1s ease"
+    if (footer <= page){  //마지막 페이지에서 fixed 사라지게
+        footerDropdown.style.transition = "all 1s ease-out"
+        footerDropdown.style.visibility = "hidden"
         footerDropdown.style.opacity = "0"
-        footerDot.style.transition = "opacity 1s ease"
+        footerDot.style.transition = "all 1s ease-out"
+        footerDot.style.visibility = "hidden"
         footerDot.style.opacity = "0"
-        footerNavibar.style.transition = "opacity 1s ease"
+        footerNavibar.style.transition = "all 1s ease-out"
+        footerNavibar.style.visibility = "hidden"
         footerNavibar.style.opacity = "0"
-        footerScroll.style.transition = "opacity 1s ease"
+        footerScroll.style.transition = "all 1s ease-out"
+        footerScroll.style.visibility = "hidden"
         footerScroll.style.opacity = "0"
     }
     else{
-        footerDropdown.style.transition = "opacity 1s ease"
-        footerDot.style.transition = "opacity 1s ease"
-        footerNavibar.style.transition = "opacity 1s ease"
-        footerScroll.style.transition = "opacity 1s ease"
+        footerDropdown.style.transition = "all 1s ease"
+        footerDot.style.transition = "all 1s ease"
+        footerNavibar.style.transition = "all 1s ease"
+        footerScroll.style.transition = "all 1s ease"
+        footerDropdown.style.visibility = "visible"
+        footerDot.style.visibility = "visible"
+        footerNavibar.style.visibility = "visible"
+        footerScroll.style.visibility = "visible"
         footerDropdown.style.opacity = "1"
         footerDot.style.opacity = "1"
         footerNavibar.style.opacity = "1"
