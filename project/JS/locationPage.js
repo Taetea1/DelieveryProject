@@ -1,4 +1,5 @@
 // 지도 부분
+
 const moveCurrnet = () => {
   // 위치 정보를 얻기 위해 Geolocation API 사용
   if (navigator.geolocation) {
@@ -38,8 +39,9 @@ const moveCurrnet = () => {
         naver.maps.Event.addListener(map, "click", function (e) {
           marker.setPosition(e.coord);
           map.panTo(e.coord);
-          document.getElementById("address").value = "이동한 위치 주소";
+          addAddress("이동한 위치 주소");
         });
+        addAddress("현재 위치 주소");
       },
       function (error) {
         let errorMessage = "";
@@ -81,7 +83,7 @@ function changeInputtext() {
       var addr = data.address; // 최종 주소 변수
 
       // 주소 정보를 해당 필드에 넣는다.
-      document.getElementById("address").value = addr;
+      addAddress(addr);
     },
   }).open();
 }
@@ -90,12 +92,12 @@ function changeInputtext() {
 document.getElementById("showMap").addEventListener("click", function (e) {
   e.preventDefault();
   moveCurrnet();
-  document.getElementById("address").value = "현재 위치 주소";
+  addAddress("현재 위치 주소");
 });
 
 // 검색창에 검색한 주소 넣기
 const addAddress = (address) => {
-  document.getElementById("address").value += address;
+  document.getElementById("address").value = address;
 };
 
 // 지도에 마커를 표시하는 함수
@@ -109,12 +111,12 @@ function insertAddress(address, latitude, longitude) {
 }
 
 // 주소 검색 이벤트(엔터)
-document.getElementById("address").addEventListener("keyup", function (event) {
-  if (event.key === "Enter") {
-    // Enter 키 눌렀을 때
-    searchAddressToCoordinate(document.getElementById("address").value);
-  }
-});
+// document.getElementById("address").addEventListener("keyup", function (event) {
+//   if (event.key === "Enter") {
+//     // Enter 키 눌렀을 때
+//     searchAddressToCoordinate(document.getElementById("address").value);
+//   }
+// });
 // 주소 검색 이벤트(검색버튼)
 document.getElementById("submit").addEventListener("click", function (event) {
   event.preventDefault();
@@ -142,8 +144,7 @@ const addMenuBox = () => {
     divs.addEventListener("click", readyalert);
 
     divs.innerHTML = `<div class="textBox">${data[i].name}</div>
-    <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /><div>
-    `;
+    <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /><div>`;
 
     //div 요소도 부모 밑에 넣음
     dropMenuGroup.appendChild(divs);
@@ -162,10 +163,10 @@ const data = [
   { id: 8, name: "일식/돈까스", url: "../image/category-06.png" },
   { id: 9, name: "족발/보쌈", url: "../image/category-07.png" },
   { id: 10, name: "야식", url: "../image/category-08.png" },
-  { id: 12, name: "분식", url: "../image/category-09.png" },
-  { id: 13, name: "카페/디저트", url: "../image/category-11.png" },
+  { id: 11, name: "분식", url: "../image/category-09.png" },
+  { id: 12, name: "카페/디저트", url: "../image/category-11.png" },
   {
-    id: 14,
+    id: 13,
     name: "편의점/마트",
     url: "../image/category-convenience-store.png",
   },

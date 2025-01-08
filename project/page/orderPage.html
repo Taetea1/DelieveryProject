@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <link rel="stylesheet" href="../CSS/orderPage.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배달의 민족</title>
+</head>
+
+<body>
+  <div class="boxWrap">
+    <!-- 헤더 -->
+    <div class="header">
+      <div class="nav">
+        <img src="../image/headname.png" alt="headname" class="headname"
+          onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
+
+        <div class="controlBtn">
+          <div id="showcurrent">
+            <img src="../image/currentlocation.png" alt="현재위치" class="cl" />
+          </div>
+          <div id="adressContaioner" onclick="changeInputtext()">
+            <input id="address" readonly type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
+            <img id="submit" src="../image/search.png" alt="검색" />
+          </div>
+          <img src="../image/locationIcon.png" alt="locationIcon" title="주소입력" class="locationIcon"
+            onclick="changeInputtext()" />
+          <img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 메뉴 -->
+    <div class="category-menu-box">
+      <div class="category-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+
+    <div class="drop-box"></div>
+
+    <div class="card"></div>
+
+
+
+
+
+</body>
+<script src="../JS/orderPage.js"></script>
+
+</html>
