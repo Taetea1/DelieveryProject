@@ -3,9 +3,9 @@
 
 <head>
 	<link rel="stylesheet" href="../CSS/locationPage.css" />
-	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ukwvgxtrv"></script>
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ne9zw04ntz"></script>
 	<script type="text/javascript"
-		src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9ukwvgxtrv&submodules=geocoder"></script>
+		src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ne9zw04ntz&submodules=geocoder"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,10 +34,9 @@
 				<div id="showMap">
 					<img src="../image/currentlocation.png" alt="현재위치" class="cl" />
 				</div>
-				<div id="adressContaioner">
-					<input id="address" type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
-					<!-- <select id="address"></select> -->
-					<img id="submit" src="../image/search.png" alt="검색" onclick="changeInputtext()" />
+				<div id="adressContaioner" onclick="changeInputtext()">
+					<input id="address" readonly type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
+					<img id="submit" src="../image/search.png" alt="검색" />
 
 				</div>
 
@@ -48,11 +47,11 @@
 			</div>
 
 
-
+			<!-- 음식 종류들 -->
 			<div class="foodtype">
-				<ul class="menu" id="foodtypeList">
-					JS로 list 추가
-				</ul>
+				<div class="menu" id="foodtypeList">
+
+				</div>
 			</div>
 
 		</div>

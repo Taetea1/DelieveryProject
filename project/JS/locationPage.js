@@ -1,3 +1,4 @@
+// 지도 부분
 const moveCurrnet = () => {
   // 위치 정보를 얻기 위해 Geolocation API 사용
   if (navigator.geolocation) {
@@ -67,8 +68,10 @@ const moveCurrnet = () => {
   }
 };
 
+//@@@이거 2개써도 되나??
 window.onload = () => {
   moveCurrnet(); //현재위치 보여주는 지도
+  addMenuBox();
 };
 
 //주소-좌표 변환 객체를 생성
@@ -124,66 +127,59 @@ function moveMap(lat, lng) {
   map.panTo(center);
   map.setZoom(17);
 }
+// 지도 부분 끝
 
-// 음식 종류 박스 넣기
-// let open = false;
-// let count = 0;
-//list를 만들어 추가하는 함수
-// window.addEventListener('scroll', () => {
-// 	//스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
-// 	if (count < data.length) {
-// 		const dropdownGroup = document.getElementById('foodtypeList');
-// 		//만약 메뉴의 자식이 없다면 실행
-// 		// if (dropdownGroup.children.length <= 0) {
+//음식 종류 박스 넣기
+//div를 만들어 추가하는 함수
+const addMenuBox = () => {
+  const dropMenuGroup = document.getElementById("foodtypeList");
+  for (let i = 0; i < data.length; i++) {
+    //div 요소 만들고 class를 줌
+    const divs = document.createElement("div");
+    divs.className = "menuBox";
 
-// 		for (let i = 0; i < data.length; i++) {
-// 			//li 요소 만들고 class를 줌
-// 			const lists = document.createElement('li');
-// 			lists.className = 'list';
+    //해당 요소를 누르면 함수 실행되도록
+    divs.addEventListener("click", readyalert);
 
-// 			//li 요소 밑에 넣을 img요소 만들어 이미지 넣음
-// 			const img = document.createElement('img');
-// 			img.src = data[i].url;
-// 			img.alt = data[i].name;
+    divs.innerHTML = `<div class="textBox">${data[i].name}</div>
+    <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /><div>
+    `;
 
-// 			//li 요소 밑에 넣을 div요소 만들어 이름 넣음
-// 			const names = document.createElement('div');
-// 			names.innerText = data[i].name;
+    //div 요소도 부모 밑에 넣음
+    dropMenuGroup.appendChild(divs);
+  }
+};
 
-// 			//li 요소 밑에 이미지, 이름 넣음
-// 			lists.appendChild(img);
-// 			lists.appendChild(names);
+//구글앱에 넣을 데이터
+const data = [
+  { id: 1, name: "전체보기", url: "../image/category-01.png" },
+  { id: 2, name: "1인분", url: "../image/category-onedish.png" },
+  { id: 3, name: "프렌차이즈", url: "../image/category-10.png" },
+  { id: 4, name: "치킨", url: "../image/category-02.png" },
+  { id: 5, name: "양식/피자", url: "../image/category-03.png" },
+  { id: 6, name: "중국집", url: "../image/category-04.png" },
+  { id: 7, name: "한식", url: "../image/category-05.png" },
+  { id: 8, name: "일식/돈까스", url: "../image/category-06.png" },
+  { id: 9, name: "족발/보쌈", url: "../image/category-07.png" },
+  { id: 10, name: "야식", url: "../image/category-08.png" },
+  { id: 12, name: "분식", url: "../image/category-09.png" },
+  { id: 13, name: "카페/디저트", url: "../image/category-11.png" },
+  {
+    id: 14,
+    name: "편의점/마트",
+    url: "../image/category-convenience-store.png",
+  },
+];
 
-// 			//해당 요소를 누르면 함수 실행되도록
-// 			lists.addEventListener('click', readyalert);
+//준비중 함수
+const readyalert = () => {
+  alert("기능 준비중입니다.");
+};
 
-// 			//li 요소도 부모 밑에 넣음
-// 			dropdownGroup.appendChild(lists);
-// 			count++;
-// 		}
-// 	}
-
-// });
-
-// //구글앱에 넣을 데이터
-// const data = [
-// 	{ id: 1, name: '전체보기', url: '../image/youtube.png' },
-// 	{ id: 2, name: '1인분', url: '../image/youtube.png' },
-// 	{ id: 3, name: '프렌차이즈', url: '../image/youtube.png' },
-// 	{ id: 4, name: '치킨', url: '../image/youtube.png' },
-// 	{ id: 5, name: '양식/피자', url: '../image/youtube.png' },
-// 	{ id: 6, name: '중국집', url: '../image/youtube.png' },
-// 	{ id: 7, name: '한식', url: '../image/youtube.png' },
-// 	{ id: 8, name: '일식/돈까스', url: '../image/youtube.png' },
-// 	{ id: 9, name: '족발/보쌈', url: '../image/youtube.png' },
-// 	{ id: 10, name: '야식', url: '../image/youtube.png' },
-// 	{ id: 12, name: '분식', url: '../image/youtube.png' },
-// 	{ id: 13, name: '카페/디저트', url: '../image/youtube.png' },
-// 	{ id: 14, name: '편의점/마트', url: '../image/youtube.png' },
-// ];
-
-// //준비중 함수
-// const readyalert = () => {
-// 	alert('기능 준비중입니다.');
-
-// }
+// 스크롤시 카테고리 메뉴들이 생기도록
+window.addEventListener("scroll", () => {
+  const winTop = window.scrollY;
+  if (winTop >= 100) {
+    document.getElementById("foodtypeList").classList.add("revealed");
+  }
+});
