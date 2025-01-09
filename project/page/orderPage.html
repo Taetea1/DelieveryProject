@@ -10,49 +10,74 @@
 </head>
 
 <body>
-  <div class="boxWrap">
-    <!-- 헤더 -->
-    <div class="header">
-      <div class="nav">
-        <img src="../image/headname.png" alt="headname" class="headname"
-          onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
+  <!-- 헤더 -->
+  <div class="header">
+    <div class="header-box">
+      <img src="../image/headname.png" alt="headname" class="headname"
+        onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
 
-        <div class="controlBtn">
-          <div id="showcurrent">
-            <img src="../image/currentlocation.png" alt="현재위치" class="cl" />
-          </div>
-          <div id="adressContaioner" onclick="changeInputtext()">
-            <input id="address" readonly type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
-            <img id="submit" src="../image/search.png" alt="검색" />
-          </div>
-          <img src="../image/locationIcon.png" alt="locationIcon" title="주소입력" class="locationIcon"
-            onclick="changeInputtext()" />
-          <img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" />
+      <div class="controlBtn">
+        <div id="showcurrent">
+          <img src="../image/currentlocation.png" alt="현재위치" class="cl" />
         </div>
+        <div id="adressContaioner" onclick="changeInputtext()">
+          <input id="address" readonly type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
+          <img id="submit" src="../image/search.png" alt="검색" />
+        </div>
+        <img src="../image/locationIcon.png" alt="locationIcon" title="주소입력" class="locationIcon"
+          onclick="changeInputtext()" />
+        <img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" />
       </div>
     </div>
+  </div>
 
-    <!-- 메뉴 -->
-    <div class="category-menu-box">
-      <div class="category-menu">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <!-- 메뉴 -->
+  <nav id="nav" class="nav">
+    <ul class="nav_menu">
+      <li><a href="#one" class="nav_menu-foused">1인분</a></li>
+      <li><a href="#two">프렌차이즈</a></li>
+      <li><a href="#three">치킨</a></li>
+      <li><a href="#four">양식/피자</a></li>
+      <li><a href="#five">중국집</a></li>
+      <li><a href="#six">한식</a></li>
+      <li><a href="#seven">일식/돈까스</a></li>
+      <li><a href="#eight">족발/보쌈</a></li>
+      <li><a href="#nine">야식</a></li>
+      <li><a href="#ten">분식</a></li>
+      <li><a href="#eleven">카페/디저트</a></li>
+      <div class="marker"></div>
+    </ul>
+  </nav>
+  <div class="sectionBox">
+    <section id="one">1인분</section>
+    <section id="two">프렌차이즈</section>
+    <section id="three">치킨</section>
+    <section id="four">양식/피자</section>
+    <section id="five">중국집</section>
+    <section id="six">한식</section>
+    <section id="seven">일식/돈까스</section>
+    <section id="eight">족발/보쌈</section>
+    <section id="nine">야식</section>
+    <section id="ten">분식</section>
+    <section id="eleven">카페/디저트</section>
+  </div>
+
+
+
+
+  <!-- 가게들 -->
+
+  <div class="shop">
+    <div class="card-box">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
     </div>
+  </div>
 
 
-    <div class="drop-box"></div>
-
-    <div class="card"></div>
+  <div class="cupon"></div>
 
 
 
