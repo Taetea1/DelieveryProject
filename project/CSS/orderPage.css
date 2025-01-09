@@ -5,9 +5,11 @@
   height: 150px;
   display: flex;
   justify-content: center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 /* 헤더 안 상자 */
-.nav {
+.header-box {
   width: 1280px;
   max-width: 1280px;
   display: flex;
@@ -94,22 +96,128 @@
   cursor: pointer;
 }
 /* 헤더 */
+/* 메뉴바 */
+html {
+  scroll-behavior: smooth;
+}
+a {
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+.nav {
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+/* 동적으로 추가하거나 제거 */
+#nav.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.nav-box {
+  max-width: 1280px;
+  width: 1280px;
+  position: relative;
+  overflow: hidden;
+}
+.nav_menu {
+  display: flex;
+  /* justify-content: center; */
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+  /* 줄바꿈 방지 */
+  white-space: nowrap;
+}
+.nav_menu > li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+.nav_menu-foused {
+  color: #00c4bd;
+}
+.marker {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: #00c4bd;
+  transition: 0.2s;
+}
+
+.sectionBox {
+  width: 100%;
+}
+section {
+  max-width: 1280px;
+  margin: 0px auto;
+  text-align: center;
+  height: 100vh;
+}
+#one {
+  background: palegoldenrod;
+}
+#two {
+  background: palegreen;
+}
+#three {
+  background: paleturquoise;
+}
+#four {
+  background: palevioletred;
+}
+#five {
+  background: palegoldenrod;
+}
+#six {
+  background: palegreen;
+}
+#seven {
+  background: paleturquoise;
+}
+#eight {
+  background: palevioletred;
+}
+#nine {
+  background: palegoldenrod;
+}
+#ten {
+  background: palegreen;
+}
+#eleven {
+  background: paleturquoise;
+}
 
 /* 메뉴바 */
-.category-menu-box {
-  position: relative;
-  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
-  width: 100%;
-  background-color: blue;
-}
-.category-menu {
-  width: 1280px;
-  max-width: 1280px;
-  height: 100px;
-  margin: 0px auto;
-  background-color: red;
-}
 
+/* 가게들 */
+.onetext {
+  padding: 10px;
+}
+.card-box {
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+  background-color: blueviolet;
+}
+.card {
+  box-shadow: 5px 6px 3px rgb(227, 227, 227);
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background-color: aquamarine;
+}
 @media screen and (max-width: 768px) {
   /* 헤더 */
   .headname {

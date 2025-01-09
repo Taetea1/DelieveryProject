@@ -144,27 +144,26 @@ const addMenuBox = () => {
     divs.addEventListener("click", readyalert);
 
     divs.innerHTML = `<div class="textBox">${data[i].name}</div>
-    <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /><div>`;
+    <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div>`;
 
     //div 요소도 부모 밑에 넣음
     dropMenuGroup.appendChild(divs);
   }
 };
 
-//구글앱에 넣을 데이터
+// 구글앱에 넣을 데이터
 const data = [
-  { id: 1, name: "전체보기", url: "../image/category-01.png" },
-  { id: 2, name: "1인분", url: "../image/category-onedish.png" },
-  { id: 3, name: "프렌차이즈", url: "../image/category-10.png" },
-  { id: 4, name: "치킨", url: "../image/category-02.png" },
-  { id: 5, name: "양식/피자", url: "../image/category-03.png" },
-  { id: 6, name: "중국집", url: "../image/category-04.png" },
-  { id: 7, name: "한식", url: "../image/category-05.png" },
-  { id: 8, name: "일식/돈까스", url: "../image/category-06.png" },
-  { id: 9, name: "족발/보쌈", url: "../image/category-07.png" },
-  { id: 10, name: "야식", url: "../image/category-08.png" },
-  { id: 11, name: "분식", url: "../image/category-09.png" },
-  { id: 12, name: "카페/디저트", url: "../image/category-11.png" },
+  { id: 1, name: "1인분", url: "../image/category-onedish.png" },
+  { id: 2, name: "프렌차이즈", url: "../image/category-10.png" },
+  { id: 3, name: "치킨", url: "../image/category-02.png" },
+  { id: 4, name: "양식/피자", url: "../image/category-03.png" },
+  { id: 5, name: "중국집", url: "../image/category-04.png" },
+  { id: 6, name: "한식", url: "../image/category-05.png" },
+  { id: 7, name: "일식/돈까스", url: "../image/category-06.png" },
+  { id: 8, name: "족발/보쌈", url: "../image/category-07.png" },
+  { id: 9, name: "야식", url: "../image/category-08.png" },
+  { id: 10, name: "분식", url: "../image/category-09.png" },
+  { id: 11, name: "카페/디저트", url: "../image/category-11.png" },
   {
     id: 13,
     name: "편의점/마트",

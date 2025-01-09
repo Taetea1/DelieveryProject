@@ -6,6 +6,8 @@
   height: 150px;
   display: flex;
   justify-content: center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 /* 헤더 안 상자 */
 .nav {
