@@ -141,10 +141,10 @@ const addMenuBox = () => {
     divs.className = "menuBox";
 
     //해당 요소를 누르면 함수 실행되도록
-    divs.addEventListener("click", readyalert);
+    // divs.addEventListener("click", readyalert);
 
-    divs.innerHTML = `<div class="textBox">${data[i].name}</div>
-    <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div>`;
+    divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="textBox">${data[i].name}</div>
+    <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
 
     //div 요소도 부모 밑에 넣음
     dropMenuGroup.appendChild(divs);
@@ -153,28 +153,45 @@ const addMenuBox = () => {
 
 // 구글앱에 넣을 데이터
 const data = [
-  { id: 1, name: "1인분", url: "../image/category-onedish.png" },
-  { id: 2, name: "프렌차이즈", url: "../image/category-10.png" },
-  { id: 3, name: "치킨", url: "../image/category-02.png" },
-  { id: 4, name: "양식/피자", url: "../image/category-03.png" },
-  { id: 5, name: "중국집", url: "../image/category-04.png" },
-  { id: 6, name: "한식", url: "../image/category-05.png" },
-  { id: 7, name: "일식/돈까스", url: "../image/category-06.png" },
-  { id: 8, name: "족발/보쌈", url: "../image/category-07.png" },
-  { id: 9, name: "야식", url: "../image/category-08.png" },
-  { id: 10, name: "분식", url: "../image/category-09.png" },
-  { id: 11, name: "카페/디저트", url: "../image/category-11.png" },
+  { id: 1, name: "전체보기", url: "../image/category-01.png", path: "#one" },
+  { id: 2, name: "1인분", url: "../image/category-onedish.png", path: "#two" },
+  {
+    id: 3,
+    name: "프렌차이즈",
+    url: "../image/category-10.png",
+    path: "#three",
+  },
+  { id: 4, name: "치킨", url: "../image/category-02.png", path: "#four" },
+  { id: 5, name: "양식/피자", url: "../image/category-03.png", path: "#five" },
+  { id: 6, name: "중국집", url: "../image/category-04.png", path: "#six" },
+  { id: 7, name: "한식", url: "../image/category-05.png", path: "#seven" },
+  {
+    id: 8,
+    name: "일식/돈까스",
+    url: "../image/category-06.png",
+    path: "#eight",
+  },
+  { id: 9, name: "족발/보쌈", url: "../image/category-07.png", path: "#nine" },
+  { id: 10, name: "야식", url: "../image/category-08.png", path: "#ten" },
+  { id: 11, name: "분식", url: "../image/category-09.png", path: "#eleven" },
+  {
+    id: 12,
+    name: "카페/디저트",
+    url: "../image/category-11.png",
+    path: "#twelve",
+  },
   {
     id: 13,
     name: "편의점/마트",
     url: "../image/category-convenience-store.png",
+    path: "#thirteen",
   },
 ];
 
 //준비중 함수
-const readyalert = () => {
-  alert("기능 준비중입니다.");
-};
+// const readyalert = () => {
+//   alert("기능 준비중입니다.");
+// };
 
 // 스크롤시 카테고리 메뉴들이 생기도록
 window.addEventListener("scroll", () => {
