@@ -73,6 +73,24 @@ function setMarker(e) {
   marker.style.width = e.offsetWidth + "px";
 }
 
+//메뉴 항목을 가운데로 이동시키는 함수
+function centerMenuItem(menu) {
+  const navBox = menu.closest(".nav-box");
+  const menuWidth = menu.offsetWidth;
+  const containerWidth = navBox.offsetWidth;
+
+  // 메뉴를 가운데로 정렬할 위치 계산
+  const targetLeft =
+    menu.getBoundingClientRect().left - navBox.getBoundingClientRect().left;
+
+  const scrollPosition = targetLeft - containerWidth / 2 + menuWidth / 2;
+
+  // 가로 스크롤을 가운데로 이동
+  navBox.scrollTo({
+    left: scrollPosition,
+    behavior: "smooth",
+  });
+}
 //스크롤 위치에 따라 해당하는 menu의 색깔과 마커가 달라짐
 window.addEventListener("scroll", () => {
   //현재 영역의 id
@@ -95,6 +113,7 @@ window.addEventListener("scroll", () => {
         //현재 있는 영역의 id와 메뉴의 링크주소가 일치할때
         menu.classList.add("nav_menu-foused");
         setMarker(menu);
+        centerMenuItem(menu); // 메뉴 항목을 가운데로 이동
       }
     });
   });

@@ -11,7 +11,7 @@
 
 <body>
   <!-- 헤더 -->
-  <div class="header">
+  <header class="header">
     <div class="header-box">
       <img src="../image/headname.png" alt="headname" class="headname"
         onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
@@ -29,27 +29,37 @@
         <img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" />
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- 메뉴 -->
   <nav id="nav" class="nav">
-    <ul class="nav_menu">
-      <li><a href="#one" class="nav_menu-foused">1인분</a></li>
-      <li><a href="#two">프렌차이즈</a></li>
-      <li><a href="#three">치킨</a></li>
-      <li><a href="#four">양식/피자</a></li>
-      <li><a href="#five">중국집</a></li>
-      <li><a href="#six">한식</a></li>
-      <li><a href="#seven">일식/돈까스</a></li>
-      <li><a href="#eight">족발/보쌈</a></li>
-      <li><a href="#nine">야식</a></li>
-      <li><a href="#ten">분식</a></li>
-      <li><a href="#eleven">카페/디저트</a></li>
-      <div class="marker"></div>
-    </ul>
+    <div class="nav-box">
+      <ul class="nav_menu">
+        <li><a href="#one" class="nav_menu-foused">1인분</a></li>
+        <li><a href="#two">프렌차이즈</a></li>
+        <li><a href="#three">치킨</a></li>
+        <li><a href="#four">양식/피자</a></li>
+        <li><a href="#five">중국집</a></li>
+        <li><a href="#six">한식</a></li>
+        <li><a href="#seven">일식/돈까스</a></li>
+        <li><a href="#eight">족발/보쌈</a></li>
+        <li><a href="#nine">야식</a></li>
+        <li><a href="#ten">분식</a></li>
+        <li><a href="#eleven">카페/디저트</a></li>
+        <div class="marker"></div>
+      </ul>
+    </div>
   </nav>
   <div class="sectionBox">
-    <section id="one">1인분</section>
+    <section id="one">
+      <div class="onetext">1인분</div>
+      <div class="card-box">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+    </section>
     <section id="two">프렌차이즈</section>
     <section id="three">치킨</section>
     <section id="four">양식/피자</section>
@@ -64,17 +74,6 @@
 
 
 
-
-  <!-- 가게들 -->
-
-  <div class="shop">
-    <div class="card-box">
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-    </div>
-  </div>
 
 
   <div class="cupon"></div>
