@@ -263,7 +263,7 @@ p{
         top: 10%;
         display: flex;
         flex-direction: row;
-        box-shadow: 0px 4px 4px #666;
+        /* box-shadow: 0px 4px 4px #666; */
         visibility: visible;
     }
     .dropdown-menu-box1{

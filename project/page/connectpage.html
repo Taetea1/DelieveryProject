@@ -7,8 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <button  class = "fixed-btn">배민커넥트 앱 다운로드</button> <!-- fixed -->
+    <div class = "backdrop"><img class = "commonpopup" src = "../image/common__popup.png" alt = "popup" /></div> 
+    <!-- onclick = "appclick()" -->
     <div class = "wrap">
-        <button class = "fixed-btn">배민커넥트 앱 다운로드</button> <!-- fixed -->
+         
+        
         <div class = "intro-box">
             <h ><img class = "intro-img" src = "../image/logo__white.png" alt = "baminconnect"/></h>
             <h3 class = "intro-headtext">원할 때, 원하는 만큼</h3>
@@ -97,14 +102,41 @@
             </div>
         </div>
         <div class = "containerFourth"> <!-- 4페이지 -->
-            <div class = four-inner>
-                <h class = "fop-text">배달부터 생활까지!</h>
-                <h class = "fop-text">제휴 혜택도 놓치지 마세요</h>
-                <h class = "fop-text1">배민커넥트만의 배-네핏</h>
+            <div class = "fop-flex">
+                <div class = four-inner>
+                    <h class = "fop-text">배달부터 생활까지!</h>
+                    <h class = "fop-text">제휴 혜택도 놓치지 마세요</h>
+                    <h class = "fop-text1">배민커넥트만의 배-네핏</h>
+                </div>
+                <div class = "fop-box">
+                    <div class = "fop-box-box"><img class = "fop-img" src = "../image/icon__benefit01.png" alt = "benefit"/><span class = "fop-box-text">배달물품<br>할인/특가</span></div>
+                    <div class = "fop-box-box"><img class = "fop-img" src = "../image/icon__benefit02.png" alt = "benefit"/><span class = "fop-box-text">금융 우대<br>혜택</span></div>
+                    <div class = "fop-box-box"><img class = "fop-img" src = "../image/icon__benefit03.png" alt = "benefit"/><span class = "fop-box-text">주유 할인</span></div>
+                </div>
+                <div class ="fop-btnbox"><button class = "fop-btn appdownload">배민커넥트 앱 다운로드</button></div>
+            </div>
+        </div>
+        <div class = "containerFifth"> <!-- 2페이지 -->
+            <h class = "ffp-text">가입도 쉽고 편안하게</h>
+            <h class = "ffp-text1">3가지 포인트만 기억해요!</h>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Card 1</div>
+                </div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Card 1</div>
+                </div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Card 1</div>
+                </div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Card 1</div>
+                </div>
             </div>
         </div>
     </div>
+
+ 
     <script src = "../JS/connectpage.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script> 
 </body>
 </html>

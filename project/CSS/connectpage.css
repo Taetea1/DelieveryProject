@@ -15,7 +15,24 @@ button{
 /* li{
     float:left;
 } */
-
+/* .wrap{
+,.containerSecond,.containerThird,.containerFourth,.containerFfith
+} */
+@media screen and (max-width: 768px){
+    .wrap{
+        padding: 0, 20% important;
+    }
+    .intro-headtext{
+        font-size: 70px;
+        margin-top : 10px;
+        color : rgb(77, 52, 52);
+        font-weight: bolder;
+    }
+}
+.wrap{
+    width: 100%;
+    height:100%;
+}
 .fixed-btn{
     position: fixed;
     left: 50%;
@@ -37,7 +54,28 @@ button{
     z-index: 999;
 }
 
-
+.commonpopup{
+    width: 400px;
+    height: 600px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+    z-index: 999;
+}
+.backdrop{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index: 998;
+    backdrop-filter: contrast(.2);
+    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+}
 /* 첫번째 뷰 */
 
 .intro-box{
@@ -320,3 +358,135 @@ button{
     height: 700px;
     margin: 0 auto;
 }
+.fop-flex{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fop-img{
+    /* width:220px; */
+    height:138px;
+}
+.fop-box{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 55px;
+}
+.fop-box-text{
+    margin-top:30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.fop-box-box{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+.fop-btn{
+    position: relative;
+    display: inline-block;
+    margin: 90px 0 48px;
+    padding: 14px 40px;
+    border-radius: 30px;
+    background-color: #00C4BD;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    cursor: pointer;
+}
+.fop-btnbox{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.fop-btnbox::after{
+    content: '';
+    position: absolute;
+    top: 145px;
+    width: 223px;
+    height: 36px;
+    background: url(../image/benefit__txt.png) no-repeat center / 100% auto;
+    pointer-events: none;
+}
+
+/* 여섯번째 뷰 */
+.ffp-text{
+    font-size: 70px;
+    font-weight: 1000;
+    display:flex;
+    justify-content: center;
+}
+.ffp-text1{
+    font-size: 20px;
+    font-weight: 1000;
+    display:flex;
+    justify-content: center;
+    color: #00c4bd;
+}
+.containerFifth{
+    padding: 0 0 160px;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+}
+.swiper-container{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%)
+    /* overflow: hidden; */
+}
+.swiper-wrapper:nth-child(1){
+    width: 250px;
+    height: 400px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    transform: translateX(200%)
+}   
+.swiper-wrapper:nth-child(2){
+    width: 250px;
+    height: 400px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    transform: translateX(400%)
+}   
+.swiper-wrapper:nth-child(3){
+    width: 250px;
+    height: 400px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    transform: translateX(600%)
+}   
+.swiper-wrapper:nth-child(4){
+    width: 250px;
+    height: 400px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    transform: translateX(800%)
+}   
