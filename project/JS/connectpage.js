@@ -99,37 +99,105 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// swiper
+const container = document.querySelector('.swiper-container'); //스와이프 카드용 변수
+const cards = document.querySelectorAll('.swiper-wrapper');
+const swipetext = document.querySelectorAll('.swiper-text');
+const swipebtn = document.querySelectorAll('.swiper-btn');
 
-const textElements = [
-    document.querySelector(".intro-headtext"), // 첫 번째 텍스트 요소
-    document.querySelector(".class2"), // 두 번째 텍스트 요소
-    document.querySelector(".class3")  // 세 번째 텍스트 요소
-];
+cards.forEach((card, index) => {
+    if (index === 0) {
+        card.classList.add('no-after');
+        swipetext[index].style.display = 'inline'; // 첫 번째 카드만 텍스트 표시
+        swipebtn[index].style.opacity = '1';
+    } else {
+        card.classList.remove('no-after');
+        swipetext[index].style.display = 'none'; // 나머지 카드들은 텍스트 숨김
+    }
+});
 
-function adjustFontSize() {
-    textElements.forEach(textElement => {
-        let currentFontSize = parseFloat(window.getComputedStyle(textElement).fontSize);
+cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        // 클릭된 카드에 'no-after' 클래스를 추가하여 ::after 투명도 변경
+        card.classList.add('no-after');
+        swipetext[index].style.display = 'inline'
+        swipebtn[index].style.opacity = '1';
+        // 각 카드의 transform 값을 설정
+        if (index === 0) {
+            cards[0].style.transform = "translateX(-50%)scale(1.2)";
+            cards[1].style.transform = "translateX(100%)";
+            cards[2].style.transform = "translateX(250%)";
+            cards[3].style.transform = "translateX(400%)";
+        }
+        if (index === 1) {
+            cards[0].style.transform = "translateX(-200%)";
+            cards[1].style.transform = "translateX(-50%)scale(1.2)";
+            cards[2].style.transform = "translateX(100%)";
+            cards[3].style.transform = "translateX(250%)";
+        }
+        if (index === 2) {
+            cards[0].style.transform = "translateX(-350%)";
+            cards[1].style.transform = "translateX(-200%)";
+            cards[2].style.transform = "translateX(-50%)scale(1.2)";
+            cards[3].style.transform = "translateX(100%)";
+        }
+        if (index === 3) {
+            cards[0].style.transform = "translateX(-550%)";
+            cards[1].style.transform = "translateX(-350%)";
+            cards[2].style.transform = "translateX(-200%)";
+            cards[3].style.transform = "translateX(-50%)scale(1.2)";
+        }
 
-        // 화면 크기가 768px 이하일 때만 폰트 크기 줄이기
-        if (window.innerWidth <= 768) {
-            if (currentFontSize > 10) { // 최소 폰트 크기 설정
-                currentFontSize -= 1; // 폰트 크기 줄이기
-                textElement.style.fontSize = `${currentFontSize}px`;
+        // 클릭된 카드 이외의 다른 카드들에서 'no-after' 클래스를 제거하여 다시 보이게 함
+        for (let i = 0; i < cards.length; i++) {
+            if (i !== index) {
+                cards[i].classList.remove('no-after');
+                swipetext[i].style.display = 'none';
+                swipebtn[i].style.opacity = '0.2'
             }
         }
     });
-}
+});
+//btn에도 적용
+swipebtn.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        // 클릭된 카드에 'no-after' 클래스를 추가하여 ::after 투명도 변경
+        cards[index].classList.add('no-after');
+        swipebtn[index].style.opacity = '1';
+        swipetext[index].style.display = 'inline'
+        // 각 카드의 transform 값을 설정
+        if (index === 0) {
+            cards[0].style.transform = "translateX(-50%)scale(1.2)";
+            cards[1].style.transform = "translateX(100%)";
+            cards[2].style.transform = "translateX(250%)";
+            cards[3].style.transform = "translateX(400%)";
+        }
+        if (index === 1) {
+            cards[0].style.transform = "translateX(-200%)";
+            cards[1].style.transform = "translateX(-50%)scale(1.2)";
+            cards[2].style.transform = "translateX(100%)";
+            cards[3].style.transform = "translateX(250%)";
+        }
+        if (index === 2) {
+            cards[0].style.transform = "translateX(-350%)";
+            cards[1].style.transform = "translateX(-200%)";
+            cards[2].style.transform = "translateX(-50%)scale(1.2)";
+            cards[3].style.transform = "translateX(100%)";
+        }
+        if (index === 3) {
+            cards[0].style.transform = "translateX(-550%)";
+            cards[1].style.transform = "translateX(-350%)";
+            cards[2].style.transform = "translateX(-200%)";
+            cards[3].style.transform = "translateX(-50%)scale(1.2)";
+        }
 
-// swiper
-
-// const container = document.querySelector('.swiper-container');
-// const cards = document.querySelectorAll('.swiper-wrapper');
-
-// cards.forEach((card, index) => {
-//     card.addEventListener('click', () => {
-    
-//     const 
-    
-    
-//     })
-// })
+        // 클릭된 카드 이외의 다른 카드들에서 'no-after' 클래스를 제거하여 다시 보이게 함
+        for (let i = 0; i < cards.length; i++) {
+            if (i !== index) {
+                cards[i].classList.remove('no-after');
+                swipetext[i].style.display = 'none';
+                swipebtn[i].style.opacity = '0.2'
+            }
+        }
+    });
+});
