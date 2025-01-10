@@ -118,3 +118,39 @@ window.addEventListener("scroll", () => {
     });
   });
 });
+
+// 카드들 나타나는 효과
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    var elements = document.querySelectorAll(".hidesection");
+
+    elements.forEach(function (element) {
+      var top_of_element = element.offsetTop;
+      var bottom_of_window = window.scrollY + window.innerHeight;
+
+      if (bottom_of_window > top_of_element) {
+        element.style.transition = "opacity 1s, margin-top 1.2s";
+        element.style.opacity = "1";
+        element.style.marginTop = "0px";
+      }
+    });
+  });
+});
+
+// 쿠폰 스와이퍼
+var swiper = new Swiper(".swiper-container", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    type: "fraction",
+  },
+  loop: true, // 루프 기능
+  autoplay: {
+    delay: 3000, // 3초마다 자동 재생
+  },
+  watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+});

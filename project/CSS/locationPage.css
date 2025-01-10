@@ -3,7 +3,7 @@
 .header {
   width: 100%;
   background-color: black;
-  height: 150px;
+  height: 125px;
   display: flex;
   justify-content: center;
   border-top-left-radius: 16px;

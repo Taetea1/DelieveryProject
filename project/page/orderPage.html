@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+  <!-- 스와이퍼 라이브러리 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <link rel="stylesheet" href="../CSS/orderPage.css" />
   <meta charset="UTF-8">
@@ -10,6 +14,7 @@
 </head>
 
 <body>
+  <section id="one"></section>
   <!-- 헤더 -->
   <header class="header">
     <div class="header-box">
@@ -52,54 +57,918 @@
       </ul>
     </div>
   </nav>
+
+  <div class="cupon">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../image/banner1.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner2.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner3.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner4.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner5.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner6.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner7.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner8.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner9.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner10.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner11.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner12.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner13.jpg" alt="banner" class="banner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/banner14.jpg" alt="banner" class="banner" />
+        </div>
+        <!-- <div class="swiper-slide">
+          <img src="../image/banner15.jpg" alt="banner" />
+        </div> -->
+      </div>
+      <!-- 내비게이션 화살표 -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- 페이지 네이션 -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
   <div class="sectionBox">
-    <section id="one">
+    <section id="two" class="common">
       <h3 class="card-list-title">
         <em>1인분</em>
       </h3>
-      <div class="card-box">
+      <div class="card-box hidesection">
         <div class="card">
           <div class="logo-box">
             <div class="time">45~60분</div>
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
-          <div>
-            <span>7번가피자 - 신촌마포점</span>
-            <span>
-              <img src="../image/star.png" alt="review" />
-              5.01
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
             </span>
-            <span>리뷰 6003</span>
+            <span>리뷰 6003 |</span>
             <span>사장님 댓글 3410</span>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
       </div>
     </section>
-    <section id="two">프렌차이즈</section>
-    <section id="three">치킨</section>
-    <section id="four">양식/피자</section>
-    <section id="five">중국집</section>
-    <section id="six">한식</section>
-    <section id="seven">일식/돈까스</section>
-    <section id="eight">족발/보쌈</section>
-    <section id="nine">야식</section>
-    <section id="ten">분식</section>
-    <section id="eleven">카페/디저트</section>
+    <section id="three" class="common">
+      <h3 class="card-list-title">
+        <em>프렌차이즈</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="four" class="common">
+      <h3 class="card-list-title">
+        <em>치킨</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="five" class="common">
+      <h3 class="card-list-title">
+        <em>양식/피자</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="six" class="common">
+      <h3 class="card-list-title">
+        <em>중국집</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="seven" class="common">
+      <h3 class="card-list-title">
+        <em>한식</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="eight" class="common">
+      <h3 class="card-list-title">
+        <em>일식/돈까스</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="nine" class="common">
+      <h3 class="card-list-title">
+        <em>족발/보쌈</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="ten" class="common">
+      <h3 class="card-list-title">
+        <em>야식</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="eleven" class="common">
+      <h3 class="card-list-title">
+        <em>분식</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="twelve" class="common">
+      <h3 class="card-list-title">
+        <em>카페/디저트</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="thirteen" class="common">
+      <h3 class="card-list-title">
+        <em>편의점/마트</em>
+      </h3>
+      <div class="card-box hidesection">
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">45~60분</div>
+            <img src="../image/7번가피자.jpg" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div>7번가피자 - 신촌마포점</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>5.01</span>
+            </span>
+            <span>리뷰 6003 |</span>
+            <span>사장님 댓글 3410</span>
+            <div class="happyCoupon">4000원 할인</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-
-
-
-
-
-  <div class="cupon"></div>
-
-
-
-
 
 </body>
 <script src="../JS/orderPage.js"></script>

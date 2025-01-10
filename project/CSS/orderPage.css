@@ -2,7 +2,7 @@
 .header {
   width: 100%;
   background-color: black;
-  height: 150px;
+  height: 125px;
   display: flex;
   justify-content: center;
   border-top-left-radius: 16px;
@@ -112,7 +112,7 @@ a {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   display: flex;
   justify-content: center;
-  z-index: 5;
+  z-index: 20;
 }
 /* 동적으로 추가하거나 제거 */
 #nav.fixed {
@@ -156,52 +156,14 @@ a {
 .sectionBox {
   width: 100%;
 }
-section {
+section.common {
   max-width: 1280px;
   margin: 0px auto;
   text-align: center;
   height: 100vh;
 }
-#one {
-  /* background: palegoldenrod; */
-}
-#two {
-  background: palegreen;
-}
-#three {
-  background: paleturquoise;
-}
-#four {
-  background: palevioletred;
-}
-#five {
-  background: palegoldenrod;
-}
-#six {
-  background: palegreen;
-}
-#seven {
-  background: paleturquoise;
-}
-#eight {
-  background: palevioletred;
-}
-#nine {
-  background: palegoldenrod;
-}
-#ten {
-  background: palegreen;
-}
-#eleven {
-  background: paleturquoise;
-}
-
-/* 메뉴바 */
 
 /* 가게들 */
-/* .sectionBox {
-  padding: 80px 0px;
-} */
 .card-list-title {
   position: relative;
   padding-bottom: 38px;
@@ -216,27 +178,109 @@ section {
   justify-content: space-evenly;
   align-items: center;
   gap: 30px;
-  background-color: blueviolet;
 }
 .card {
   box-shadow: 5px 6px 3px rgb(227, 227, 227);
   border-radius: 8px;
   aspect-ratio: 1/1;
   overflow: hidden;
-  background-color: aquamarine;
+  background-color: black;
+  border-radius: 30px;
 }
 .logo-box {
   position: relative;
-  border: 1px solid black;
+  background-color: white;
   border-radius: 10px;
+  margin: 30px 20px 10px 20px;
+}
+.logoImg {
+  width: 100%;
+  object-fit: contain;
 }
 .time {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 2px;
+  right: 5px;
+  font-weight: bold;
 }
 .logoImg {
   width: 100px;
+}
+.cardtext {
+  text-align: start;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+}
+.review {
+  display: flex;
+  margin-bottom: 15px;
+}
+.reviewImg {
+  width: 20px;
+}
+.happyCoupon {
+  display: flex;
+  justify-content: center;
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-top: 7px;
+  padding: 7px;
+  background-color: white;
+}
+.hidesection {
+  opacity: 0;
+  margin-top: 600px;
+  max-width: 100%;
+}
+
+/* 쿠폰 스와이퍼 */
+.cupon {
+  max-width: 100%;
+  /* 스크롤바 안 보이게 */
+  overflow: hidden;
+  margin: 10px;
+}
+.swiper-container {
+  display: relative;
+  padding: 50px;
+}
+.swiper-slide {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide:hover {
+  cursor: pointer;
+}
+.swiper-pagination {
+  display: absolute;
+  top: 540px;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  display: absolute;
+  top: 500px;
+  z-index: 1;
+  color: #00c4bd; /* 빨간색으로 화살표 색상 변경 */
+}
+.swiper-pagination-bullet-active {
+  background-color: #00c4bd; /* 활성 페이지네이션 색상 */
+}
+.banner {
+  width: 1280px;
 }
 @media screen and (max-width: 768px) {
   /* 헤더 */
