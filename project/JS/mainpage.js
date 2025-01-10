@@ -194,3 +194,11 @@ riderBtn.addEventListener("click", () => {
   open = !open;
   console.log(riderBtn);
 });
+
+
+function orderpage() {
+  window.location.href = "http://127.0.0.1:5500/project/page/locationPage.html";
+}
+function connectpage() {
+  window.location.href = "http://127.0.0.1:5500/project/page/connectpage.html";
+}

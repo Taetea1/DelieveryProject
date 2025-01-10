@@ -16,6 +16,9 @@ p{
     margin: 0;
     padding: 0;
 }
+input::placeholder {
+    color: #abb4bd;
+}
 /* li{
     float:left;
 } */
@@ -617,6 +620,100 @@ p{
     line-height: 32px;
     cursor: pointer;
 }
+/* 일곱번째 뷰 */
+.containerSixth{
+    padding: 160px 0 160px;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.sip-searchbox{
+    max-width: 720px;
+    margin-top : 135px;
+}
+.sip-iconb{
+    position: relative;
+    width: 100%;
+}
+.sip-input{
+    width: 90%;
+    height: 32px;
+    border: 2px solid #00C4BD;
+    padding: 20px 76px 20px 24px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    border-radius: 8px;
+    background-color: #fff;
+    outline: none;
+}
+.sip-input:focus{
+    border: 2px solid #00C4BD;
+}
+.sip-boxtext{
+    background-image: url(../image/icon__bubble.png);
+    width: 219px;
+    height: 105px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right:-90px;
+    bottom: 100px;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+.sip-text1{
+    display: block;
+    position: relative;
+    margin-top: 12px;
+    padding-left: 11px;
+    color: #9FA9AB;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+.sip-text1::before{
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #9FA9AB;
+    border-radius: 50%;
+    z-index: 1;
+    left: -6px;
+    bottom: 5px;
+    position: absolute;
+}
+.sip-searchicon{
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    width: 76px;
+    height: 64px;
+    background: url(../image/icon__search.svg) no-repeat center / 28px;
+    white-space: nowrap;
+    text-indent: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.sip-searchinbox{
+    width: 100%;
+    margin: 24px 0 0;
+    padding: 16px 8px 24px 24px;
+    border-radius: 8px;
+    background-color: #EBF9FA;
+}
 
 @media screen and (max-width: 768px){
     .wrap{
@@ -693,4 +790,23 @@ p{
     .intro-btn{
         display:none;
     }
+    .sip-input{
+        width: 80%;
+    }
+    .sip-boxtext{
+        right: -40px;
+        bottom: 100px;
+        display: none;
+    }
+    .sip-searchicon{
+        right: 0px;
+        top: 10px;
+    }
+}
+@media screen and (max-width: 1024px){
+    .sip-searchicon{
+        right: 20px;
+        top: 10px;
+    }
+
 }

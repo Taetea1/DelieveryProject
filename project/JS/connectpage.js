@@ -201,3 +201,11 @@ swipebtn.forEach((btn, index) => {
         }
     });
 });
+
+const searchicon = document.querySelector(".sip-searchicon")
+
+searchicon.addEventListener("click", () => {
+    const inputtext = document.querySelector(".sip-input").value
+
+    
+})
