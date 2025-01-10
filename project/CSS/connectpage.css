@@ -16,6 +16,11 @@ p{
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;  
+    color: inherit;         
+    outline: none;          
+}
 input::placeholder {
     color: #abb4bd;
 }
@@ -72,6 +77,14 @@ input::placeholder {
     transition: all 0.3s ease-out;
     visibility: hidden;
     opacity: 0;
+}
+
+.outro{
+    background:white url(../image/outro__bg.jpg) no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width:100%;
+    height:400px;
 }
 /* 첫번째 뷰 */
 
@@ -707,12 +720,82 @@ input::placeholder {
     overflow: hidden;
     cursor: pointer;
 }
-.sip-searchinbox{
+
+.sip-input-list{
+    margin-top : 20px;
+    position: absolute;
+    background-color: #EBF9FA;
+    width: 100%;
+    height: 350px;
+    z-index: 3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    /* overflow: hidden; */
+}
+.sip-list-item {
+    background-color: #f7f7f7;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  .sip-list-item:hover {
+    background-color: #eaeaea;
+    transform: translateY(-5px);
+  }
+  /* input 서치시 나오는 box */
+  .sip-searchinbox{  
+    background-color: #EBF9FA;
+    padding: 16px;
+    display: none;
+    position: relative;
+    margin-top : 20px;
+    border-radius: 16px;
+  }
+  .sip-searchinbox-text{
     width: 100%;
     margin: 24px 0 0;
-    padding: 16px 8px 24px 24px;
+    padding:20px 0 20px;
     border-radius: 8px;
-    background-color: #EBF9FA;
+    background-color: #D3F4F4;
+    color: #00C4BD;
+    text-align: center;
+}
+.sip-search-box-text{  
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+.sip-search-box-text1{
+    font-size: 16px;
+    font-weight: 300;
+}
+.sip-search-box-text2{  
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color :#9FA9AB;
+}
+.sip-search-box-text3{
+    font-size: 24px;
+    font-weight: 700;
+    color : black;
+}
+.sip-absolute{
+    width: 100%;
+    height: 100%;
+    background-color: #EEEEEE;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    border-radius: 16px;
+    display: none;
 }
 
 @media screen and (max-width: 768px){
@@ -801,6 +884,16 @@ input::placeholder {
     .sip-searchicon{
         right: 0px;
         top: 10px;
+    }
+    .fop-img{
+        width: 120px;
+        height: 75px;
+    }
+    .fop-box-text{
+        font-size: 20px;
+    }
+    .sip-input-list{
+        height: 100px;
     }
 }
 @media screen and (max-width: 1024px){

@@ -1,4 +1,5 @@
 
+
 let firstpage = false;
 let lastpage = false;
 let countnum = false;
@@ -18,7 +19,9 @@ window.addEventListener("scroll", () => {
     else if (windowy < 100){
         fixedimg.style. opacity = "0"
     }
-    
+    if(windowy > 5262){
+        fixedimg.style. opacity = "0"
+    }
     const spnum = [
         document.querySelector(".sp-count"),
         document.querySelector(".sp-count1"),
@@ -202,10 +205,91 @@ swipebtn.forEach((btn, index) => {
     });
 });
 
-const searchicon = document.querySelector(".sip-searchicon")
 
-searchicon.addEventListener("click", () => {
-    const inputtext = document.querySelector(".sip-input").value
+// input list 서울시, 구만
 
-    
+const sipinput = document.querySelector(".sip-input")
+const inputlist = document.querySelector(".sip-input-list")
+const sipinputtext = document.querySelector(".sip-searchinbox")
+const inputvalue = sipinput.value.trim();
+
+//인풋에 입력값 입력 받을 때마다 작동 변형해서 자음마다 리스트가 나오도록 기능 추가 가능
+sipinput.addEventListener("input", () =>{
+    const inputvalue = sipinput.value.trim();
+    if (inputvalue === "서울"){
+        inputlist.style.display = "block";
+        displayinputlist();
+    }
+    else {
+        inputlist.style.display = "none";
+    }
 })
+
+//input Enter키 조건 추가
+sipinput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        enterkey()    
+    }
+  });
+//icon에도 onclick=enterkey() 적용
+function enterkey(){
+
+  const inputvalue1 = sipinput.value.trim();
+  const sipsearchinbox = document.querySelector(".sip-searchin-text")
+  const sipabsolute = document.querySelector(".sip-absolute")
+  
+  sipinput.value = "";
+  inputlist.style.display = "none"; 
+  sipabsolute.style.display = "none"; //입력 후 안쓰이는 디스플레이 안보이게
+
+  if (inputvalue1 == ""){
+    alert('검색어를 입력해 주세요.')
+    return;
+}
+     // Enter 키를 눌렀을 때 서울이 아닐경우
+  if (inputvalue1 !== "서울" && inputvalue1 != "" && inputvalue1 !== "제주도"){
+    alert('미구현 기능입니다.')
+    return;
+    }
+  if (inputvalue1 == "서울"){
+      sipinputtext.style.display = "block"
+      console.log(inputvalue1)
+      sipsearchinbox.innerHTML = inputvalue1
+      setTimeout(function() {
+        sipsearchinbox.innerHTML = "";
+        sipinputtext.style.display = "none"// 텍스트 삭제
+      }, 10000); //
+    }
+    if (inputvalue1 == "제주도"){
+        sipinputtext.style.display = "block"
+        sipabsolute.style.display = "flex"
+        console.log(inputvalue1)
+        sipsearchinbox.innerHTML = inputvalue1
+        setTimeout(function() {
+          sipinputtext.style.display = "none"
+          sipabsolute.style.display = "none"// 텍스트 삭제
+        }, 7000); //
+      }
+}
+
+// const swiperSlides = document.querySelectorAll('.swiper');
+
+// swiperSlides.forEach(function (element, index) {
+//     element.classList.add("swiper-" + index);
+//     let swiper = new Swiper(".swiper-" + index, {
+//       autoplay: {
+//             delay: 1, 
+//             // 슬라이드가 자동으로 전환되기까지의 시간 간격
+//             desableOnInteraction: true, 
+//             // arrow나 pagination이용 후 자동 재생을 비활성화 할지의 여부
+//       },
+//       speed: 8e3,
+//       // 슬라이드가 자동으로 전환되는 속도를 설정
+//       loop: true,
+//       // 슬라이드가 무한 순환
+//       slidesPerView: "auto",
+//       // 슬라이드가 표시되는 갯수를 설정
+//       freemode: true
+//       // 슬라이드가 자유롭게 스와이프 되도록 설정
+//     });
+// });

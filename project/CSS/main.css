@@ -119,7 +119,7 @@ body {
 }
 
 .head{
-    width: 30%;
+    width: 40%;
     height: 50%;
 }
 p{
@@ -147,10 +147,12 @@ p{
     display: flex;
     justify-content: space-between;
 }
-
-.image{
-    width: 180px;
+.margin-left{
     margin-left: 20px;
+}
+.image{
+    margin-top: 20px;
+    width: 180px;
     height: 70px;
 }
 .image1 {
@@ -224,6 +226,12 @@ p{
         }
         .imgB3{
             display:none;
+        }
+        .head{
+            width: 100%;
+        }
+        .margin-left{
+            margin:0;
         }
  
     }

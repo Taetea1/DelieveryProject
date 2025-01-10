@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel = "stylesheet" href = "../CSS/connectpage.css"/>
+    <link rel = "stylesheet" href = "../CSS/footer.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -149,11 +150,33 @@
                     <div class = "sip-iconb">
                         <div class = "sip-boxtext"><span class = "sip-text">내가 원하는 곳에서<br>부담 없이 시작해보세요</span></div>
                         <input class = "sip-input" placeholder = "활동 가능 지역을 찾아보세요! (예: 신천동)" type = "text" list = "search" />
-                        <div class = "sip-searchicon"></div><br>
+                        <div class = "sip-input-list" id = "sip-input-list"></div>
+                        <div onclick = "enterkey()" class = "sip-searchicon"></div><br>
                         <span class = "sip-text1">일부 법정동은 배달권역에서 추가/제외될 수 있으며, 기상 및 도로 사정에 따라 변경될 수 있습니다.</span>
                     </div>
-                    <div class = "sip-searchinbox"><div class = "sip-searchinbox-text">123123123123132312</div></div>
+                    <div class = "sip-searchinbox">
+                        <div class = "sip-absolute"><p class = "sip-search-box-text2">이 지역에서는 아직 활동이 어려워요.<br>
+                            <span class = "sip-search-box-text3">주변 지역으로 다시 검색해 보세요!</span></p></div>
+                        <div class = "sip-searchin-text"></div>
+                        <div class = "sip-searchinbox-text">
+                            <p class = "sip-search-box-text">이 지역은 배달이 가능해요<br><span class = "sip-search-box-text1">앱을 다운로드 하고 배달을 시작해보세요!</span></p>
+                        </div>
+                    </div>
                 </div>
+        </div>
+        <div class = "outro"></div>
+        <div class = "containerfooter">
+            <div class = "footergap">
+                <span class = "footerbold">(주)우아한청년들</span>
+                <a class = "footerbold" href = "">개인정보처리방침</a>
+                <a href = "">공지사항</a>
+            </div>
+                <ul class = "footerul">
+                    <li>대표 : 김병우</li>
+                    <li>사업자번호 : 417-87-00193</li>
+                    <li>서울특별시 송파구 올림픽로35다길 32 9층</li>
+                    <li>문의 : 카카오톡 채널(@배민커넥트)</li>
+                </ul>
         </div>
     </div>
     <script src = "../JS/connectpage.js"></script>
