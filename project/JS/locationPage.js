@@ -180,12 +180,6 @@ const data = [
     url: "../image/category-11.png",
     path: "#twelve",
   },
-  {
-    id: 13,
-    name: "편의점/마트",
-    url: "../image/category-convenience-store.png",
-    path: "#thirteen",
-  },
 ];
 
 //준비중 함수

@@ -153,69 +153,76 @@ a {
   transition: 0.2s;
 }
 
-.sectionBox {
+#sectionBox {
   width: 100%;
 }
 section.common {
   max-width: 1280px;
   margin: 0px auto;
   text-align: center;
-  height: 100vh;
 }
 
 /* 가게들 */
 .card-list-title {
+  padding-top: 100px;
   position: relative;
-  padding-bottom: 38px;
-  padding-top: 200px;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #999;
   font-size: 38px;
   text-align: start;
 }
 .card-box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 30px;
+  gap: 10px;
+  height: 100%;
 }
 .card {
-  box-shadow: 5px 6px 3px rgb(227, 227, 227);
-  border-radius: 8px;
-  aspect-ratio: 1/1;
+  /* box-shadow: 5px 6px 3px rgb(227, 227, 227); */
+  border-radius: 10px;
   overflow: hidden;
-  background-color: black;
-  border-radius: 30px;
+  /* background-color: #eee; */
+  background-color: #333;
+  padding: 20px;
 }
 .logo-box {
-  position: relative;
-  background-color: white;
   border-radius: 10px;
-  margin: 30px 20px 10px 20px;
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .logoImg {
   width: 100%;
-  object-fit: contain;
+  height: 180px;
+  object-fit: cover;
 }
 .time {
+  color: #333;
   position: absolute;
   top: 2px;
   right: 5px;
   font-weight: bold;
 }
-.logoImg {
-  width: 100px;
-}
+
 .cardtext {
-  text-align: start;
-  margin: 20px;
+  margin: 10px 0px;
+  text-align: left;
   font-weight: bold;
   font-size: 1em;
   color: white;
 }
+
+.cardTitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 .review {
   display: flex;
-  margin-bottom: 15px;
+  margin: 6px 0px;
+  align-items: center;
+  img {
+    margin-right: 5px;
+  }
 }
 .reviewImg {
   width: 20px;
@@ -223,17 +230,36 @@ section.common {
 .happyCoupon {
   display: flex;
   justify-content: center;
-  color: red;
-  border: 1px solid red;
+  color: rgb(252, 71, 71);
   border-radius: 5px;
   margin-top: 7px;
-  padding: 7px;
-  background-color: white;
+  padding: 10px;
+  background-color: #f2f4f7;
 }
 .hidesection {
   opacity: 0;
-  margin-top: 600px;
+  margin-top: 300px;
   max-width: 100%;
+}
+
+.textWrap {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  .titleWrap {
+    display: flex;
+    color: rgb(241, 241, 78);
+    align-items: flex-end;
+    gap: 5px;
+    font-size: 14px;
+    .title {
+      font-size: 16px;
+      color: white;
+    }
+  }
+  .bar {
+    font-weight: bolder;
+  }
 }
 
 /* 쿠폰 스와이퍼 */

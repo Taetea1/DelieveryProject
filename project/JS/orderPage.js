@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var bottom_of_window = window.scrollY + window.innerHeight;
 
       if (bottom_of_window > top_of_element) {
-        element.style.transition = "opacity 1s, margin-top 1.2s";
+        element.style.transition = "opacity 1s, margin-top 1s";
         element.style.opacity = "1";
         element.style.marginTop = "0px";
       }
@@ -154,3 +154,641 @@ var swiper = new Swiper(".swiper-container", {
   },
   watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
 });
+
+// 레스토랑 데이터
+const rt_data = [
+  {
+    type: "1인분",
+    id: "two",
+    rt: [
+      {
+        time: "22~37분",
+        name: "맥도날드-연세대점",
+        star: "4.7",
+        review: "5,526",
+        coupon: "8,000원 이상 배달",
+        boss: "0",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "24~39분",
+        name: "혼밥대왕-홍대점",
+        star: "4.9",
+        review: "7,364",
+        coupon: "3,000원 이상 배달",
+        boss: "6,751",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "25~40분",
+        name: "노브랜드버거-신촌점",
+        star: "4.8",
+        review: "744",
+        coupon: "9,000원 이상 배달",
+        boss: "0",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "22~37분",
+        name: "와이스타브-공덕본점",
+        star: "4.9",
+        review: "143",
+        coupon: "5,000원 이상 배달",
+        boss: "0",
+        logo: "../image/category-convenience-store.png",
+      },
+    ],
+  },
+  {
+    type: "프렌차이즈",
+    id: "three",
+    rt: [
+      {
+        time: "24~39분",
+        name: "도미노피자-마포점",
+        star: "4.7",
+        review: "1,185",
+        coupon: "21,900원 이상 배달",
+        boss: "5",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "24~39분",
+        name: "버거킹-신촌1점",
+        star: "4.7",
+        review: "3,467",
+        coupon: "12,000원 이상 배달",
+        boss: "84",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "33~48분",
+        name: "디디치킨-대흥점",
+        star: "4.9",
+        review: "2,896",
+        coupon: "16,000원 이상 배달",
+        boss: "909",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "21~36분",
+        name: "피자헛-신수점",
+        star: "4.9",
+        review: "960",
+        coupon: "18,900원 이상 배달",
+        boss: "959",
+        logo: "../image/category-convenience-store.png",
+      },
+    ],
+  },
+  {
+    type: "치킨",
+    id: "four",
+    rt: [
+      {
+        time: "24~39분",
+        name: "후라이드참잘하는집-공덕점 ",
+        star: "4.7",
+        review: "3,859",
+        coupon: "13,000원 이상 배달",
+        boss: "3,854",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "34~49분",
+        name: "BHC-이대역점",
+        star: "4.7",
+        review: "4,600",
+        coupon: "18,000원 이상 배달",
+        boss: "1121",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "20~35분",
+        name: "그램치킨-마포직영점",
+        star: "4.9",
+        review: "1,458",
+        coupon: "5,000원 이상 배달",
+        boss: "1,469",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "40~55분",
+        name: "바른치킨-공덕파크자이점",
+        star: "4.8",
+        review: "931",
+        coupon: "15,000원 이상 배달",
+        boss: "0",
+        logo: "../image/category-convenience-store.png",
+      },
+    ],
+  },
+  {
+    type: "양식/피자",
+    id: "five",
+    rt: [
+      {
+        time: "44~59분",
+        name: "7번가피자-신촌마포점",
+        star: "5.0",
+        review: "6,003",
+        coupon: "17,900원 이상 배달",
+        boss: "3,410",
+        logo: "../image/category-pizza.png",
+      },
+      {
+        time: "24~39분",
+        name: "피자보이시나-신촌점",
+        star: "5.0",
+        review: "5,119",
+        coupon: "15,000원 이상 배달",
+        boss: "4,719",
+        logo: "../image/category-pizza.png",
+      },
+      {
+        time: "24~39분",
+        name: "도미노피자-마포점",
+        star: "4.7",
+        review: "1,185",
+        coupon: "21,900원 이상 배달",
+        boss: "5",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "45~60분",
+        name: "써브웨이-홍익대점",
+        star: "0",
+        review: "0",
+        coupon: "17,000원 이상 배달",
+        boss: "0",
+        logo: "../image/category-convenience-store.png",
+      },
+    ],
+  },
+  {
+    type: "중국집",
+    id: "six",
+    rt: [
+      {
+        time: "24~39분",
+        name: "공시우육면",
+        star: "4.8",
+        review: "473",
+        coupon: "13,500원 이상 배달",
+        boss: "46",
+        logo: "../image/category-convenience-store.png",
+      },
+      {
+        time: "24~39분",
+        name: "중국성-공덕점",
+        star: "4.7",
+        review: "5,762",
+        coupon: "9,000원 이상 배달",
+        boss: "3,512",
+        logo: "../image/category-chinese.png",
+      },
+      {
+        time: "24~39분",
+        name: "춘리마라탕-신촌점",
+        star: "5.0",
+        review: "1,587",
+        coupon: "12,900원 이상 배달",
+        boss: "1,325",
+        logo: "../image/category-chinese.png",
+      },
+      {
+        time: "24~39분",
+        name: "가화만사성",
+        star: "4.7",
+        review: "31,615",
+        coupon: "14,000원 이상 배달",
+        boss: "40",
+        logo: "../image/category-chinese.png",
+      },
+    ],
+  },
+  {
+    type: "한식",
+    id: "seven",
+    rt: [
+      {
+        time: "24~39분",
+        name: "디디찜엔닭-대흥점",
+        star: "4.7",
+        review: "76",
+        coupon: "16,000원 이상 배달",
+        boss: "10",
+        logo: "../image/category-korean.png",
+      },
+      {
+        time: "24~39분",
+        name: "기떡찜-성산점",
+        star: "4.5",
+        review: "42",
+        coupon: "16,900원 이상 배달",
+        boss: "0",
+        logo: "../image/category-korean.png",
+      },
+      {
+        time: "24~39분",
+        name: "반찬가게슈퍼키친-마포프레스티지자이점",
+        star: "4.6",
+        review: "19",
+        coupon: "16,000원 이상 배달",
+        boss: "18",
+        logo: "../image/category-korean.png",
+      },
+      {
+        time: "24~39분",
+        name: "유가네닭갈비-홍대2호점",
+        star: "4.6",
+        review: "277",
+        coupon: "15,000원 이상 배달",
+        boss: "152",
+        logo: "../image/category-korean.png",
+      },
+    ],
+  },
+  {
+    type: "일식/돈까스",
+    id: "eight",
+    rt: [
+      {
+        time: "24~39분",
+        name: "벚꽃스시-망원점",
+        star: "4.9",
+        review: "11,768",
+        coupon: "14,900원 이상 배달",
+        boss: "3,714",
+        logo: "../image/category-japanese.png",
+      },
+      {
+        time: "38~53분",
+        name: "벚꽃스시&사시미-산곡점",
+        star: "4.9",
+        review: "259",
+        coupon: "14,900원 이상 배달",
+        boss: "259",
+        logo: "../image/category-japanese.png",
+      },
+      {
+        time: "20~35분",
+        name: "육회바른연어-홍대점",
+        star: "4.9",
+        review: "4,975",
+        coupon: "13,900원 이상 배달",
+        boss: "1,774",
+        logo: "../image/category-japanese.png",
+      },
+      {
+        time: "26~41분",
+        name: "갈라파라멘",
+        star: "5.0",
+        review: "365",
+        coupon: "12,900원 이상 배달",
+        boss: "7",
+        logo: "../image/category-japanese.png",
+      },
+    ],
+  },
+  {
+    type: "족발/보쌈",
+    id: "nine",
+    rt: [
+      {
+        time: "19~34분",
+        name: "귀한족발-홍대서교점",
+        star: "5.0",
+        review: "928",
+        coupon: "11,000원 이상 배달",
+        boss: "833",
+        logo: "../image/category-pork.png",
+      },
+      {
+        time: "24~39분",
+        name: "구구족-이대점",
+        star: "4.9",
+        review: "9,341",
+        coupon: "19,900원 이상 배달",
+        boss: "6,890",
+        logo: "../image/category-pork.png",
+      },
+      {
+        time: "24~39분",
+        name: "싸움의고수-신촌점",
+        star: "4.6",
+        review: "1,496",
+        coupon: "11,700원 이상 배달",
+        boss: "412",
+        logo: "../image/category-pork.png",
+      },
+      {
+        time: "24~39분",
+        name: "원할머니보쌈-홍대역점",
+        star: "4.6",
+        review: "1,168",
+        coupon: "27,000원 이상 배달",
+        boss: "398",
+        logo: "../image/category-pork.png",
+      },
+    ],
+  },
+  {
+    type: "야식",
+    id: "ten",
+    rt: [
+      {
+        time: "24~39분",
+        name: "파스타예요-마포신촌본점",
+        star: "4.9",
+        review: "902",
+        coupon: "9,900원 이상 배달",
+        boss: "0",
+        logo: "../image/category-pasta.png",
+      },
+      {
+        time: "24~39분",
+        name: "빵위에치즈 피자-마포점",
+        star: "5.0",
+        review: "5,974",
+        coupon: "15,900원 이상 배달",
+        boss: "5,957",
+        logo: "../image/category-pizza.png",
+      },
+      {
+        time: "24~39분",
+        name: "윤이불닭발-홍대직영점",
+        star: "4.9",
+        review: "179",
+        coupon: "9,900원 이상 배달",
+        boss: "78",
+        logo: "../image/category-chicken.png",
+      },
+      {
+        time: "24~39분",
+        name: "숯미남숯불치킨&찜닭에미친남자",
+        star: "4.9",
+        review: "1,292",
+        coupon: "5,000원 이상 배달",
+        boss: "5",
+        logo: "../image/category-chicken.png",
+      },
+    ],
+  },
+  {
+    type: "분식",
+    id: "eleven",
+    rt: [
+      {
+        time: "34~49분",
+        name: "동대문엽기떡볶이-신촌점",
+        star: "4.8",
+        review: "1,594",
+        coupon: "14,000원 이상 배달",
+        boss: "79",
+        logo: "../image/category-snack.png",
+      },
+      {
+        time: "24~39분",
+        name: "김가네-동교동삼거리점",
+        star: "4.9",
+        review: "893",
+        coupon: "15,000원 이상 배달",
+        boss: "673",
+        logo: "../image/category-snack.png",
+      },
+      {
+        time: "24~39분",
+        name: "옐로우캔-홍대직영점",
+        star: "4.7",
+        review: "37",
+        coupon: "10,000원 이상 배달",
+        boss: "0",
+        logo: "../image/category-snack.png",
+      },
+      {
+        time: "24~39분",
+        name: "뽁떡떡볶이-공덕점",
+        star: "4.9",
+        review: "299",
+        coupon: "6,100원 이상 배달",
+        boss: "266",
+        logo: "../image/category-snack.png",
+      },
+    ],
+  },
+  {
+    type: "카페/디저트",
+    id: "twelve",
+    rt: [
+      {
+        time: "24~39분",
+        name: "뚜레쥬르-공덕해링턴점",
+        star: "4.9",
+        review: "5,009",
+        coupon: "12,000원 이상 배달",
+        boss: "3,388",
+        logo: "../image/category-dessert.png",
+      },
+      {
+        time: "22~37분",
+        name: "구스카토커피-마포대흥점",
+        star: "5.0",
+        review: "1,393",
+        coupon: "9,900원 이상 배달",
+        boss: "1,392",
+        logo: "../image/category-dessert.png",
+      },
+      {
+        time: "18~33분",
+        name: "백억커피-홍대점",
+        star: "4.9",
+        review: "341",
+        coupon: "7,900원 이상 배달",
+        boss: "247",
+        logo: "../image/category-dessert.png",
+      },
+      {
+        time: "17~32분",
+        name: "설빙-서울신촌점",
+        star: "4.9",
+        review: "1,333",
+        coupon: "13,000원 이상 배달",
+        boss: "1,135",
+        logo: "../image/category-dessert.png",
+      },
+    ],
+  },
+];
+
+let rt_type = "all";
+// 해더 클릭시 변환 함수
+const changeMenu = (type) => {
+  rt_type = type;
+  const sectionBox = document.getElementById("sectionBox");
+
+  // sectionBox 초기화
+  sectionBox.innerHTML = "";
+
+  // 데이터 처리
+  if (rt_type === "all") {
+    // 모든 데이터를 추가
+    rt_data.forEach((category) => {
+      const sectionHTML = `
+        <section id="${category.id}" class="common">
+          <h3 class="card-list-title">${category.type}</h3>
+          <div class="card-box hidesection">
+      `;
+
+      const restaurantHTML = category.rt
+        .map(
+          (restaurant) => `
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">${restaurant.time}</div>
+            <img src="${restaurant.logo}" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div class="cardTitle">${restaurant.name}</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>${restaurant.star}</span>
+            </span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>${restaurant.review}</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>${restaurant.boss}</div>
+              </div>
+            </div>
+            <div class="happyCoupon">${restaurant.coupon}</div>
+          </div>
+        </div>
+      `
+        )
+        .join("");
+
+      sectionBox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
+    });
+  } else {
+    // "1인분" 또는 "twotype" 같은 매개변수로 넘어온 값이 있을 경우
+    const selectedCategory = rt_data.find(
+      (category) => category.id === rt_type
+    );
+
+    if (selectedCategory) {
+      const sectionHTML = `
+        <section id="${selectedCategory.id}" class="common">
+          <h3 class="card-list-title">${selectedCategory.type}</h3>
+          <div class="card-box hidesection">
+      `;
+
+      const restaurantHTML = selectedCategory.rt
+        .map(
+          (restaurant) => `
+        <div class="card">
+          <div class="logo-box">
+            <div class="time">${restaurant.time}</div>
+            <img src="${restaurant.logo}" class="logoImg" />
+          </div>
+          <div class="cardtext">
+            <div class="cardTitle">${restaurant.name}</div>
+            <span class="review">
+              <img src="../image/star.png" alt="review" class="reviewImg" />
+              <span>${restaurant.star}</span>
+            </span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>${restaurant.review}</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>${restaurant.boss}</div>
+              </div>
+            </div>
+            <div class="happyCoupon">${restaurant.coupon}</div>
+          </div>
+        </div>
+      `
+        )
+        .join("");
+
+      sectionBox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
+    } else {
+      console.log("해당 카테고리가 없습니다.");
+    }
+  }
+};
+
+// 해더 클릭시 변환 함수
+// const changeMenu = (type) => {
+//   rt_type = type;
+//   const sectionbox = document.getElementById("sectionBox");
+//   //초기화
+//   sectionbox.innerHTML = "";
+//   // if (rt_type === "all") {
+//   //   forEach((data, index) => {});
+//   // }
+//   rt_data.forEach((category) => {
+//     // 새로운 섹션을 추가
+//     const sectionHTML = `
+//       <section id="${category.id}" class="common">
+//         <h3 class="card-list-title">${category.type}</h3>
+//         <div class="card-box hidesection">
+//     `;
+
+//     // 카테고리 안에 레스토랑 카드 추가
+//     const restaurantHTML = category.rt
+//       .map(
+//         (restaurant) => `
+//       <div class="card">
+//         <div class="logo-box">
+//           <div class="time">${restaurant.time}</div>
+//           <img src="${restaurant.logo}" class="logoImg" />
+//         </div>
+//         <div class="cardtext">
+//           <div class="cardTitle">${restaurant.name}</div>
+//           <span class="review">
+//             <img src="../image/star.png" alt="review" class="reviewImg" />
+//             <span>${restaurant.star}</span>
+//           </span>
+//           <div class="textWrap">
+//             <div class="titleWrap">
+//               <div class="title">리뷰</div>
+//               <div>${restaurant.review}</div>
+//             </div>
+//             <div class="bar">|</div>
+//             <div class="titleWrap">
+//               <div class="title">사장님 댓글</div>
+//               <div>${restaurant.boss}</div>
+//             </div>
+//           </div>
+//           <div class="happyCoupon">${restaurant.coupon}</div>
+//         </div>
+//       </div>
+//     `
+//       )
+//       .join(""); // restaurantHTML을 하나의 문자열로 합침
+
+//     // 섹션 내용에 레스토랑 카드 추가
+//     sectionbox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
+//   });
+// };
+//가게 박스 넣기
+// const addMenuBox = () => {
+//   for (let i = 0; i < rt_data.length; i++) {
+//     divs.innerHTML = `
+
+//     <a href=orderPage.html${data[i].path}><div class="textBox">${data[i].name}</div>
+//     <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
+
+//     //div 요소도 부모 밑에 넣음
+//     sectionbox.appendChild(divs);
+//   }
+// };

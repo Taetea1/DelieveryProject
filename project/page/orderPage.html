@@ -36,27 +36,6 @@
     </div>
   </header>
 
-  <!-- 메뉴 -->
-  <nav id="nav" class="nav">
-    <div class="nav-box">
-      <ul class="nav_menu">
-        <li><a href="#one" class="nav_menu-foused">전체보기</a></li>
-        <li><a href="#two">1인분</a></li>
-        <li><a href="#three">프렌차이즈</a></li>
-        <li><a href="#four">치킨</a></li>
-        <li><a href="#five">양식/피자</a></li>
-        <li><a href="#six">중국집</a></li>
-        <li><a href="#seven">한식</a></li>
-        <li><a href="#eight">일식/돈까스</a></li>
-        <li><a href="#nine">족발/보쌈</a></li>
-        <li><a href="#ten">야식</a></li>
-        <li><a href="#eleven">분식</a></li>
-        <li><a href="#twelve">카페/디저트</a></li>
-        <li><a href="#thirteen">편의점/마트</a></li>
-        <div class="marker"></div>
-      </ul>
-    </div>
-  </nav>
 
   <div class="cupon">
     <div class="swiper-container">
@@ -111,14 +90,38 @@
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <!-- 페이지 네이션 -->
-      <div class="swiper-pagination"></div>
+      <!-- <div class="swiper-pagination"></div> -->
     </div>
   </div>
 
-  <div class="sectionBox">
-    <section id="two" class="common">
+
+  <!-- 메뉴 -->
+  <nav id="nav" class="nav">
+    <div class="nav-box">
+      <ul class="nav_menu">
+        <li><a href="#one" class="nav_menu-foused" onclick="changeMenu('all')">전체보기</a></li>
+        <li><a href="#two" onclick="changeMenu('two')">1인분</a></li>
+        <li><a href="#three" onclick="changeMenu('three')">프렌차이즈</a></li>
+        <li><a href="#four" onclick="changeMenu('four')">치킨</a></li>
+        <li><a href="#five" onclick="changeMenu('five')">양식/피자</a></li>
+        <li><a href="#six" onclick="changeMenu('six')">중국집</a></li>
+        <li><a href="#seven" onclick="changeMenu('seven')">한식</a></li>
+        <li><a href="#eight" onclick="changeMenu('eight')">일식/돈까스</a></li>
+        <li><a href="#nine" onclick="changeMenu('nine')">족발/보쌈</a></li>
+        <li><a href="#ten" onclick="changeMenu('ten')">야식</a></li>
+        <li><a href="#eleven" onclick="changeMenu('eleven')">분식</a></li>
+        <li><a href="#twelve" onclick="changeMenu('twelve')">카페/디저트</a></li>
+        <li><a href="#thirteen" onclick="changeMenu('thirteen')">편의점/마트</a></li>
+        <div class="marker"></div>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div id="sectionBox">
+    <!-- <section id="two" class="common">
       <h3 class="card-list-title">
-        <em>1인분</em>
+        1인분
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -127,13 +130,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -143,45 +155,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
-            <div class="happyCoupon">4000원 할인</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="logo-box">
-            <div class="time">45~60분</div>
-            <img src="../image/7번가피자.jpg" class="logoImg" />
-          </div>
-          <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
-            <span class="review">
-              <img src="../image/star.png" alt="review" class="reviewImg" />
-              <span>5.01</span>
-            </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
-            <div class="happyCoupon">4000원 할인</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="logo-box">
-            <div class="time">45~60분</div>
-            <img src="../image/7번가피자.jpg" class="logoImg" />
-          </div>
-          <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
-            <span class="review">
-              <img src="../image/star.png" alt="review" class="reviewImg" />
-              <span>5.01</span>
-            </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -189,7 +178,7 @@
     </section>
     <section id="three" class="common">
       <h3 class="card-list-title">
-        <em>프렌차이즈</em>
+        프렌차이즈
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -198,13 +187,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -214,13 +212,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -230,13 +237,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -246,13 +262,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -260,7 +285,7 @@
     </section>
     <section id="four" class="common">
       <h3 class="card-list-title">
-        <em>치킨</em>
+        치킨
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -269,13 +294,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -285,13 +319,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -301,13 +344,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -317,13 +369,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -331,7 +392,7 @@
     </section>
     <section id="five" class="common">
       <h3 class="card-list-title">
-        <em>양식/피자</em>
+        양식/피자
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -340,13 +401,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -356,13 +426,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -372,13 +451,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -388,13 +476,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -402,7 +499,7 @@
     </section>
     <section id="six" class="common">
       <h3 class="card-list-title">
-        <em>중국집</em>
+        중국집
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -411,13 +508,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -427,13 +533,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -443,13 +558,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -459,13 +583,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -473,7 +606,7 @@
     </section>
     <section id="seven" class="common">
       <h3 class="card-list-title">
-        <em>한식</em>
+        한식
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -544,7 +677,7 @@
     </section>
     <section id="eight" class="common">
       <h3 class="card-list-title">
-        <em>일식/돈까스</em>
+        일식/돈까스
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -615,7 +748,7 @@
     </section>
     <section id="nine" class="common">
       <h3 class="card-list-title">
-        <em>족발/보쌈</em>
+        족발/보쌈
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -624,13 +757,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -640,13 +782,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -656,13 +807,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -672,13 +832,22 @@
             <img src="../image/7번가피자.jpg" class="logoImg" />
           </div>
           <div class="cardtext">
-            <div>7번가피자 - 신촌마포점</div>
+            <div class="cardTitle">7번가피자 - 신촌마포점</div>
             <span class="review">
               <img src="../image/star.png" alt="review" class="reviewImg" />
               <span>5.01</span>
             </span>
-            <span>리뷰 6003 |</span>
-            <span>사장님 댓글 3410</span>
+            <div class="textWrap">
+              <div class="titleWrap">
+                <div class="title">리뷰</div>
+                <div>6,333</div>
+              </div>
+              <div class="bar">|</div>
+              <div class="titleWrap">
+                <div class="title">사장님 댓글</div>
+                <div>1,555</div>
+              </div>
+            </div>
             <div class="happyCoupon">4000원 할인</div>
           </div>
         </div>
@@ -686,7 +855,7 @@
     </section>
     <section id="ten" class="common">
       <h3 class="card-list-title">
-        <em>야식</em>
+        야식
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -757,7 +926,7 @@
     </section>
     <section id="eleven" class="common">
       <h3 class="card-list-title">
-        <em>분식</em>
+        분식
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -828,7 +997,7 @@
     </section>
     <section id="twelve" class="common">
       <h3 class="card-list-title">
-        <em>카페/디저트</em>
+        카페/디저트
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -899,7 +1068,7 @@
     </section>
     <section id="thirteen" class="common">
       <h3 class="card-list-title">
-        <em>편의점/마트</em>
+        편의점/마트
       </h3>
       <div class="card-box hidesection">
         <div class="card">
@@ -967,7 +1136,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 
 </body>
