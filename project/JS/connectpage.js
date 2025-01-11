@@ -247,17 +247,17 @@ function enterkey(){
     return;
 }
      // Enter 키를 눌렀을 때 서울이 아닐경우
-  if (inputvalue1 !== "서울" && inputvalue1 != "" && inputvalue1 !== "제주도"){
+  if (inputvalue1 !== "서울시 마포구" && inputvalue1 != "" && inputvalue1 !== "제주도"){
     alert('미구현 기능입니다.')
     return;
     }
-  if (inputvalue1 == "서울"){
+  if (inputvalue1 == "서울시 마포구"){
       sipinputtext.style.display = "block"
       console.log(inputvalue1)
       sipsearchinbox.innerHTML = inputvalue1
       setTimeout(function() {
         sipsearchinbox.innerHTML = "";
-        sipinputtext.style.display = "none"// 텍스트 삭제
+        sipinputtext.style.display = "none"// 텍스트 삭제 (10초후)
       }, 10000); //
     }
     if (inputvalue1 == "제주도"){
@@ -267,29 +267,7 @@ function enterkey(){
         sipsearchinbox.innerHTML = inputvalue1
         setTimeout(function() {
           sipinputtext.style.display = "none"
-          sipabsolute.style.display = "none"// 텍스트 삭제
+          sipabsolute.style.display = "none"// 텍스트 삭제 (7초후)
         }, 7000); //
       }
 }
-
-// const swiperSlides = document.querySelectorAll('.swiper');
-
-// swiperSlides.forEach(function (element, index) {
-//     element.classList.add("swiper-" + index);
-//     let swiper = new Swiper(".swiper-" + index, {
-//       autoplay: {
-//             delay: 1, 
-//             // 슬라이드가 자동으로 전환되기까지의 시간 간격
-//             desableOnInteraction: true, 
-//             // arrow나 pagination이용 후 자동 재생을 비활성화 할지의 여부
-//       },
-//       speed: 8e3,
-//       // 슬라이드가 자동으로 전환되는 속도를 설정
-//       loop: true,
-//       // 슬라이드가 무한 순환
-//       slidesPerView: "auto",
-//       // 슬라이드가 표시되는 갯수를 설정
-//       freemode: true
-//       // 슬라이드가 자유롭게 스와이프 되도록 설정
-//     });
-// });

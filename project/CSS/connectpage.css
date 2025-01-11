@@ -867,6 +867,9 @@ input::placeholder {
     .ffp-btnbox{
         display: none;
     }
+    .swiper-btnbox{
+        display: none;
+    }
     .intro-text{
         display:none;
     }

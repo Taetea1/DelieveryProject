@@ -57,6 +57,7 @@ a{
 .swiper-wrapper {
       transition-timing-function: linear;
       column-gap: 50px;
+      margin-top: 50px; /* margin-top */
 }
 
 /* slide 크기조절, 속도조절 */
@@ -67,10 +68,30 @@ a{
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
       transition: transform 0.3s;  
+}
+.swiper-slide {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+.banner{
+    width: 800px !important;
+}
+.slide{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 .swiper-slide img {
       display: block;
