@@ -1,12 +1,12 @@
 // 페이지가 완전히 로드된 후 실행되는 함수
 window.addEventListener("load", function () {
-  // 300ms 후에 로딩 화면을 숨기기
+  // 1000ms 후에 로딩 화면을 숨기기
   setTimeout(function () {
     var loadDiv = document.getElementById("loadDiv");
     if (loadDiv) {
       loadDiv.style.display = "none"; // 로딩 화면 숨기기
     }
-  }, 600); // 600ms 지연
+  }, 1000); // 1000ms 지연
 });
 
 // 지도 부분
@@ -81,7 +81,6 @@ const moveCurrnet = () => {
   }
 };
 
-//@@@이거 2개써도 되나??
 window.onload = () => {
   moveCurrnet(); //현재위치 보여주는 지도
   addMenuBox();
@@ -152,24 +151,16 @@ const addMenuBox = () => {
     divs.className = "menuBox";
     // rt_type = data[i].type;
     //해당 요소를 누르면 함수 실행되도록
-    divs.addEventListener("click", () => {
-      changetype(data[i].type);
-    });
+    // divs.addEventListener('click', () => {
+    //     changetype(data[i].type);
+    // });
 
     divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="textBox">${data[i].name}</div>
-    <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
+  <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
 
     //div 요소도 부모 밑에 넣음
     dropMenuGroup.appendChild(divs);
   }
-};
-
-//orderPage+locationPage 변수 공유
-let rt_type = "two";
-const changetype = (type) => {
-  rt_type = type;
-  console.log("ssssss", rt_type);
-  changeMenu(rt_type);
 };
 
 // 데이터
