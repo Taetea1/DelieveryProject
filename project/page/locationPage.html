@@ -13,6 +13,13 @@
 </head>
 
 <body>
+	<!-- loading 화면 HTML Start -->
+	<div id="loadDiv">
+		<img src="../image/rider.png" alt="loading...">
+	</div>
+	<!-- loading 화면 HTML End -->
+
+	</div>
 	<div class="boxWrap">
 		<!-- 헤더 -->
 		<div class="header">
@@ -43,9 +50,17 @@
 
 			</div>
 			<!-- 지도 영역 -->
-			<div class="mapbox">
-				<div id="map"></div>
+			<div class="mapwrap">
+				<div class="mapbox">
+					<div id="map"></div>
+					<div class="scrollbox">
+						<img class="scroll" src="../image/scroll.png" alt="scroll" />
+					</div>
+				</div>
 			</div>
+
+
+
 
 
 			<!-- 음식 종류들 -->

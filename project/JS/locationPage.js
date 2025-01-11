@@ -1,3 +1,14 @@
+// 페이지가 완전히 로드된 후 실행되는 함수
+window.addEventListener("load", function () {
+  // 300ms 후에 로딩 화면을 숨기기
+  setTimeout(function () {
+    var loadDiv = document.getElementById("loadDiv");
+    if (loadDiv) {
+      loadDiv.style.display = "none"; // 로딩 화면 숨기기
+    }
+  }, 600); // 600ms 지연
+});
+
 // 지도 부분
 
 const moveCurrnet = () => {
@@ -139,9 +150,11 @@ const addMenuBox = () => {
     //div 요소 만들고 class를 줌
     const divs = document.createElement("div");
     divs.className = "menuBox";
-
+    // rt_type = data[i].type;
     //해당 요소를 누르면 함수 실행되도록
-    // divs.addEventListener("click", readyalert);
+    divs.addEventListener("click", () => {
+      changetype(data[i].type);
+    });
 
     divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="textBox">${data[i].name}</div>
     <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
@@ -151,34 +164,99 @@ const addMenuBox = () => {
   }
 };
 
-// 구글앱에 넣을 데이터
+//orderPage+locationPage 변수 공유
+let rt_type = "two";
+const changetype = (type) => {
+  rt_type = type;
+  console.log("ssssss", rt_type);
+  changeMenu(rt_type);
+};
+
+// 데이터
 const data = [
-  { id: 1, name: "전체보기", url: "../image/category-01.png", path: "#one" },
-  { id: 2, name: "1인분", url: "../image/category-onedish.png", path: "#two" },
+  // {
+  //   id: 1,
+  //   name: "전체",
+  //   url: "../image/category-01.png",
+  //   path: "#one",
+  //   type: "all",
+  // },
+  {
+    id: 2,
+    name: "1인분",
+    url: "../image/category-onedish.png",
+    path: "#two",
+    type: "two",
+  },
   {
     id: 3,
     name: "프렌차이즈",
     url: "../image/category-10.png",
     path: "#three",
+    type: "three",
   },
-  { id: 4, name: "치킨", url: "../image/category-02.png", path: "#four" },
-  { id: 5, name: "양식/피자", url: "../image/category-03.png", path: "#five" },
-  { id: 6, name: "중국집", url: "../image/category-04.png", path: "#six" },
-  { id: 7, name: "한식", url: "../image/category-05.png", path: "#seven" },
+  {
+    id: 4,
+    name: "치킨",
+    url: "../image/category-02.png",
+    path: "#four",
+    type: "four",
+  },
+  {
+    id: 5,
+    name: "양식/피자",
+    url: "../image/category-03.png",
+    path: "#five",
+    type: "five",
+  },
+  {
+    id: 6,
+    name: "중국집",
+    url: "../image/category-04.png",
+    path: "#six",
+    type: "six",
+  },
+  {
+    id: 7,
+    name: "한식",
+    url: "../image/category-05.png",
+    path: "#seven",
+    type: "seven",
+  },
   {
     id: 8,
     name: "일식/돈까스",
     url: "../image/category-06.png",
     path: "#eight",
+    type: "eight",
   },
-  { id: 9, name: "족발/보쌈", url: "../image/category-07.png", path: "#nine" },
-  { id: 10, name: "야식", url: "../image/category-08.png", path: "#ten" },
-  { id: 11, name: "분식", url: "../image/category-09.png", path: "#eleven" },
+  {
+    id: 9,
+    name: "족발/보쌈",
+    url: "../image/category-07.png",
+    path: "#nine",
+    type: "nine",
+  },
+  {
+    id: 10,
+    name: "야식",
+    url: "../image/category-08.png",
+    path: "#ten",
+    type: "ten",
+  },
+  {
+    id: 11,
+    name: "분식",
+    url: "../image/category-09.png",
+    path: "#eleven",
+    type: "eleven",
+  },
   {
     id: 12,
     name: "카페/디저트",
     url: "../image/category-11.png",
     path: "#twelve",
+    type: "twelve",
   },
 ];
 

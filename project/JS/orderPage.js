@@ -1,5 +1,7 @@
 // window.onload = () => {
-//   searchedLocation();
+//   // searchedLocation();
+//   console.log(rt_type);
+//   changeMenu(rt_type);
 // };
 
 // 지도 부분
@@ -72,7 +74,6 @@ function setMarker(e) {
   marker.style.left = e.offsetLeft + "px";
   marker.style.width = e.offsetWidth + "px";
 }
-
 //메뉴 항목을 가운데로 이동시키는 함수
 function centerMenuItem(menu) {
   const navBox = menu.closest(".nav-box");
@@ -91,51 +92,80 @@ function centerMenuItem(menu) {
     behavior: "smooth",
   });
 }
-//스크롤 위치에 따라 해당하는 menu의 색깔과 마커가 달라짐
-window.addEventListener("scroll", () => {
-  //현재 영역의 id
-  let currentId = "";
+// 메뉴 클릭 시 해당하는 섹션으로 스크롤 이동 및 스타일 변경
+// 메뉴 항목 클릭 시
+menus.forEach((menu) => {
+  menu.addEventListener("click", (e) => {
+    e.preventDefault(); // 기본 클릭 동작(링크 이동) 방지
 
-  sections.forEach((section) => {
-    //각 section의 top 위치
-    const sectionTop = window.scrollY + section.getBoundingClientRect().top;
+    // 클릭된 메뉴의 href 속성에서 id 가져오기
+    const targetId = menu.getAttribute("href").substring(1); // '#'을 제외한 id값
 
-    //누적된 스크롤이 section의 top위치에 도달했거나 section의 안에 위치할 경우
-    if (window.scrollY >= sectionTop) {
-      currentId = section.getAttribute("id");
+    // 해당 id를 가진 섹션으로 스크롤 이동
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
     }
 
-    // 해당 메뉴에 marker 이동시켜주기
+    // 메뉴 항목의 스타일을 변경 (활성화된 메뉴 표시)
     menus.forEach((menu) => {
-      menu.classList.remove("nav_menu-foused");
-      const href = menu.getAttribute("href").substring(1); //substring으로 #제거
-      if (href === currentId) {
-        //현재 있는 영역의 id와 메뉴의 링크주소가 일치할때
-        menu.classList.add("nav_menu-foused");
-        setMarker(menu);
-        centerMenuItem(menu); // 메뉴 항목을 가운데로 이동
-      }
+      menu.classList.remove("nav_menu-foused"); // 기존 활성화된 메뉴 스타일 제거
     });
+    menu.classList.add("nav_menu-foused"); // 클릭한 메뉴 스타일 추가
+
+    // 마커 이동 (필요한 경우)
+    setMarker(menu);
+
+    // 메뉴 항목을 화면 중앙으로 이동
+    centerMenuItem(menu);
   });
 });
+// //스크롤 위치에 따라 해당하는 menu의 색깔과 마커가 달라짐
+// window.addEventListener("scroll", () => {
+//   //현재 영역의 id
+//   let currentId = "";
+
+//   sections.forEach((section) => {
+//     //각 section의 top 위치
+//     const sectionTop = window.scrollY + section.getBoundingClientRect().top;
+
+//     //누적된 스크롤이 section의 top위치에 도달했거나 section의 안에 위치할 경우
+//     if (window.scrollY >= sectionTop) {
+//       currentId = section.getAttribute("id");
+//     }
+
+//     // 해당 메뉴에 marker 이동시켜주기
+//     menus.forEach((menu) => {
+//       menu.classList.remove("nav_menu-foused");
+//       const href = menu.getAttribute("href").substring(1); //substring으로 #제거
+//       if (href === currentId) {
+//         //현재 있는 영역의 id와 메뉴의 링크주소가 일치할때
+//         menu.classList.add("nav_menu-foused");
+//         setMarker(menu);
+//         centerMenuItem(menu); // 메뉴 항목을 가운데로 이동
+//       }
+//     });
+//   });
+// }
+// );
 
 // 카드들 나타나는 효과
-document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener("scroll", function () {
-    var elements = document.querySelectorAll(".hidesection");
+// document.addEventListener("DOMContentLoaded", function () {
+//   window.addEventListener("scroll", function () {
+//     var elements = document.querySelectorAll(".hidesection");
 
-    elements.forEach(function (element) {
-      var top_of_element = element.offsetTop;
-      var bottom_of_window = window.scrollY + window.innerHeight;
+//     elements.forEach(function (element) {
+//       var top_of_element = element.offsetTop;
+//       var bottom_of_window = window.scrollY + window.innerHeight;
 
-      if (bottom_of_window > top_of_element) {
-        element.style.transition = "opacity 1s, margin-top 1s";
-        element.style.opacity = "1";
-        element.style.marginTop = "0px";
-      }
-    });
-  });
-});
+//       if (bottom_of_window > top_of_element) {
+//         element.style.transition = "opacity 1s, margin-top 1s";
+//         element.style.opacity = "1";
+//         element.style.marginTop = "0px";
+//       }
+//     });
+//   });
+// });
 
 // 쿠폰 스와이퍼
 var swiper = new Swiper(".swiper-container", {
@@ -154,8 +184,8 @@ var swiper = new Swiper(".swiper-container", {
   },
   watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
 });
-
 // 레스토랑 데이터
+
 const rt_data = [
   {
     type: "1인분",
@@ -546,7 +576,7 @@ const rt_data = [
         review: "1,594",
         coupon: "14,000원 이상 배달",
         boss: "79",
-        logo: "../image/orderlogo/야식/동대문엽기.jpg",
+        logo: "../image/orderlogo/분식/동대문엽기.jpg",
       },
       {
         time: "24~39분",
@@ -620,8 +650,6 @@ const rt_data = [
     ],
   },
 ];
-
-let rt_type = "all";
 // 해더 클릭시 변환 함수
 const changeMenu = (type) => {
   rt_type = type;
@@ -637,8 +665,7 @@ const changeMenu = (type) => {
       const sectionHTML = `
         <section id="${category.id}" class="common">
           <h3 class="card-list-title">${category.type}</h3>
-          <div class="card-box hidesection">
-      `;
+          <div class="card-box">`;
 
       const restaurantHTML = category.rt
         .map(
@@ -667,15 +694,13 @@ const changeMenu = (type) => {
             </div>
             <div class="happyCoupon">${restaurant.coupon}</div>
           </div>
-        </div>
-      `
+        </div>`
         )
         .join("");
 
       sectionBox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
     });
   } else {
-    // "1인분" 또는 "twotype" 같은 매개변수로 넘어온 값이 있을 경우
     const selectedCategory = rt_data.find(
       (category) => category.id === rt_type
     );
@@ -684,7 +709,7 @@ const changeMenu = (type) => {
       const sectionHTML = `
         <section id="${selectedCategory.id}" class="common">
           <h3 class="card-list-title">${selectedCategory.type}</h3>
-          <div class="card-box hidesection">
+          <div class="card-box">
       `;
 
       const restaurantHTML = selectedCategory.rt
@@ -725,70 +750,3 @@ const changeMenu = (type) => {
     }
   }
 };
-
-// 해더 클릭시 변환 함수
-// const changeMenu = (type) => {
-//   rt_type = type;
-//   const sectionbox = document.getElementById("sectionBox");
-//   //초기화
-//   sectionbox.innerHTML = "";
-//   // if (rt_type === "all") {
-//   //   forEach((data, index) => {});
-//   // }
-//   rt_data.forEach((category) => {
-//     // 새로운 섹션을 추가
-//     const sectionHTML = `
-//       <section id="${category.id}" class="common">
-//         <h3 class="card-list-title">${category.type}</h3>
-//         <div class="card-box hidesection">
-//     `;
-
-//     // 카테고리 안에 레스토랑 카드 추가
-//     const restaurantHTML = category.rt
-//       .map(
-//         (restaurant) => `
-//       <div class="card">
-//         <div class="logo-box">
-//           <div class="time">${restaurant.time}</div>
-//           <img src="${restaurant.logo}" class="logoImg" />
-//         </div>
-//         <div class="cardtext">
-//           <div class="cardTitle">${restaurant.name}</div>
-//           <span class="review">
-//             <img src="../image/star.png" alt="review" class="reviewImg" />
-//             <span>${restaurant.star}</span>
-//           </span>
-//           <div class="textWrap">
-//             <div class="titleWrap">
-//               <div class="title">리뷰</div>
-//               <div>${restaurant.review}</div>
-//             </div>
-//             <div class="bar">|</div>
-//             <div class="titleWrap">
-//               <div class="title">사장님 댓글</div>
-//               <div>${restaurant.boss}</div>
-//             </div>
-//           </div>
-//           <div class="happyCoupon">${restaurant.coupon}</div>
-//         </div>
-//       </div>
-//     `
-//       )
-//       .join(""); // restaurantHTML을 하나의 문자열로 합침
-
-//     // 섹션 내용에 레스토랑 카드 추가
-//     sectionbox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
-//   });
-// };
-//가게 박스 넣기
-// const addMenuBox = () => {
-//   for (let i = 0; i < rt_data.length; i++) {
-//     divs.innerHTML = `
-
-//     <a href=orderPage.html${data[i].path}><div class="textBox">${data[i].name}</div>
-//     <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
-
-//     //div 요소도 부모 밑에 넣음
-//     sectionbox.appendChild(divs);
-//   }
-// };

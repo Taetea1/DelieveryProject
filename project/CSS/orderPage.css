@@ -5,8 +5,6 @@
   height: 125px;
   display: flex;
   justify-content: center;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
 }
 /* 헤더 안 상자 */
 .header-box {
@@ -140,6 +138,7 @@ a {
   display: inline-block;
   padding: 10px 20px;
 }
+
 .nav_menu-foused {
   color: #00c4bd;
 }
@@ -166,22 +165,27 @@ section.common {
 .card-list-title {
   padding-top: 100px;
   position: relative;
-  border-bottom: 2px solid #999;
-  font-size: 38px;
   text-align: start;
+  font-size: 38px;
+  /* border-bottom: 2px solid #999; */
+
+  margin: 0px !important;
 }
 .card-box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   height: 100%;
+  box-shadow: 7px 8px 5px rgb(227, 227, 227);
+  border-radius: 10px;
+  margin-top: 20px;
 }
 .card {
   /* box-shadow: 5px 6px 3px rgb(227, 227, 227); */
   border-radius: 10px;
   overflow: hidden;
-  /* background-color: #eee; */
-  background-color: #333;
+  background-color: #eee;
+  /* background-color: #333; */
   padding: 20px;
 }
 .logo-box {
@@ -209,7 +213,7 @@ section.common {
   text-align: left;
   font-weight: bold;
   font-size: 1em;
-  color: white;
+  /* color: white; */
 }
 
 .cardTitle {
@@ -248,13 +252,13 @@ section.common {
   gap: 10px;
   .titleWrap {
     display: flex;
-    color: rgb(241, 241, 78);
+    /* color: rgb(241, 241, 78); */
     align-items: flex-end;
     gap: 5px;
     font-size: 14px;
     .title {
       font-size: 16px;
-      color: white;
+      /* color: white; */
     }
   }
   .bar {
@@ -267,11 +271,10 @@ section.common {
   max-width: 100%;
   /* 스크롤바 안 보이게 */
   overflow: hidden;
-  margin: 10px;
 }
 .swiper-container {
   display: relative;
-  padding: 50px;
+  padding: 10px;
 }
 .swiper-slide {
   width: 100%;
@@ -291,23 +294,25 @@ section.common {
 .swiper-slide:hover {
   cursor: pointer;
 }
-.swiper-pagination {
+/* .swiper-pagination {
   display: absolute;
   top: 540px;
-}
+} */
 .swiper-button-next,
 .swiper-button-prev {
   display: absolute;
-  top: 500px;
-  z-index: 1;
-  color: #00c4bd; /* 빨간색으로 화살표 색상 변경 */
+  top: 300px;
+  color: #00c4bd;
 }
 .swiper-pagination-bullet-active {
   background-color: #00c4bd; /* 활성 페이지네이션 색상 */
 }
-.banner {
-  width: 1280px;
+@media screen and (max-width: 1119px) {
+  .card-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
 @media screen and (max-width: 768px) {
   /* 헤더 */
   .headname {
@@ -326,7 +331,13 @@ section.common {
     display: block;
   }
   /* 헤더 */
-  .card-box {
-    grid-template-columns: repeat(2, 1fr);
+  .banner {
+    width: 650px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: absolute;
+    top: 220px;
   }
 }
