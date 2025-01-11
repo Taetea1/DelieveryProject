@@ -663,38 +663,38 @@ const changeMenu = (type) => {
     // 모든 데이터를 추가
     rt_data.forEach((category) => {
       const sectionHTML = `
-        <section id="${category.id}" class="common">
-          <h3 class="card-list-title">${category.type}</h3>
-          <div class="card-box">`;
+      <section id="${category.id}" class="common">
+        <h3 class="card-list-title">${category.type}</h3>
+        <div class="card-box">`;
 
       const restaurantHTML = category.rt
         .map(
           (restaurant) => `
-        <div class="card">
-          <div class="logo-box">
-            <div class="time">${restaurant.time}</div>
-            <img src="${restaurant.logo}" class="logoImg" />
-          </div>
-          <div class="cardtext">
-            <div class="cardTitle">${restaurant.name}</div>
-            <span class="review">
-              <img src="../image/star.png" alt="review" class="reviewImg" />
-              <span>${restaurant.star}</span>
-            </span>
-            <div class="textWrap">
-              <div class="titleWrap">
-                <div class="title">리뷰</div>
-                <div>${restaurant.review}</div>
-              </div>
-              <div class="bar">|</div>
-              <div class="titleWrap">
-                <div class="title">사장님 댓글</div>
-                <div>${restaurant.boss}</div>
-              </div>
+      <div class="card">
+        <div class="logo-box">
+          <div class="time">${restaurant.time}</div>
+          <img src="${restaurant.logo}" class="logoImg" />
+        </div>
+        <div class="cardtext">
+          <div class="cardTitle">${restaurant.name}</div>
+          <span class="review">
+            <img src="../image/star.png" alt="review" class="reviewImg" />
+            <span>${restaurant.star}</span>
+          </span>
+          <div class="textWrap">
+            <div class="titleWrap">
+              <div class="title">리뷰</div>
+              <div>${restaurant.review}</div>
             </div>
-            <div class="happyCoupon">${restaurant.coupon}</div>
+            <div class="bar">|</div>
+            <div class="titleWrap">
+              <div class="title">사장님 댓글</div>
+              <div>${restaurant.boss}</div>
+            </div>
           </div>
-        </div>`
+          <div class="happyCoupon">${restaurant.coupon}</div>
+        </div>
+      </div>`
         )
         .join("");
 
@@ -707,40 +707,40 @@ const changeMenu = (type) => {
 
     if (selectedCategory) {
       const sectionHTML = `
-        <section id="${selectedCategory.id}" class="common">
-          <h3 class="card-list-title">${selectedCategory.type}</h3>
-          <div class="card-box">
-      `;
+      <section id="${selectedCategory.id}" class="common">
+        <h3 class="card-list-title">${selectedCategory.type}</h3>
+        <div class="card-box">
+    `;
 
       const restaurantHTML = selectedCategory.rt
         .map(
           (restaurant) => `
-        <div class="card">
-          <div class="logo-box">
-            <div class="time">${restaurant.time}</div>
-            <img src="${restaurant.logo}" class="logoImg" />
-          </div>
-          <div class="cardtext">
-            <div class="cardTitle">${restaurant.name}</div>
-            <span class="review">
-              <img src="../image/star.png" alt="review" class="reviewImg" />
-              <span>${restaurant.star}</span>
-            </span>
-            <div class="textWrap">
-              <div class="titleWrap">
-                <div class="title">리뷰</div>
-                <div>${restaurant.review}</div>
-              </div>
-              <div class="bar">|</div>
-              <div class="titleWrap">
-                <div class="title">사장님 댓글</div>
-                <div>${restaurant.boss}</div>
-              </div>
-            </div>
-            <div class="happyCoupon">${restaurant.coupon}</div>
-          </div>
+      <div class="card">
+        <div class="logo-box">
+          <div class="time">${restaurant.time}</div>
+          <img src="${restaurant.logo}" class="logoImg" />
         </div>
-      `
+        <div class="cardtext">
+          <div class="cardTitle">${restaurant.name}</div>
+          <span class="review">
+            <img src="../image/star.png" alt="review" class="reviewImg" />
+            <span>${restaurant.star}</span>
+          </span>
+          <div class="textWrap">
+            <div class="titleWrap">
+              <div class="title">리뷰</div>
+              <div>${restaurant.review}</div>
+            </div>
+            <div class="bar">|</div>
+            <div class="titleWrap">
+              <div class="title">사장님 댓글</div>
+              <div>${restaurant.boss}</div>
+            </div>
+          </div>
+          <div class="happyCoupon">${restaurant.coupon}</div>
+        </div>
+      </div>
+    `
         )
         .join("");
 
@@ -750,3 +750,18 @@ const changeMenu = (type) => {
     }
   }
 };
+// URL에서 해시 값을 추출하고 changeMenu 함수를 호출하는 함수
+function handleHashChange() {
+  const hash = window.location.hash.slice(1); // '#'을 제외한 해시 값
+  if (hash) {
+    changeMenu(hash);
+  } else {
+    changeMenu("all"); // 해시가 없을 경우 기본값으로 'all' 사용
+  }
+}
+
+// 페이지 로드 시 실행
+window.addEventListener("load", handleHashChange);
+
+// URL 해시가 변경될 때마다 실행
+window.addEventListener("hashchange", handleHashChange);

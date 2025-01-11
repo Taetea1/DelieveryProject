@@ -36,7 +36,6 @@
   cursor: pointer;
 }
 .locationIcon {
-  display: none;
   width: 50px;
 }
 .locationIcon:hover {
@@ -54,7 +53,7 @@
 }
 
 /* 현재위치 이동 버튼 */
-.cl {
+/* .cl {
   position: absolute;
   width: 25px;
   padding: 5px;
@@ -65,7 +64,7 @@
 }
 .cl:hover {
   cursor: pointer;
-}
+} */
 /* 현재위치 이동 버튼이랑 주소상자랑 버튼 아이콘 담은 상자 */
 #adressContaioner {
   width: 300px;
@@ -75,13 +74,13 @@
 }
 
 /* 주소검색 */
-#address {
+/* #address {
   width: 100%;
   border-radius: 10px;
   outline: none;
   margin-left: 5px;
   padding: 0px 40px 0px 32px;
-}
+} */
 /* 주소검색 아이콘 */
 #submit {
   position: absolute;
@@ -301,11 +300,14 @@ section.common {
 .swiper-button-next,
 .swiper-button-prev {
   display: absolute;
-  top: 300px;
+  top: 250px;
   color: #00c4bd;
 }
 .swiper-pagination-bullet-active {
   background-color: #00c4bd; /* 활성 페이지네이션 색상 */
+}
+.banner {
+  width: 500px;
 }
 @media screen and (max-width: 1119px) {
   .card-box {
@@ -324,20 +326,20 @@ section.common {
   #adressContaioner {
     display: none;
   }
-  #showcurrent {
+  /* #showcurrent {
     display: none;
-  }
+  } */
   .locationIcon {
     display: block;
   }
   /* 헤더 */
   .banner {
-    width: 650px;
+    width: 400px;
   }
 
   .swiper-button-next,
   .swiper-button-prev {
     display: absolute;
-    top: 220px;
+    top: 180px;
   }
 }
