@@ -2,12 +2,9 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- <link rel="stylesheet" href="../CSS/orderPage.css" /> -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel = "stylesheet" href ="../CSS/footer.css" />
     <link rel="stylesheet" href="../CSS/shoppingcartpage.css"/>
-    
-    <script type = "module" src="global.js"></script>
+    <link rel = "stylesheet" href ="../CSS/footer.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -37,31 +34,31 @@
       <div class="cupon">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner1.png" alt="banner" class="banner" />
             </div>
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner2.png" alt="banner" class="banner" />
             </div>
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner3.png" alt="banner" class="banner" />
             </div>
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner4.png" alt="banner" class="banner" />
             </div>
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner5.png" alt="banner" class="banner" />
             </div>
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner6.png" alt="banner" class="banner" />
             </div>
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner7.png" alt="banner" class="banner" />
             </div>
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner8.png" alt="banner" class="banner" />
             </div>
-            <div class="swiper-slide slidecoupon">
+            <div class="swiper-slide">
               <img src="../image/banner9.png" alt="banner" class="banner" />
             </div>
           </div>
@@ -72,7 +69,9 @@
           <!-- <div class="swiper-pagination"></div> -->
         </div>
       </div>
-      <hr>
+
+
+      
       <div class = "wrap">
         <div class = "wrapwrap">
             <div class = "banner-box">
@@ -81,35 +80,26 @@
                     <div class = "banner-text">버거킹 신촌1점</div>
                     <div class = "banner-small-text"><span>리뷰 3,467</span> | 사장님 댓글 84</div>
                     <div class = "banner-small-text1">배달의 민족에서 빠르고 편리하게 주문하세요</div>
-                    1234512345
                 </div>
             </div>
             <div class = "menu-container">
                 <div class = "menu-box-btn">
-                    <button class = "menu-btn">추천메뉴</button><button class = "menu-btn">오리지널스&맥시멈</button><button class = "menu-btn">프리미엄</button><button class = "menu-btn">와퍼&주니어</button>
-                    <button class = "menu-btn">치킨&슈림프버거</button><button class = "menu-btn">올데이킹&킹모닝 사이드</button>
+                    <div class = "menu-btn menu-btn-toggle" >추천메뉴</div><div class = "menu-btn">오리지널스&맥시멈</div><div class = "menu-btn">프리미엄</div><div class = "menu-btn">와퍼&주니어</div>
+                    <div class = "menu-btn">치킨&슈림프버거</div><div class = "menu-btn">올데이킹&킹모닝 사이드</div>
                 </div>
-                <div class = "menu-box">
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                    <div class = "menu-box-box"></div>
-                </div>
+                <ul class = "menu-box">
+                    <li class = "menu-box-box">
+                            <img class = "menu-img" src = "../image/menu/추천메뉴/풀드비프 와퍼.png" alt = "menuimg"/>
+                            <div class = "menu-text">풀드비프 와퍼</div><div class = "menu-text">10000원</div>
+                    </li>
+                </ul>
             </div>
         </div>
 
 
       </div>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
+      <div class="swiper1 mySwiper">
+        <div class="swiper-wrapper mySwiper-wrapper">
           <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/1인분/노브랜드버거.jpg" alt ="pizza"/></div>
           <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/분식/동대문엽기.jpg" alt ="pizza"/></div>
           <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/1인분/맥도날드.jpg" alt ="pizza"/></div>
@@ -128,11 +118,11 @@
         </div>
       </div>
     <div class = "containerfooter">
-        <div class = "footergap">
-            <span class = "footerbold">(주)우아한청년들</span>
-            <a class = "footerbold" href = "">개인정보처리방침</a>
-            <a href = "">공지사항</a>
-        </div>
+            <div class = "footergap">
+                <span class = "footerbold">(주)우아한청년들</span>
+                <a class = "footerbold" href = "">개인정보처리방침</a>
+                <a href = "">공지사항</a>
+            </div>
             <ul class = "footerul">
                 <li>대표 : 김병우</li>
                 <li>사업자번호 : 417-87-00193</li>
@@ -140,8 +130,8 @@
                 <li>문의 : 카카오톡 채널(@배민커넥트)</li>
             </ul>
     </div>
-      <script src = "../JS/global.js"></script>
-    
+        <script src = "../JS/global.js"></script>
+        <script type = "module" src = "../JS/shoppingcartpage.js"></script>         
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 
 
 //swiper 무한 loop
-const swiperSlides = document.querySelectorAll('.swiper');
+const swiperSlides = document.querySelectorAll('.swiper1');
 
 swiperSlides.forEach(function (element, index) {
     element.classList.add("swiper-" + index);
@@ -29,9 +29,9 @@ var swiper = new Swiper(".swiper-container", {
     clickable: true,
     type: "fraction",
   },
-  loop: true, // 루프 기능
-  autoplay: {
-    delay: 3000, // 3초마다 자동 재생
-  },
+  loop: false, // 루프 기능
+  // autoplay: {
+  //   delay: 3500, // 3초마다 자동 재생
+  // },
   watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
 });

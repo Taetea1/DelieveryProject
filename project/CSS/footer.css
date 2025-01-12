@@ -1,4 +1,6 @@
+
 .containerfooter{
+    max-width: 1280px;
     width: 100%;
     height: 72px;
     display: flex;
@@ -9,7 +11,9 @@
     border-top : 1px solid black;
     font-size: 14px;
     margin-top:20px;
+    justify-content: space-around;
 }
+
 a{
     text-decoration: none;  
     color: inherit;         
@@ -18,15 +22,12 @@ a{
 .footerbold{
     font-weight: bold;
 }
-.footergap{
-    gap: 20px;
-}
 
 .footerul{
     list-style: none;
     display: flex;
     gap : 10px;
-    margin-left:200px;
+    margin-left:100px;
 }
 .footerul li{
     position: relative;
@@ -36,14 +37,15 @@ a{
     content: none;
 }
 
-.footerul li+li::before {
-    content: '';  /* 가로줄을 생성할 내용 설정 */
-    position: absolute;  /* absolute로 위치 설정 */
+/* 세로줄 추가 */
+.footerul li+li::before { 
+    content: '';  
+    position: absolute;  
     top: 10%;
-    right: -7%;  /* 왼쪽에서 시작 */
-    width: 1px;  /* 전체 너비로 가로줄을 설정 */
-    height: 80%;  /* 가로줄의 높이를 1px로 설정 */
-    background-color: #D9D9D9;  /* 회색 가로줄 색상 설정 */
+    right: -7%;  
+    width: 1px; 
+    height: 80%; 
+    background-color: #D9D9D9;  
 }
 
 
@@ -54,50 +56,16 @@ a{
       padding-bottom: 30px;
 } */
  /* 간격조절 */
-.swiper-wrapper {
-      transition-timing-function: linear;
-      column-gap: 50px;
-      margin-top: 50px; /* margin-top */
-}
-
-/* slide 크기조절, 속도조절 */
-.swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.3s;  
-}
-.swiper-slide {
+  .mySwiper{
+    /* max-width:1280px !important; */
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-.banner{
-    width: 800px !important;
-}
+    overflow: hidden;
+    margin: 0px auto;
+ }
 .slide{
     width: 150px;
     height: 150px;
     border-radius: 50%;
-}
-.swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
 }
 /* .swiper-slide:hover {
   transform: translateY(30px);
@@ -108,4 +76,72 @@ hover시 세로로 슬레이트
     border-radius: 50%;
     width: 100%;
     height: 100%;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  display: absolute;
+  top: 250px;
+  color: #00c4bd;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: linear-gradient(90deg, #00c4bd 0%, #cce5e4 50%, #00c4bd 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transform: translate3d((0, 0, 0));
+    /* transition: transform 0.3s;   */
+}
+.mySwiper-wrapper{ 
+    transition-timing-function: linear;
+    column-gap: 50px;
+    margin-top: 50px;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .footergap{
+        display: none;
+    }
+    .containerfooter{
+        max-width: 1280px;
+        width: 100%;
+        height: 72px;
+        display: flex;
+        align-items: left;
+        padding: 0 5px;
+        height: 72px;
+        white-space: wrap;
+        border-top : 1px solid black;
+        font-size: 12px;
+        margin-top:20px;
+        overflow: hidden;
+    }
+    .footerul li{
+        position: none;
+        margin-left:0;
+        width: 100px;
+    }
+    .footerul li:last-child::before{
+        content: none;
+    }
+    
+    .footerul li+li::before {
+        content: '';  
+        position: none;  
+        top: 10%;
+        right: -7%;  
+        width: 1px;  
+        height: 80%;  
+        background-color: #D9D9D9;  
+        display: none;
+    }
+    .footerul{
+        list-style: none;
+        display: flex;
+        gap : 10px;
+        margin-left: 0;
+    }
 }
