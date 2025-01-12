@@ -1,3 +1,8 @@
+window.onload = () => {
+  moveCurrnet(); //현재위치 보여주는 지도
+  addMenuBox();
+};
+
 // 페이지가 완전히 로드된 후 실행되는 함수
 window.addEventListener("load", function () {
   // 1000ms 후에 로딩 화면을 숨기기
@@ -9,8 +14,24 @@ window.addEventListener("load", function () {
   }, 1000); // 1000ms 지연
 });
 
-// 지도 부분
+// 준비중 함수
+const readyalert = (name) => {
+  if (name === "") {
+    alert("기능 준비중입니다.");
+  } else {
+    alert(`${name}기능 준비중입니다.`);
+  }
+};
 
+// 스크롤시 카테고리 메뉴들이 생기도록
+window.addEventListener("scroll", () => {
+  const winTop = window.scrollY;
+  if (winTop >= 100) {
+    document.getElementById("foodtypeList").classList.add("revealed");
+  }
+});
+
+// 지도 부분
 const moveCurrnet = () => {
   // 위치 정보를 얻기 위해 Geolocation API 사용
   if (navigator.geolocation) {
@@ -36,11 +57,6 @@ const moveCurrnet = () => {
         const marker = new naver.maps.Marker({
           position: new naver.maps.LatLng(lat, lon),
           map: map,
-        });
-
-        // 마커에 정보창 추가
-        const infoWindow = new naver.maps.InfoWindow({
-          content: '<div class="nowlocation">현재 위치</div>',
         });
 
         naver.maps.Event.addListener(marker, "click", function () {
@@ -81,12 +97,7 @@ const moveCurrnet = () => {
   }
 };
 
-window.onload = () => {
-  moveCurrnet(); //현재위치 보여주는 지도
-  addMenuBox();
-};
-
-//주소-좌표 변환 객체를 생성
+//주소 새로 넣기
 function changeInputtext() {
   new daum.Postcode({
     oncomplete: function (data) {
@@ -108,6 +119,7 @@ document.getElementById("showMap").addEventListener("click", function (e) {
 // 검색창에 검색한 주소 넣기
 const addAddress = (address) => {
   document.getElementById("address").value = address;
+  window.localStorage.setItem("name", address);
 };
 
 // 지도에 마커를 표시하는 함수
@@ -120,13 +132,6 @@ function insertAddress(address, latitude, longitude) {
   });
 }
 
-// 주소 검색 이벤트(엔터)
-// document.getElementById("address").addEventListener("keyup", function (event) {
-//   if (event.key === "Enter") {
-//     // Enter 키 눌렀을 때
-//     searchAddressToCoordinate(document.getElementById("address").value);
-//   }
-// });
 // 주소 검색 이벤트(검색버튼)
 document.getElementById("submit").addEventListener("click", function (event) {
   event.preventDefault();
@@ -149,15 +154,9 @@ const addMenuBox = () => {
     //div 요소 만들고 class를 줌
     const divs = document.createElement("div");
     divs.className = "menuBox";
-    // rt_type = data[i].type;
-    //해당 요소를 누르면 함수 실행되도록
-    // divs.addEventListener('click', () => {
-    //     changetype(data[i].type);
-    // });
 
-    divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="textBox">${data[i].name}</div>
+    divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="textBox"><img src=${data[i].img} alt=${data[i].name} /></div>
   <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
-
     //div 요소도 부모 밑에 넣음
     dropMenuGroup.appendChild(divs);
   }
@@ -165,19 +164,13 @@ const addMenuBox = () => {
 
 // 데이터
 const data = [
-  // {
-  //   id: 1,
-  //   name: "전체",
-  //   url: "../image/category-01.png",
-  //   path: "#one",
-  //   type: "all",
-  // },
   {
     id: 2,
     name: "1인분",
     url: "../image/category-onedish.png",
     path: "#two",
     type: "two",
+    img: "../image/solo.png",
   },
   {
     id: 3,
@@ -185,6 +178,7 @@ const data = [
     url: "../image/category-10.png",
     path: "#three",
     type: "three",
+    img: "../image/fran.png",
   },
   {
     id: 4,
@@ -192,6 +186,7 @@ const data = [
     url: "../image/category-02.png",
     path: "#four",
     type: "four",
+    img: "../image/chicken.png",
   },
   {
     id: 5,
@@ -199,6 +194,7 @@ const data = [
     url: "../image/category-03.png",
     path: "#five",
     type: "five",
+    img: "../image/pizzaicon.png",
   },
   {
     id: 6,
@@ -206,6 +202,7 @@ const data = [
     url: "../image/category-04.png",
     path: "#six",
     type: "six",
+    img: "../image/chiicon.png",
   },
   {
     id: 7,
@@ -213,6 +210,7 @@ const data = [
     url: "../image/category-05.png",
     path: "#seven",
     type: "seven",
+    img: "../image/hanicon.png",
   },
   {
     id: 8,
@@ -220,6 +218,7 @@ const data = [
     url: "../image/category-06.png",
     path: "#eight",
     type: "eight",
+    img: "../image/japicon.png",
   },
   {
     id: 9,
@@ -227,6 +226,7 @@ const data = [
     url: "../image/category-07.png",
     path: "#nine",
     type: "nine",
+    img: "../image/pigicon.png",
   },
   {
     id: 10,
@@ -234,6 +234,7 @@ const data = [
     url: "../image/category-08.png",
     path: "#ten",
     type: "ten",
+    img: "../image/nighticon.png",
   },
   {
     id: 11,
@@ -241,6 +242,7 @@ const data = [
     url: "../image/category-09.png",
     path: "#eleven",
     type: "eleven",
+    img: "../image/gimbobicon.png",
   },
   {
     id: 12,
@@ -248,18 +250,6 @@ const data = [
     url: "../image/category-11.png",
     path: "#twelve",
     type: "twelve",
+    img: "../image/cafeicon.png",
   },
 ];
-
-//준비중 함수
-// const readyalert = () => {
-//   alert("기능 준비중입니다.");
-// };
-
-// 스크롤시 카테고리 메뉴들이 생기도록
-window.addEventListener("scroll", () => {
-  const winTop = window.scrollY;
-  if (winTop >= 100) {
-    document.getElementById("foodtypeList").classList.add("revealed");
-  }
-});

@@ -3,13 +3,16 @@
 
 <head>
 	<link rel="stylesheet" href="../CSS/locationPage.css" />
+
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ne9zw04ntz"></script>
 	<script type="text/javascript"
 		src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ne9zw04ntz&submodules=geocoder"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>배달의 민족</title>
+
 </head>
 
 <body>
@@ -27,15 +30,13 @@
 				<img src="../image/headname.png" alt="headname" class="headname"
 					onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
 				<div>
-					<img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" />
+					<img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" onclick="readyalert('로그인')" />
 				</div>
 				<div id="loginBtn">
-					<div class="login">로그인</div>
+					<div class="login" onclick="readyalert('로그인')">로그인</div>
 				</div>
 			</div>
-
 		</div>
-
 		<div class="whereBox">
 			<!-- 버튼 -->
 			<div class="controlBtn">
@@ -45,9 +46,7 @@
 				<div id="adressContaioner" onclick="changeInputtext()">
 					<input id="address" readonly type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
 					<img id="submit" src="../image/search.png" alt="검색" />
-
 				</div>
-
 			</div>
 			<!-- 지도 영역 -->
 			<div class="mapwrap">
@@ -64,11 +63,11 @@
 					<!-- JS로 요소 동적 추가 -->
 				</div>
 			</div>
-
 		</div>
 	</div>
 </body>
-<script src="../JS/global.js"></script>
+
 <script src="../JS/locationPage.js"></script>
+
 
 </html>

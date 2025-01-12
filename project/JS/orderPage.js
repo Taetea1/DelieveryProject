@@ -1,51 +1,33 @@
-// window.onload = () => {
-//   // searchedLocation();
-//   console.log(rt_type);
-//   changeMenu(rt_type);
-// };
-
-// 지도 부분
-
+window.onload = () => {
+  searchedLocation();
+};
 //검색했던 위치 넣기(아직 테스트 안 해봄)
-// const searchedLocation = () => {
-//   // 값 불러오기
+const searchedLocation = () => {
+  // 값 불러오기
 
-//   var loadedName = localStorage.getItem("name");
-//   if (loadedName) {
-//     addAddress(loadedName);
-//   } else {
-//     addAddress("주소 없음");
-//   }
-// };
+  var loadedName = window.localStorage.getItem("name");
+  if (loadedName) {
+    addAddress(loadedName);
+  } else {
+    addAddress("주소를 입력해주세요");
+  }
+};
 
-//주소-좌표 변환 객체를 생성
+//주소텍스트변경
 function changeInputtext() {
   new daum.Postcode({
     oncomplete: function (data) {
       var addr = data.address; // 최종 주소 변수
 
       // 주소 정보를 해당 필드에 넣는다.
-      document.getElementById("address").value = addr;
+      addAddress(addr);
     },
   }).open();
 }
-
-// 현재위치 버튼 클릭시 현재위치로 텍스트 변경(이거 사용하니까 maker가 안 나옴)
-// document.getElementById("showMap").addEventListener("click", function (e) {
-//   e.preventDefault();
-//   document.getElementById("address").value = "현재 위치 주소";
-// });
-
 // 검색창에 검색한 주소 넣기
 const addAddress = (address) => {
-  document.getElementById("address").value = address;
-  localStorage.setItem("name", address);
+  document.getElementById("adressbox").innerText = address;
 };
-// 주소 검색 이벤트(검색버튼)
-document.getElementById("submit").addEventListener("click", function (event) {
-  event.preventDefault();
-  searchAddressToCoordinate(document.getElementById("address").value);
-});
 // 지도 부분 끝
 
 // 메뉴 시작
@@ -101,71 +83,102 @@ menus.forEach((menu) => {
     // 클릭된 메뉴의 href 속성에서 id 가져오기
     const targetId = menu.getAttribute("href").substring(1); // '#'을 제외한 id값
 
-    // 해당 id를 가진 섹션으로 스크롤 이동
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: "smooth" });
-    }
-
-    // 메뉴 항목의 스타일을 변경 (활성화된 메뉴 표시)
-    menus.forEach((menu) => {
-      menu.classList.remove("nav_menu-foused"); // 기존 활성화된 메뉴 스타일 제거
-    });
-    menu.classList.add("nav_menu-foused"); // 클릭한 메뉴 스타일 추가
-
-    // 마커 이동 (필요한 경우)
-    setMarker(menu);
-
-    // 메뉴 항목을 화면 중앙으로 이동
-    centerMenuItem(menu);
+    // changeMenu 호출하여 메뉴 활성화 및 마커 이동
+    changeMenu(targetId);
   });
 });
-// //스크롤 위치에 따라 해당하는 menu의 색깔과 마커가 달라짐
-// window.addEventListener("scroll", () => {
-//   //현재 영역의 id
-//   let currentId = "";
+// 해더 클릭시 변환 함수
+const changeMenu = (type) => {
+  rt_type = type;
+  const sectionBox = document.getElementById("sectionBox");
 
-//   sections.forEach((section) => {
-//     //각 section의 top 위치
-//     const sectionTop = window.scrollY + section.getBoundingClientRect().top;
+  // sectionBox 초기화
+  sectionBox.innerHTML = "";
 
-//     //누적된 스크롤이 section의 top위치에 도달했거나 section의 안에 위치할 경우
-//     if (window.scrollY >= sectionTop) {
-//       currentId = section.getAttribute("id");
-//     }
+  // 데이터 처리
+  const selectedCategory = rt_data.find((category) => category.id === rt_type);
 
-//     // 해당 메뉴에 marker 이동시켜주기
-//     menus.forEach((menu) => {
-//       menu.classList.remove("nav_menu-foused");
-//       const href = menu.getAttribute("href").substring(1); //substring으로 #제거
-//       if (href === currentId) {
-//         //현재 있는 영역의 id와 메뉴의 링크주소가 일치할때
-//         menu.classList.add("nav_menu-foused");
-//         setMarker(menu);
-//         centerMenuItem(menu); // 메뉴 항목을 가운데로 이동
-//       }
-//     });
-//   });
-// }
-// );
+  if (selectedCategory) {
+    const sectionHTML = `
+      <section id="${selectedCategory.id}" class="common">
+        <h3 class="card-list-title">${selectedCategory.type}</h3>
+        <div class="card-box">
+    `;
 
-// 카드들 나타나는 효과
-// document.addEventListener("DOMContentLoaded", function () {
-//   window.addEventListener("scroll", function () {
-//     var elements = document.querySelectorAll(".hidesection");
+    const restaurantHTML = selectedCategory.rt
+      .map(
+        (restaurant) => `
+      <div class="card">
+        <div class="logo-box">
+          <div class="time">${restaurant.time}</div>
+          <img src="${restaurant.logo}" class="logoImg" />
+        </div>
+        <div class="cardtext">
+          <div class="cardTitle">${restaurant.name}</div>
+          <span class="review">
+            <img src="../image/star.png" alt="review" class="reviewImg" />
+            <span>${restaurant.star}</span>
+          </span>
+          <div class="textWrap">
+            <div class="titleWrap">
+              <div class="title">리뷰</div>
+              <div>${restaurant.review}</div>
+            </div>
+            <div class="bar">|</div>
+            <div class="titleWrap">
+              <div class="title">사장님 댓글</div>
+              <div>${restaurant.boss}</div>
+            </div>
+          </div>
+          <div class="happyCoupon">${restaurant.coupon}</div>
+        </div>
+      </div>
+    `
+      )
+      .join("");
 
-//     elements.forEach(function (element) {
-//       var top_of_element = element.offsetTop;
-//       var bottom_of_window = window.scrollY + window.innerHeight;
+    sectionBox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
+  } else {
+    console.log("해당 카테고리가 없습니다.");
+  }
+  // 메뉴 활성화 및 마커 위치 변경
+  updateMenuAndMarker(type);
+};
+// 메뉴 활성화 및 마커 이동
+function updateMenuAndMarker(type) {
+  const menus = document.querySelectorAll(".nav_menu > li > a");
+  const targetMenu = document.querySelector(
+    `.nav_menu > li > a[href='#${type}']`
+  );
 
-//       if (bottom_of_window > top_of_element) {
-//         element.style.transition = "opacity 1s, margin-top 1s";
-//         element.style.opacity = "1";
-//         element.style.marginTop = "0px";
-//       }
-//     });
-//   });
-// });
+  // 메뉴 활성화
+  if (targetMenu) {
+    menus.forEach((menu) => menu.classList.remove("nav_menu-foused"));
+    targetMenu.classList.add("nav_menu-foused");
+
+    // 마커 이동
+    setMarker(targetMenu);
+
+    // 메뉴 항목을 가운데로 이동
+    centerMenuItem(targetMenu);
+  }
+}
+
+// URL에서 해시 값을 추출하고 changeMenu 함수를 호출하는 함수
+function handleHashChange() {
+  const hash = window.location.hash.slice(1); // '#'을 제외한 해시 값
+  if (hash) {
+    changeMenu(hash);
+  } else {
+    changeMenu("all"); // 해시가 없을 경우 기본값으로 'all' 사용
+  }
+}
+
+// 페이지 로드 시 실행
+window.addEventListener("load", handleHashChange);
+
+// URL 해시가 변경될 때마다 실행
+window.addEventListener("hashchange", handleHashChange);
 
 // 쿠폰 스와이퍼
 var swiper = new Swiper(".swiper-container", {
@@ -184,8 +197,17 @@ var swiper = new Swiper(".swiper-container", {
   },
   watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
 });
-// 레스토랑 데이터
 
+// 준비중 함수
+const readyalert = (name) => {
+  if (name === "") {
+    alert("기능 준비중입니다.");
+  } else {
+    alert(`${name}기능 준비중입니다.`);
+  }
+};
+
+// 레스토랑 데이터
 const rt_data = [
   {
     type: "1인분",
@@ -268,6 +290,24 @@ const rt_data = [
         coupon: "18,900원 이상 배달",
         boss: "959",
         logo: "../image/orderlogo/프랜차이즈/피자헛.jpg",
+      },
+      {
+        time: "25~40분",
+        name: "삼첩분식-서울은평점",
+        star: "4.9",
+        review: "3,251",
+        coupon: "16,000원 이상 배달",
+        boss: "620",
+        logo: "../image/orderlogo/프랜차이즈/삼첩분식.jpg",
+      },
+      {
+        time: "24~39분",
+        name: "훌랄라참숯치킨-응암이마트점",
+        star: "5.0",
+        review: "7",
+        coupon: "19,900원 이상 배달",
+        boss: "0",
+        logo: "../image/orderlogo/프랜차이즈/훌랄라.jpg",
       },
     ],
   },
@@ -650,118 +690,3 @@ const rt_data = [
     ],
   },
 ];
-// 해더 클릭시 변환 함수
-const changeMenu = (type) => {
-  rt_type = type;
-  const sectionBox = document.getElementById("sectionBox");
-
-  // sectionBox 초기화
-  sectionBox.innerHTML = "";
-
-  // 데이터 처리
-  if (rt_type === "all") {
-    // 모든 데이터를 추가
-    rt_data.forEach((category) => {
-      const sectionHTML = `
-      <section id="${category.id}" class="common">
-        <h3 class="card-list-title">${category.type}</h3>
-        <div class="card-box">`;
-
-      const restaurantHTML = category.rt
-        .map(
-          (restaurant) => `
-      <div class="card">
-        <div class="logo-box">
-          <div class="time">${restaurant.time}</div>
-          <img src="${restaurant.logo}" class="logoImg" />
-        </div>
-        <div class="cardtext">
-          <div class="cardTitle">${restaurant.name}</div>
-          <span class="review">
-            <img src="../image/star.png" alt="review" class="reviewImg" />
-            <span>${restaurant.star}</span>
-          </span>
-          <div class="textWrap">
-            <div class="titleWrap">
-              <div class="title">리뷰</div>
-              <div>${restaurant.review}</div>
-            </div>
-            <div class="bar">|</div>
-            <div class="titleWrap">
-              <div class="title">사장님 댓글</div>
-              <div>${restaurant.boss}</div>
-            </div>
-          </div>
-          <div class="happyCoupon">${restaurant.coupon}</div>
-        </div>
-      </div>`
-        )
-        .join("");
-
-      sectionBox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
-    });
-  } else {
-    const selectedCategory = rt_data.find(
-      (category) => category.id === rt_type
-    );
-
-    if (selectedCategory) {
-      const sectionHTML = `
-      <section id="${selectedCategory.id}" class="common">
-        <h3 class="card-list-title">${selectedCategory.type}</h3>
-        <div class="card-box">
-    `;
-
-      const restaurantHTML = selectedCategory.rt
-        .map(
-          (restaurant) => `
-      <div class="card">
-        <div class="logo-box">
-          <div class="time">${restaurant.time}</div>
-          <img src="${restaurant.logo}" class="logoImg" />
-        </div>
-        <div class="cardtext">
-          <div class="cardTitle">${restaurant.name}</div>
-          <span class="review">
-            <img src="../image/star.png" alt="review" class="reviewImg" />
-            <span>${restaurant.star}</span>
-          </span>
-          <div class="textWrap">
-            <div class="titleWrap">
-              <div class="title">리뷰</div>
-              <div>${restaurant.review}</div>
-            </div>
-            <div class="bar">|</div>
-            <div class="titleWrap">
-              <div class="title">사장님 댓글</div>
-              <div>${restaurant.boss}</div>
-            </div>
-          </div>
-          <div class="happyCoupon">${restaurant.coupon}</div>
-        </div>
-      </div>
-    `
-        )
-        .join("");
-
-      sectionBox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
-    } else {
-      console.log("해당 카테고리가 없습니다.");
-    }
-  }
-};
-// URL에서 해시 값을 추출하고 changeMenu 함수를 호출하는 함수
-function handleHashChange() {
-  const hash = window.location.hash.slice(1); // '#'을 제외한 해시 값
-  if (hash) {
-    changeMenu(hash);
-  } else {
-    changeMenu("all"); // 해시가 없을 경우 기본값으로 'all' 사용
-  }
-}
-
-// 페이지 로드 시 실행
-window.addEventListener("load", handleHashChange);
-
-// URL 해시가 변경될 때마다 실행
-window.addEventListener("hashchange", handleHashChange);
