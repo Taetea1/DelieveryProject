@@ -1,7 +1,7 @@
 window.onload = () => {
   searchedLocation();
 };
-//검색했던 위치 넣기(아직 테스트 안 해봄)
+//검색했던 위치 넣기
 const searchedLocation = () => {
   // 값 불러오기
 
@@ -120,12 +120,12 @@ const changeMenu = (type) => {
           <div class="textWrap">
             <div class="titleWrap">
               <div class="title">리뷰</div>
-              <div>${restaurant.review}</div>
+              <div class = "cardReview">${restaurant.review}</div>
             </div>
             <div class="bar">|</div>
             <div class="titleWrap">
               <div class="title">사장님 댓글</div>
-              <div>${restaurant.boss}</div>
+              <div class="cardBoss">${restaurant.boss}</div>
             </div>
           </div>
           <div class="happyCoupon">${restaurant.coupon}</div>
@@ -209,8 +209,18 @@ const readyalert = (name) => {
     alert(`${name}기능 준비중입니다.`);
   }
 };
+const sAlert = (txt) => {
+  Swal.fire({
+    title: "쿠폰을 다운받을까요?",
+    icon: "question",
+    iconHtml: "?",
+    confirmButtonText: "نعم",
+    cancelButtonText: "لا",
+    showCancelButton: true,
+    showCloseButton: true,
+  });
+};
 
-// 레스토랑 데이터
 const rt_data = [
   {
     type: "1인분",

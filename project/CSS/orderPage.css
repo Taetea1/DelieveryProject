@@ -62,8 +62,9 @@ h3 {
 #adressbox {
   color: white;
   font-size: 20px;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   margin: 0 0px 0 50px;
+  font-family: "Hanna";
 }
 #adressbox:hover {
   cursor: pointer;

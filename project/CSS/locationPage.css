@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Hanna";
+  src: url("../font/BMHANNAPro.ttf");
+}
 /* loading 화면 CSS Start */
 #loadDiv {
   width: 100%;
@@ -9,6 +13,7 @@
   background: white;
   z-index: 999;
   opacity: 0.9;
+  cursor: wait;
 }
 
 #loadDiv > img {
@@ -55,6 +60,7 @@
   border: 2px solid white;
   border-radius: 20px;
   padding: 15px 40px;
+  font-family: "Hanna";
 }
 .login:hover {
   cursor: pointer;
@@ -79,14 +85,14 @@
 }
 /* 지도를 감싼 상자 */
 .mapbox {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 100px;
 }
 .scrollbox {
-  width: 850px;
+  /* width: 850px; */
   display: flex;
   justify-content: center;
 }
@@ -129,6 +135,7 @@
   outline: none;
   margin-left: 5px;
   padding: 0px 40px 0px 10px;
+  font-family: "Hanna";
 }
 /* 주소검색 아이콘 */
 #submit {
@@ -168,7 +175,7 @@
 }
 
 .menuBox:hover {
-  cursor: pointer;
+  /* cursor: url("../image/rider.png") 2 2, pointer; */
   .imgBox {
     img {
       transition: 0.2s ease-in-out;
@@ -204,6 +211,58 @@
   transform: translate(0px, -100px);
 }
 
+/* 풋터 */
+.containerfooter {
+  max-width: 1280px;
+  /* width: 100%; */
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  height: 72px;
+  /* white-space: nowrap; */
+  border-top: 1px solid black;
+  font-size: 14px;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+.footergap {
+  a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+  }
+}
+
+.footerbold {
+  font-weight: bold;
+}
+
+.footerul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin-left: 100px;
+}
+.footerul li {
+  position: relative;
+  margin-left: 25px;
+}
+.footerul li:last-child::before {
+  content: none;
+}
+
+/* 세로줄 추가 */
+.footerul li + li::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -7%;
+  width: 1px;
+  height: 80%;
+  background-color: #d9d9d9;
+}
+
 @media screen and (max-width: 768px) {
   .menu {
     grid-template-columns: repeat(2, 1fr);
@@ -228,7 +287,7 @@
     cursor: pointer;
   }
   #map {
-    width: 100%;
+    width: 500px;
     height: 400px;
   }
   .menu {
@@ -237,5 +296,49 @@
   }
   .loginicon {
     width: 45px;
+  }
+
+  /* 풋터 */
+  .footergap {
+    display: none;
+  }
+  .containerfooter {
+    max-width: 1280px;
+    /* width: 100%; */
+    height: 72px;
+    display: flex;
+    align-items: left;
+    padding: 0 5px;
+    height: 72px;
+    /* white-space: wrap; */
+    border-top: 1px solid black;
+    font-size: 12px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .footerul li {
+    position: none;
+    margin-left: 0;
+    width: 100px;
+  }
+  .footerul li:last-child::before {
+    content: none;
+  }
+
+  .footerul li + li::before {
+    content: "";
+    position: none;
+    top: 10%;
+    right: -7%;
+    width: 1px;
+    height: 80%;
+    background-color: #d9d9d9;
+    display: none;
+  }
+  .footerul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin-left: 0;
   }
 }
