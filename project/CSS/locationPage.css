@@ -18,6 +18,10 @@
 }
 /* loading 화면 CSS End */
 
+.boxWrap {
+  background-color: #eee;
+}
+
 /* 헤더 */
 .header {
   width: 100%;
@@ -85,7 +89,6 @@
   width: 850px;
   display: flex;
   justify-content: center;
-  background-color: #eee;
 }
 
 /* 주소쪽 전체 상자 */
@@ -156,40 +159,33 @@
 }
 /* 음식 사진이랑 텍스트 넣은 상자 */
 .menuBox {
-  position: relative;
-  align-items: center;
   box-shadow: 5px 6px 3px rgb(227, 227, 227);
   border-radius: 8px;
   width: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
+  background-color: white;
 }
 
-.textBox {
-  text-align: center;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 3;
-  color: black;
-}
 .menuBox:hover {
   cursor: pointer;
   .imgBox {
     img {
-      transition: 0.5s ease-in-out;
-      transform: scale(1.5);
+      transition: 0.2s ease-in-out;
+      transform: scale(1.2);
     }
   }
 }
 
 .imgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   overflow: hidden;
   img {
-    width: 100%;
-    height: 100%;
+    height: 80px;
   }
 }
 

@@ -96,12 +96,14 @@ a {
 }
 .nav_menu {
   display: flex;
-  /* justify-content: center; */
   padding: 20px;
   margin: 0;
   list-style: none;
   /* 줄바꿈 방지 */
   white-space: nowrap;
+  img {
+    height: 70px;
+  }
 }
 .nav_menu > li {
   display: inline-block;
@@ -113,7 +115,7 @@ a {
 }
 .marker {
   position: absolute;
-  bottom: 1.2rem;
+  bottom: 1.8rem;
   left: 50%;
   width: 0%;
   height: 3px;
@@ -155,7 +157,6 @@ section.common {
   border-radius: 10px;
   overflow: hidden;
   background-color: #eee;
-  /* background-color: #333; */
   padding: 20px;
 }
 .card:hover {

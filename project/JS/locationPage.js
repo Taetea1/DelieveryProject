@@ -218,8 +218,9 @@ const addMenuBox = () => {
     const divs = document.createElement("div");
     divs.className = "menuBox";
 
-    divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="textBox"><img src=${data[i].img} alt=${data[i].name} /></div>
-  <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
+    //   divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="textBox"><img src=${data[i].img} alt=${data[i].name} /></div>
+    // <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
+    divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="imgBox"><img src=${data[i].img} alt=${data[i].name} /></div></a>`;
     //div 요소도 부모 밑에 넣음
     dropMenuGroup.appendChild(divs);
   }
