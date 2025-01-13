@@ -59,16 +59,43 @@ const moveCurrnet = () => {
           map: map,
         });
 
-        naver.maps.Event.addListener(marker, "click", function () {
-          infoWindow.open(map, marker);
-        });
-        // 원하는 위치에 마커표시
+        // 현재 위치의 주소를 받아오기
+        naver.maps.Service.reverseGeocode(
+          {
+            location: new naver.maps.LatLng(lat, lon),
+          },
+          function (status, response) {
+            if (status === naver.maps.Service.Status.OK) {
+              var result = response.result;
+              var address = result.items[0].address; // 가장 가까운 주소 가져오기
+              addAddress(address); // 주소를 화면에 표시하는 함수 호출
+            } else {
+              addAddress("위치를 찾지 못했습니다.");
+            }
+          }
+        );
+
+        // 지도 클릭 시 마커를 찍고 주소를 받아오기
         naver.maps.Event.addListener(map, "click", function (e) {
-          marker.setPosition(e.coord);
-          map.panTo(e.coord);
-          addAddress("이동한 위치 주소");
+          let latlng = e.coord; //클릭한 좌표
+          marker.setPosition(latlng);
+          map.panTo(e.coord); //파커위치변경
+          // Reverse Geocoding API 호출
+          naver.maps.Service.reverseGeocode(
+            {
+              location: latlng,
+            },
+            function (status, response) {
+              if (status === naver.maps.Service.Status.OK) {
+                var result = response.result;
+                var address = result.items[0].address; // 가장 가까운 주소 가져오기
+                addAddress(address);
+              } else {
+                addAddress("위치를 찾지 못했습니다");
+              }
+            }
+          );
         });
-        addAddress("현재 위치 주소");
       },
       function (error) {
         let errorMessage = "";
@@ -105,15 +132,51 @@ function changeInputtext() {
 
       // 주소 정보를 해당 필드에 넣는다.
       addAddress(addr);
+
+      // 주소로 지도 위치 이동 및 마커 표시
+      searchAddress(addr);
     },
   }).open();
 }
+// 네이버 지도 API를 통해 주소 검색 후 마커 찍기
+const searchAddress = () => {
+  const address = document.getElementById("address").value;
 
+  // 네이버 지도에서 주소로 좌표 검색 (geocode 사용)
+  naver.maps.Service.geocode(
+    {
+      query: address, // 검색할 주소
+    },
+    function (status, response) {
+      if (status === naver.maps.Service.Status.OK) {
+        const result = response.result.items[0];
+        const latlng = new naver.maps.LatLng(result.y, result.x); // 위도와 경도
+
+        const map = new naver.maps.Map("map", {
+          center: latlng, // 검색한 주소의 위치로 지도 중심 이동
+          zoom: 17, // 줌 레벨
+        });
+
+        // 마커 생성 (검색한 주소에 마커 표시)
+        const marker = new naver.maps.Marker({
+          position: latlng, // 검색한 위치
+          map: map, // 마커를 표시할 지도
+        });
+
+        // 주소를 화면에 표시
+        const addressElement = document.getElementById("result-address");
+        addressElement.innerText = "검색한 주소: " + result.address;
+      } else {
+        alert("주소 검색에 실패했습니다.");
+      }
+    }
+  );
+};
 // 현재위치 버튼 클릭시 현재위치로 이동
 document.getElementById("showMap").addEventListener("click", function (e) {
   e.preventDefault();
   moveCurrnet();
-  addAddress("현재 위치 주소");
+  // addAddress("현재 위치 주소");
 });
 
 // 검색창에 검색한 주소 넣기

@@ -99,11 +99,9 @@ const changeMenu = (type) => {
   const selectedCategory = rt_data.find((category) => category.id === rt_type);
 
   if (selectedCategory) {
-    const sectionHTML = `
-      <section id="${selectedCategory.id}" class="common">
-        <h3 class="card-list-title">${selectedCategory.type}</h3>
-        <div class="card-box">
-    `;
+    const sectionHTML = `<section id="${selectedCategory.id}" class="common">
+    <h3 class="card-list-title">${selectedCategory.type}</h3>
+    <div class="card-box">`;
 
     const restaurantHTML = selectedCategory.rt
       .map(
@@ -212,6 +210,7 @@ const rt_data = [
   {
     type: "1인분",
     id: "two",
+    img: "../image/solo.png",
     rt: [
       {
         time: "22~37분",
@@ -252,8 +251,9 @@ const rt_data = [
     ],
   },
   {
-    type: "프렌차이즈",
+    type: "패스트푸드",
     id: "three",
+    img: "../image/fran.png",
     rt: [
       {
         time: "24~39분",
@@ -314,6 +314,7 @@ const rt_data = [
   {
     type: "치킨",
     id: "four",
+    img: "../image/chicken.png",
     rt: [
       {
         time: "24~39분",
@@ -354,8 +355,9 @@ const rt_data = [
     ],
   },
   {
-    type: "양식/피자",
+    type: "피자",
     id: "five",
+    img: "../image/pizzaicon.png",
     rt: [
       {
         time: "44~59분",
@@ -396,8 +398,9 @@ const rt_data = [
     ],
   },
   {
-    type: "중국집",
+    type: "중식",
     id: "six",
+    img: "../image/chiicon.png",
     rt: [
       {
         time: "24~39분",
@@ -438,8 +441,9 @@ const rt_data = [
     ],
   },
   {
-    type: "한식",
+    type: "찜·탕·찌개",
     id: "seven",
+    img: "../image/hanicon.png",
     rt: [
       {
         time: "24~39분",
@@ -480,8 +484,9 @@ const rt_data = [
     ],
   },
   {
-    type: "일식/돈까스",
+    type: "돈까스·회·일식",
     id: "eight",
+    img: "../image/japicon.png",
     rt: [
       {
         time: "24~39분",
@@ -522,8 +527,9 @@ const rt_data = [
     ],
   },
   {
-    type: "족발/보쌈",
+    type: "족발·보쌈",
     id: "nine",
+    img: "../image/pigicon.png",
     rt: [
       {
         time: "19~34분",
@@ -566,6 +572,7 @@ const rt_data = [
   {
     type: "야식",
     id: "ten",
+    img: "../image/nighticon.png",
     rt: [
       {
         time: "24~39분",
@@ -608,6 +615,7 @@ const rt_data = [
   {
     type: "분식",
     id: "eleven",
+    img: "../image/gimbobicon.png",
     rt: [
       {
         time: "34~49분",
@@ -648,8 +656,9 @@ const rt_data = [
     ],
   },
   {
-    type: "카페/디저트",
+    type: "카페·디저트",
     id: "twelve",
+    img: "../image/cafeicon.png",
     rt: [
       {
         time: "24~39분",
