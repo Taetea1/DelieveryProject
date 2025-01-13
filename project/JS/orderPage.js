@@ -106,7 +106,7 @@ const changeMenu = (type) => {
     const restaurantHTML = selectedCategory.rt
       .map(
         (restaurant) => `
-      <div class="card">
+      <div class="card" onclick="movePage()">
         <div class="logo-box">
           <div class="time">${restaurant.time}</div>
           <img src="${restaurant.logo}" class="logoImg" />
@@ -142,6 +142,11 @@ const changeMenu = (type) => {
   // 메뉴 활성화 및 마커 위치 변경
   updateMenuAndMarker(type);
 };
+
+const movePage = () => {
+  window.location.href = "./shoppingcartpage.html";
+};
+
 // 메뉴 활성화 및 마커 이동
 function updateMenuAndMarker(type) {
   const menus = document.querySelectorAll(".nav_menu > li > a");

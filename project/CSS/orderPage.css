@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Hanna";
+  src: url("../font/BMHANNAPro.ttf");
+}
+h3 {
+  font-family: "Hanna";
+}
 /* 헤더 */
 .header {
   width: 100%;
