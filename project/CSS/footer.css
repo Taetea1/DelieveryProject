@@ -75,16 +75,9 @@ hover시 세로로 슬레이트
     width: 100%;
     height: 100%;
 }
-.swiper-button-next,
-.swiper-button-prev {
-  display: absolute;
-  top: 250px;
-  color: #00c4bd;
-}
-.swiper-slide {
+.slide{
     text-align: center;
     font-size: 18px;
-    background: linear-gradient(90deg, #00c4bd 0%, #cce5e4 50%, #00c4bd 100%);
     display: flex;
     justify-content: center;
     align-items: center;
