@@ -173,7 +173,7 @@ function scrollvh() {
 
     if (page === 3) {
       console.log("2")
-      imgB3.style.right = "45%" 
+      imgB3.style.right = "30%" 
       imgB3.style.opacity = "1"
       imgB3.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out"
       btnbtn[3].style.content = "url(../image/dotSelect@2x.c333164a.png)"

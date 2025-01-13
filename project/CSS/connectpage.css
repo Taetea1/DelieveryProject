@@ -1,9 +1,19 @@
+@font-face {
+    font-family: "Hanna";
+    src: url("../font/BMHANNAPro.ttf");
+  }
+
+   
+
+
+
 body {
     height:100%;
     margin:0;
     border:0;
     padding:0;
     overflow-x:hidden;
+    font-family: "Hanna";
 }
 h3{
     margin: 0;

@@ -1,6 +1,10 @@
+@font-face {
+    font-family: "Hanna";
+    src: url("../font/BMHANNAPro.ttf");
+  }
 
 .wrap{
-   
+  font-family: "Hanna";
     width: 100%;
 
 }
@@ -20,8 +24,10 @@ li{
 .banner-box{
     width: 30%;
     padding: 24px 10px 24px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-top : 103px;
+    min-height: 700px;
+    /* position: fixed; */
 }
 .menu-container{
     width: 70%;
@@ -81,9 +87,14 @@ li{
     align-items: center;
     justify-items: center;
     overflow: auto;
+    -webkit-overflow-scrolling: touch; /* 터치스크린에서 부드러운 스크롤링 */
+    scrollbar-width: none; /* Firefox에서 스크롤바 두께 조정 */
     /* background: rgb(2,0,36);
     background: linear-gradient(90deg, #00c4bd 0%, #cce5e4 50%, #00c4bd 100%); */
     border-radius: 16px;
+    max-height: 1500px;
+    /* position: inherit;
+    left: 40%; */
 }
 .menu-box-box{
     max-width: 200px;
@@ -93,6 +104,9 @@ li{
     margin: 20px;
     border: none;
     border-radius: 16px;
+}
+.menu-box-box:hover{
+  cursor: pointer;
 }
 .menu-img{
     max-width:200px;
@@ -122,172 +136,216 @@ li{
     text-decoration: underline;
     border: none;
 }
-
-
-
-
+.cart-box{
+  margin-top: 30px;
+}
+.menu-middle{
+  display: none;
+}
+.Detailed-menu{
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  transform: translateX(-50% -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction:column;
+  border-radius: 16px;
+  width: 20%;
+  height: 60%;
+  text-align: center;
+  padding: 10px;
+  background-color: whitesmoke;
+  display: none;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; /* 터치스크린에서 부드러운 스크롤링 */
+  scrollbar-width: none; /* Firefox에서 스크롤바 두께 조정 */
+  font-family: "Hanna";
+  box-shadow:  1px 5px 3px grey;
+}
+.Detailed-menu-title{
+  background-color: white;
+  border-radius: 10px;
+}
+.Detailed-menu-img{
+  width: 200px;
+  aspect-ratio: 0.5/0.5;
+}
+.Detailed-menu-name{
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+}
+.Detailed-menu-middle{
+  margin-top: 10px;
+  font-size: 13px;
+  /* color:#878889; */
+  background-color: white;
+  border-radius: 10px;
+}
+.Detailed-menu-text{
+  text-align: left;
+}
+.Detailed-menu-price{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 10px;
+}
+.Detailed-menu-cart{
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: #878889;
+  width: 100%; */
+}
+.Detailed-menu-cartbtn{
+  width: 100px;
+  padding: 5px;
+  background-color: rgb(153, 231, 239);
+  border-radius: 16px;
+}
+.Detailed-menu-box{
+  margin-top: 30px;
+  font-size: 10px;
+}
 /* 헤더 */
 .header {
-    width: 100%;
-    background-color: black;
-    height: 125px;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  background-color: #00c4bd;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+}
+/* 헤더 안 상자 */
+.header-box {
+  width: 1280px;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+/* 배달의 민족 글자 이미지 */
+.headname {
+  max-width: 200px;
+  height: auto;
+}
+.headname {
+  cursor: pointer;
+}
+
+/* 로그인버튼 */
+.loginicon {
+  width: 50px;
+  margin: 10px;
+}
+.loginicon:hover {
+  background-color: #04a39d;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.locationIcon {
+  width: 50px;
+}
+/* .locationIcon:hover {
+  background-color: #04a39d;
+  border-radius: 50%;
+  cursor: pointer;
+} */
+/* 주소쪽 전체 상자 */
+.controlBtn {
+  position: relative;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#adressbox {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0 0px 0 50px;
+}
+/* #adressbox:hover {
+  cursor: pointer;
+} */
+
+/* 헤더 */
+/* 메뉴바 */
+html {
+  scroll-behavior: smooth;
+}
+a {
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+.nav {
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  display: flex;
+  justify-content: center;
+  z-index: 20;
+}
+/* 동적으로 추가하거나 제거 */
+#nav.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.nav-box {
+  max-width: 1280px;
+  width: 1280px;
+  position: relative;
+  overflow: hidden;
+}
+.nav_menu {
+  display: flex;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+  /* 줄바꿈 방지 */
+  white-space: nowrap;
+  img {
+    height: 70px;
   }
-  /* 헤더 안 상자 */
-  .header-box {
-    width: 1280px;
-    max-width: 1280px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-  /* 배달의 민족 글자 이미지 */
-  .headname {
-    max-width: 200px;
-    height: auto;
-  }
-  .headname {
-    cursor: pointer;
-  }
-  
-  /* 로그인버튼 */
-  .loginicon {
-    width: 50px;
-    margin: 10px;
-  }
-  .loginicon:hover {
-    background-color: gray;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .locationIcon {
-    display: none;
-    width: 50px;
-  }
-  .locationIcon:hover {
-    background-color: gray;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  /* 주소쪽 전체 상자 */
-  .controlBtn {
-    position: relative;
-    top: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* 현재위치 이동 버튼 */
-  .cl {
-    position: absolute;
-    width: 25px;
-    padding: 5px;
-    top: 15px;
-    left: 3px;
-    padding: 7px;
-    z-index: 2;
-  }
-  .cl:hover {
-    cursor: pointer;
-  }
-  /* 현재위치 이동 버튼이랑 주소상자랑 버튼 아이콘 담은 상자 */
-  #adressContaioner {
-    width: 300px;
-    height: 45px;
-    position: relative;
-    display: flex;
-  }
-  
-  /* 주소검색 */
-  #address {
-    width: 100%;
-    border-radius: 10px;
-    outline: none;
-    margin-left: 5px;
-    padding: 0px 40px 0px 32px;
-  }
-  /* 주소검색 아이콘 */
-  #submit {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 25px;
-    padding: 10px;
-  }
-  #submit:hover {
-    cursor: pointer;
-  }
-  /* 헤더 */
-  /* 메뉴바 */
-  html {
-    scroll-behavior: smooth;
-  }
-  a {
-    color: black;
-    font-weight: 700;
-    font-size: 20px;
-    text-decoration: none;
-  }
-  .nav {
-    width: 100%;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    display: flex;
-    justify-content: center;
-    z-index: 20;
-  }
-  /* 동적으로 추가하거나 제거 */
-  #nav.fixed {
-    position: fixed;
-    left: 0;
-    top: 0;
-  }
-  
-  .nav-box {
-    max-width: 1280px;
-    width: 1280px;
-    position: relative;
-    overflow: hidden;
-  }
-  .nav_menu {
-    display: flex;
-    /* justify-content: center; */
-    padding: 20px;
-    margin: 0;
-    list-style: none;
-    /* 줄바꿈 방지 */
-    white-space: nowrap;
-  }
-  .nav_menu > li {
-    display: inline-block;
-    padding: 10px 20px;
-  }
-  
-  .nav_menu-foused {
-    color: #00c4bd;
-  }
-  .marker {
-    position: absolute;
-    bottom: 1.2rem;
-    left: 50%;
-    width: 0%;
-    height: 3px;
-    background-color: #00c4bd;
-    transition: 0.2s;
-  }
-  
-  #sectionBox {
-    width: 100%;
-  }
-  section.common {
-    max-width: 1280px;
-    margin: 0px auto;
-    text-align: center;
-  }
+}
+.nav_menu > li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.nav_menu-foused {
+  color: #00c4bd;
+}
+.marker {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: #00c4bd;
+  transition: 0.2s;
+}
+
+#sectionBox {
+  width: 100%;
+}
+section.common {
+  max-width: 1280px;
+  margin: 0px auto;
+  text-align: center;
+}
 
 /* slide 크기조절, 속도조절 */
 .cupon {
@@ -302,6 +360,14 @@ li{
 
 .banner{
     width: 500px !important;
+}
+.cart-in{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.cart-menuname{
+  margin-right: 20%;
 }
   @media screen and (max-width: 768px) {
     /* 헤더 */

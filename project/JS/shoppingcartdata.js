@@ -1,3 +1,6 @@
+// 가게 정보 받아오는 파일
+
+
 export const menulist1Data = [
     {
       id: "menu1",
