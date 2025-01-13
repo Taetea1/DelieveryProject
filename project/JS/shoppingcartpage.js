@@ -1,8 +1,14 @@
 window.onload = () => {
-    menuCreate(menulist1Data)
+    
     searchedLocation();
       //검색했던 위치 넣기(아직 테스트 안 해봄)
+    getloaded();
+    menuCreate(menulist1Data)
 }
+
+
+
+
 const searchedLocation = () => {
     // 값 불러오기
   
@@ -54,10 +60,7 @@ function menuCreate(menuData){
     })
     
 }
-
-document.querySelector(".menu-box").addEventListener("click", (event) => { //menu-box가 클릭을 받으면
-    const menu = event.target.closest('.menu-box-box'); //타겟변경 해당하는 menu-box-box로
-    if (menu) {
+function detailsmenuclick(menu){
         const menuimage = menu.querySelector(".menu-img").src;
         const menuname = menu.querySelector(".menu-name").textContent;
         const menuprice = menu.querySelector(".menu-price").textContent;
@@ -80,40 +83,74 @@ document.querySelector(".menu-box").addEventListener("click", (event) => { //men
                 </div>
         `;
         detailsmenu.style.display = "block";
-    }
-});
+}
+
 document.addEventListener("click", (event) => {
     const detailsmenu = document.querySelector(".Detailed-menu");
     if (!event.target.closest(".Detailed-menu") && !event.target.closest(".menu-box-box")) {
         detailsmenu.style.display = "none";
     }
 });
-const menubtn = document.querySelectorAll(".menu-btn");
-
-menubtn.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const btnText = btn.textContent;
-    
-    if (btnText === "추천메뉴") {
-        menuCreate(menulist1Data)
-    } else if (btnText === "오리지널스&맥시멈") {
-        menuCreate(menulist2Data)
-    } else if (btnText === "프리미엄") {
-        menuCreate(menulist3Data)
-    } else if (btnText === "와퍼&주니어") {
-        menuCreate(menulist4Data)
-    } else if (btnText === "치킨&슈림프버거") {
-        menuCreate(menulist5Data)
-    } else if (btnText === "올데이킹&킹모닝 사이드") {
-        menuCreate(menulist6Data)
+document.addEventListener("click", (event) => {
+    const menu = event.target.closest('.menu-box-box'); //타겟변경 해당하는 menu-box-box로
+    if(menu){
+        detailsmenuclick(menu)
     }
-    menubtn.forEach(button => {
-      button.classList.remove('menu-btn-toggle');
-    });
-    btn.classList.add('menu-btn-toggle');
-  });
-});
-
-
-
+    const btn = event.target.closest(".menu-btn");
+    if (btn) {
+      const menuname = [1,2,3,4,5,6];
   
+      if (btnText === menuname[0]) {
+        menuCreate(menulist1Data);
+      } else if (btnText === menuname[1]) {
+        menuCreate(menulist2Data);
+      } else if (btnText === menuname[2]) {
+        menuCreate(menulist3Data);
+      } else if (btnText === menuname[3]) {
+        menuCreate(menulist4Data);
+      } else if (btnText === menuname[4]) {
+        menuCreate(menulist5Data);
+      } else if (btnText === menuname[5]) {
+        menuCreate(menulist6Data);
+      }
+  
+      // 버튼 활성화 상태 업데이트
+      document.querySelectorAll(".menu-btn").forEach(button => {
+        button.classList.remove("menu-btn-toggle");
+      });
+      btn.classList.add("menu-btn-toggle");
+    }
+    
+  });
+
+
+
+function getloaded(){
+    const cardName = window.localStorage.getItem("cardname")
+    const cardimg = window.localStorage.getItem("cardimg")
+    const cardBoss = window.localStorage.getItem("cardBoss")
+    const cardReview = window.localStorage.getItem("cardReview")
+    // 메뉴이름은 여기에
+    const menuname = ["추천메뉴","오리지널스&맥시멈","프리미엄","와퍼&주니어","치킨&슈림프버거","올데이킹&킹모닝 사이드"]
+    const wrapwrap = document.querySelector(".wrapwrap")
+    wrapwrap.innerHTML = ''
+    wrapwrap.innerHTML = `
+    <div class = "banner-box">
+                <div class = "banner-box-box">
+                    <div class = "banner-img-box"><img class = "banner-img" src = "${cardimg}" alt = "tag"/></div>
+                    <div class = "banner-text">${cardName}</div>
+                    <div class = "banner-small-text"><span>리뷰 ${cardReview}</span> | 사장님 댓글 ${cardBoss}</div>
+                    <div class = "banner-small-text1">배달의 민족에서 빠르고 편리하게 주문하세요</div>
+                </div>
+            </div>
+            <div class = "menu-container">
+                <div class = "menu-box-btn">
+                    <div class = "menu-btn menu-btn-toggle" >${menuname[0]}</div><div class = "menu-btn">${menuname[1]}</div><div class = "menu-btn">${menuname[2]}</div><div class = "menu-btn">${menuname[3]}</div>
+                    <div class = "menu-btn">${menuname[4]}</div><div class = "menu-btn">${menuname[5]}</div>
+                </div>
+                <ul class = "menu-box">
+                </ul>
+            </div>`
+}
+
+

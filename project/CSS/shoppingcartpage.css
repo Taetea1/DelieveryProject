@@ -60,7 +60,11 @@ li{
     display: flex;
     flex-direction: row;
     gap : 15px;
-    overflow: auto;
+    /* white-space: nowrap; */
+    overflow-x: auto;
+}
+.menu-box-btn::-webkit-scrollbar{
+  display: none; 
 }
 .menu-btn{
     padding: 10px 10px;
@@ -220,6 +224,7 @@ li{
   height: 125px;
   display: flex;
   justify-content: center;
+  font-family: "Hanna";
 }
 /* 헤더 안 상자 */
 .header-box {
@@ -429,7 +434,7 @@ section.common {
         /* position: absolute; */
         /* margin-left : -100%; */
         overflow-y: auto;
-        width: 400px;
+        /* width: 400px; */
     }
     .menu-btn{
         padding: 10px 10px;
@@ -456,7 +461,6 @@ section.common {
     .banner-box{
         width: 30%;
         padding: 24px 10px 24px;
-        border: 1px solid black;
         margin-top : 120px;
     }
     .menu-container{
