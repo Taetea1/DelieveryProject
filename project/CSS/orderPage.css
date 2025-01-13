@@ -292,6 +292,7 @@ section.common {
 .banner {
   width: 500px;
 }
+
 @media screen and (max-width: 1119px) {
   .card-box {
     grid-template-columns: repeat(2, 1fr);

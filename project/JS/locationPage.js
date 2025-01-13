@@ -195,12 +195,6 @@ function insertAddress(address, latitude, longitude) {
   });
 }
 
-// 주소 검색 이벤트(검색버튼)
-document.getElementById("submit").addEventListener("click", function (event) {
-  event.preventDefault();
-  searchAddressToCoordinate(document.getElementById("address").value);
-});
-
 // 지도를 이동시키는 함수
 function moveMap(lat, lng) {
   var center = new naver.maps.LatLng(lat, lng);
