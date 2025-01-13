@@ -5,6 +5,9 @@
 h3 {
   font-family: "Hanna";
 }
+.cardindex {
+  display: none;
+}
 /* 헤더 */
 .header {
   width: 100%;
