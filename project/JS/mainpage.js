@@ -31,7 +31,9 @@ window.addEventListener(
     wrap.style.top = page * -100 + "vh";
   },
   { passive: false }
-); // 디폴트 기능 제거 - 스크롤
+); 
+
+// 디폴트 기능 제거 - 스크롤
 // window.addEventListener(
 //   "scroll",
 //   () => {
@@ -63,6 +65,8 @@ window.addEventListener(
 //   },
 //   { passive: false } // 디폴트 스크롤 방지
 // );
+
+
 function scrollClick(scroll) {
   if (scroll == "1") wrap.style.top = 0 + "vh",page = 0, scrollvh();
   else if (scroll == "2") wrap.style.top = -100 + "vh",page = 1, scrollvh();
@@ -72,7 +76,7 @@ function scrollClick(scroll) {
 
 function randomBackground() {
   // 홈페이지 로딩 후 랜덤으로 배경 밑 헤드 텍스트 설정
-  const randomNumber = Math.floor(Math.random() * 4); // 0부터 9까지의 정수
+  const randomNumber = Math.floor(Math.random() * 4); // 0부터 3까지의 정수
   const head = document.querySelector(".head");
   const containerFirst = document.querySelector(".containerFirst");
   const image = [
@@ -243,8 +247,8 @@ riderBtn.addEventListener("click", () => {
 
 
 function orderpage() {
-  window.location.href = "http://127.0.0.1:5500/project/page/locationPage.html";
+  window.location.href = "./locationPage.html";
 }
 function connectpage() {
-  window.location.href = "http://127.0.0.1:5500/project/page/connectpage.html";
+  window.location.href = "./connectpage.html";
 }

@@ -127,7 +127,7 @@ body {
 }
 
 .head{
-    width: 400px;
+    width: 50%;
     height: 50%;
 }
 p{
@@ -236,7 +236,7 @@ p{
             display:none;
         }
         .head{
-            width: 300px;
+            width: 50%;
             aspect-ratio: 1/1;
         }
         .margin-left{

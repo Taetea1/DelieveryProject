@@ -106,7 +106,7 @@ const changeMenu = (type) => {
     const restaurantHTML = selectedCategory.rt
       .map(
         (restaurant) => `
-      <div class="card" onclick="movePage()">
+      <div class="card">
         <div class="logo-box">
           <div class="time">${restaurant.time}</div>
           <img src="${restaurant.logo}" class="logoImg" />
@@ -143,9 +143,23 @@ const changeMenu = (type) => {
   updateMenuAndMarker(type);
 };
 
-const movePage = () => {
-  window.location.href = "./shoppingcartpage.html";
-};
+// 카드 선택하면 이미지, 이름, 보스, 리뷰 받아서 스토리지 저장받고 페이지 이동
+document.querySelector("#sectionBox").addEventListener("click", (cardSelect) =>{
+  const selectcard = cardSelect.target.closest(".card")
+  if(selectcard){
+    const cardname = selectcard.querySelector(".cardTitle").textContent
+    const cardimg = selectcard.querySelector(".logoImg").src
+    const cardBoss = selectcard.querySelector(".cardBoss").textContent
+    const cardReview = selectcard.querySelector(".cardReview").textContent
+    
+    window.localStorage.setItem("cardname",cardname)
+    window.localStorage.setItem("cardimg",cardimg)
+    window.localStorage.setItem("cardBoss",cardBoss)
+    window.localStorage.setItem("cardReview",cardReview)
+    
+    window.location.href = "./shoppingcartpage.html"
+  }
+})
 
 // 메뉴 활성화 및 마커 이동
 function updateMenuAndMarker(type) {
