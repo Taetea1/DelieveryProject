@@ -3,7 +3,6 @@ window.onload = () => {
     searchedLocation();
       //검색했던 위치 넣기(아직 테스트 안 해봄)
     getloaded();
-    menuCreate(menulist1Data)
 }
 
 
@@ -35,21 +34,17 @@ const addAddress = (address) => {
     document.getElementById("adressbox").innerText = address;
 };
 // data.js 파일에 저장되어 있는 데이터 배열 호출
-import { menulist1Data } from './shoppingcartdata.js';
-import { menulist2Data } from './shoppingcartdata.js';
-import { menulist3Data } from './shoppingcartdata.js';
-import { menulist4Data } from './shoppingcartdata.js';
-import { menulist5Data } from './shoppingcartdata.js';
-import { menulist6Data } from './shoppingcartdata.js';
+import { storeMenus } from './shoppingcartdata.js';
 
-
-
-
-function menuCreate(menuData){
+//버튼 클릭시 메뉴 생성 (값은 데이터의 카테고리 값을 받음)
+function menuCreate(categoryName){
     const menubox = document.querySelector(".menu-box")
     menubox.innerHTML = '';
-
-    menuData.forEach(menu => {
+    const menutype = savedCategory[categoryName]
+    if(!menutype || menutype.length == 0){
+            menubox.innerHTML = `<p>메뉴 데이터가 없어요<p>`
+    }
+    menutype.forEach(menu => {
         menubox.innerHTML += `
         <li class = "menu-box-box">
             <img class = "menu-img" src = "${menu.image}" alt = "menuimg"/>
@@ -58,8 +53,8 @@ function menuCreate(menuData){
         </li>`
         ;
     })
-    
 }
+//각 메뉴의 상세정보를 표시
 function detailsmenuclick(menu){
         const menuimage = menu.querySelector(".menu-img").src;
         const menuname = menu.querySelector(".menu-name").textContent;
@@ -83,7 +78,15 @@ function detailsmenuclick(menu){
                 </div>
         `;
         detailsmenu.style.display = "block";
+        const cartBtn = detailsmenu.querySelector('.Detailed-menu-cartbtn');
+        cartBtn.addEventListener('click', function() {
+            Unimplemented();
+        });
 }
+function Unimplemented(){
+    alert('미구현 기능입니다. ')
+}
+
 
 document.addEventListener("click", (event) => {
     const detailsmenu = document.querySelector(".Detailed-menu");
@@ -96,32 +99,9 @@ document.addEventListener("click", (event) => {
     if(menu){
         detailsmenuclick(menu)
     }
-    const btn = event.target.closest(".menu-btn");
-    if (btn) {
-      const menuname = [1,2,3,4,5,6];
-  
-      if (btnText === menuname[0]) {
-        menuCreate(menulist1Data);
-      } else if (btnText === menuname[1]) {
-        menuCreate(menulist2Data);
-      } else if (btnText === menuname[2]) {
-        menuCreate(menulist3Data);
-      } else if (btnText === menuname[3]) {
-        menuCreate(menulist4Data);
-      } else if (btnText === menuname[4]) {
-        menuCreate(menulist5Data);
-      } else if (btnText === menuname[5]) {
-        menuCreate(menulist6Data);
-      }
-  
-      // 버튼 활성화 상태 업데이트
-      document.querySelectorAll(".menu-btn").forEach(button => {
-        button.classList.remove("menu-btn-toggle");
-      });
-      btn.classList.add("menu-btn-toggle");
-    }
+      
     
-  });
+});
 
 
 
@@ -130,8 +110,8 @@ function getloaded(){
     const cardimg = window.localStorage.getItem("cardimg")
     const cardBoss = window.localStorage.getItem("cardBoss")
     const cardReview = window.localStorage.getItem("cardReview")
+    const cardindex = window.localStorage.getItem("cardindex")
     // 메뉴이름은 여기에
-    const menuname = ["추천메뉴","오리지널스&맥시멈","프리미엄","와퍼&주니어","치킨&슈림프버거","올데이킹&킹모닝 사이드"]
     const wrapwrap = document.querySelector(".wrapwrap")
     wrapwrap.innerHTML = ''
     wrapwrap.innerHTML = `
@@ -143,14 +123,71 @@ function getloaded(){
                     <div class = "banner-small-text1">배달의 민족에서 빠르고 편리하게 주문하세요</div>
                 </div>
             </div>
-            <div class = "menu-container">
-                <div class = "menu-box-btn">
-                    <div class = "menu-btn menu-btn-toggle" >${menuname[0]}</div><div class = "menu-btn">${menuname[1]}</div><div class = "menu-btn">${menuname[2]}</div><div class = "menu-btn">${menuname[3]}</div>
-                    <div class = "menu-btn">${menuname[4]}</div><div class = "menu-btn">${menuname[5]}</div>
-                </div>
-                <ul class = "menu-box">
-                </ul>
-            </div>`
+    <div class = "menu-container">
+        <div class = "menu-box-btn">
+
+        </div>
+        <ul class = "menu-box">
+        </ul>
+    </div>      `
+    // 가게 데이터가 있으면 정보 넘겨주기
+    if(cardindex === "Burgerking"){
+        createMenuButtons(storeMenus.BurgerKing)
+    }
+    if(cardindex === "Pizzahut"){
+        createMenuButtons(storeMenus.PizzaHut)
+    }
+    if(cardindex === "McDonalds"){
+        createMenuButtons(storeMenus.McDonalds)
+    }
+    else if (cardindex == ''){
+        createMenuButtons()
+    }
+}
+let savedCategory;
+let menuNames = []; //실험용
+
+//초기에 가게에 따른 메뉴 버튼 나오게
+function createMenuButtons(item) {
+  const menuBoxBtn = document.querySelector(".menu-box-btn");
+  if(!item){
+    menuBoxBtn.innerHTML = `<p>가게 정보가 없어요</p>`
+    return;
+  }
+  const menus = Object.keys(item)
+  console.log("createMenuButtons", item);
+  savedCategory = item;
+  console.log(menus)
+  if (menus.length > 0) {
+    // 기존 버튼 초기화
+    menuBoxBtn.innerHTML = '';
+
+    // 새로운 버튼 생성
+    menus.forEach((menuName, index) => {
+      const menuBtn = document.createElement("div");
+      menuBtn.className = "menu-btn";
+      if (index === 0) {
+        menuBtn.classList.add("menu-btn-toggle"); // 첫 번째 버튼 활성화
+      }
+      menuBtn.textContent = menuName;
+      menuNames.push(menuName);
+      console.log(menuNames);
+      menuBtn.addEventListener("click", function() {
+        menuCreate(menuName);  // 클릭한 카테고리 이름을 전달
+        const btn = document.querySelectorAll(".menu-btn")
+        btn.forEach(btn => {
+            btn.classList.remove("menu-btn-toggle")
+        })
+        menuBtn.classList.add("menu-btn-toggle");
+      });
+      menuBoxBtn.appendChild(menuBtn);
+    });
+    menuCreate(menus[0])
+  } 
 }
 
-
+// document.querySelectorAll(".menu-btn").forEach(button => {
+//     button.classList.remove("menu-btn-toggle");
+//   });
+//   btn.classList.add("menu-btn-toggle");
+// }

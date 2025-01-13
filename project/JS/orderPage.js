@@ -102,12 +102,13 @@ const changeMenu = (type) => {
     const sectionHTML = `<section id="${selectedCategory.id}" class="common">
     <h3 class="card-list-title">${selectedCategory.type}</h3>
     <div class="card-box">`;
-
+    
     const restaurantHTML = selectedCategory.rt
       .map(
         (restaurant) => `
       <div class="card">
         <div class="logo-box">
+        <div class="cardindex">${restaurant.menutype?restaurant.menutype:''}</div>
           <div class="time">${restaurant.time}</div>
           <img src="${restaurant.logo}" class="logoImg" />
         </div>
@@ -151,11 +152,13 @@ document.querySelector("#sectionBox").addEventListener("click", (cardSelect) =>{
     const cardimg = selectcard.querySelector(".logoImg").src
     const cardBoss = selectcard.querySelector(".cardBoss").textContent
     const cardReview = selectcard.querySelector(".cardReview").textContent
+    const cardindex = selectcard.querySelector(".cardindex").textContent
     
     window.localStorage.setItem("cardname",cardname)
     window.localStorage.setItem("cardimg",cardimg)
     window.localStorage.setItem("cardBoss",cardBoss)
     window.localStorage.setItem("cardReview",cardReview)
+    window.localStorage.setItem("cardindex",cardindex)
     
     window.location.href = "./shoppingcartpage.html"
   }
@@ -242,6 +245,7 @@ const rt_data = [
     img: "../image/solo.png",
     rt: [
       {
+        menutype: "Mcdonalds",
         time: "22~37분",
         name: "맥도날드-연세대점",
         star: "4.7",
@@ -294,6 +298,7 @@ const rt_data = [
         logo: "../image/orderlogo/프랜차이즈/도미노.jpg",
       },
       {
+        menutype: "Burgerking",
         time: "24~39분",
         name: "버거킹-신촌1점",
         star: "4.7",
@@ -312,6 +317,7 @@ const rt_data = [
         logo: "../image/orderlogo/프랜차이즈/디디치킨.jpg",
       },
       {
+        menutype: "Pizzahut",
         time: "21~36분",
         name: "피자헛-신수점",
         star: "4.9",
