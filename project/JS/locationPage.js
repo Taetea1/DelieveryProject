@@ -15,195 +15,16 @@ window.addEventListener("load", function () {
 });
 
 // 준비중 함수
-const readyalert = (name) => {
-  if (name === "") {
-    alert("기능 준비중입니다.");
-  } else {
-    alert(`${name}기능 준비중입니다.`);
-  }
+const readyalert = () => {
+  Swal.fire({
+    icon: "info",
+    title: "로그인기능은 준비중입니다.",
+  });
 };
 
-// 스크롤시 카테고리 메뉴들이 생기도록
-window.addEventListener("scroll", () => {
-  const winTop = window.scrollY;
-  if (winTop >= 100) {
-    document.getElementById("foodtypeList").classList.add("revealed");
-  }
-});
-
-// // 지도 부분
-// const moveCurrnet = () => {
-//   // 위치 정보를 얻기 위해 Geolocation API 사용
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(
-//       function (position) {
-//         // 사용자의 현재 위치 가져오기
-//         const lat = position.coords.latitude;
-//         const lon = position.coords.longitude;
-
-//         // 지도 생성
-//         const map = new naver.maps.Map("map", {
-//           center: new naver.maps.LatLng(lat, lon), // 현재 위치로 지도의 중심 설정
-//           zoom: 17, // 초기 줌 레벨 설정
-//           minZoom: 7, // 최소 줌 레벨
-//           zoomControl: true, // 줌 컨트롤 표시 여부
-//           zoomControlOptions: {
-//             // 줌 컨트롤의 옵션
-//             position: naver.maps.Position.TOP_RIGHT,
-//           },
-//         });
-
-//         // 현재 위치에 마커 표시
-//         const marker = new naver.maps.Marker({
-//           position: new naver.maps.LatLng(lat, lon),
-//           map: map,
-//         });
-
-//         // 현재 위치의 주소를 받아오기
-//         naver.maps.Service.reverseGeocode(
-//           {
-//             location: new naver.maps.LatLng(lat, lon),
-//           },
-//           function (status, response) {
-//             if (status === naver.maps.Service.Status.OK) {
-//               var result = response.result;
-//               var address = result.items[0].address; // 가장 가까운 주소 가져오기
-//               addAddress(address); // 주소를 화면에 표시하는 함수 호출
-//             } else {
-//               addAddress("위치를 찾지 못했습니다.");
-//             }
-//           }
-//         );
-
-//         // 지도 클릭 시 마커를 찍고 주소를 받아오기
-//         naver.maps.Event.addListener(map, "click", function (e) {
-//           let latlng = e.coord; //클릭한 좌표
-//           marker.setPosition(latlng);
-//           map.panTo(e.coord); //파커위치변경
-//           // Reverse Geocoding API 호출
-//           naver.maps.Service.reverseGeocode(
-//             {
-//               location: latlng,
-//             },
-//             function (status, response) {
-//               if (status === naver.maps.Service.Status.OK) {
-//                 var result = response.result;
-//                 var address = result.items[0].address; // 가장 가까운 주소 가져오기
-//                 addAddress(address);
-//               } else {
-//                 addAddress("위치를 찾지 못했습니다");
-//               }
-//             }
-//           );
-//         });
-//       },
-//       function (error) {
-//         let errorMessage = "";
-//         switch (error.code) {
-//           case error.PERMISSION_DENIED:
-//             errorMessage =
-//               "위치 정보를 허용해야 합니다. 위치 서비스 권한을 부여해 주세요.";
-//             break;
-//           case error.POSITION_UNAVAILABLE:
-//             errorMessage =
-//               "위치 정보를 사용할 수 없습니다. 네트워크 상태나 GPS 신호를 확인해 주세요.";
-//             break;
-//           case error.TIMEOUT:
-//             errorMessage =
-//               "위치 정보를 가져오는데 시간이 너무 걸렸습니다. 다시 시도해 주세요.";
-//             break;
-//           default:
-//             errorMessage = "알 수 없는 오류가 발생했습니다.";
-//             break;
-//         }
-//         alert(errorMessage);
-//       }
-//     );
-//   } else {
-//     alert("이 브라우저는 위치 정보를 지원하지 않습니다.");
-//   }
-// };
-
-// //주소 새로 넣기
-// function changeInputtext() {
-//   new daum.Postcode({
-//     oncomplete: function (data) {
-//       var addr = data.address; // 최종 주소 변수
-
-//       // 주소 정보를 해당 필드에 넣는다.
-//       addAddress(addr);
-
-//       // 주소로 지도 위치 이동 및 마커 표시
-//       searchAddress(addr);
-//     },
-//   }).open();
-// }
-// // 네이버 지도 API를 통해 주소 검색 후 마커 찍기
-// const searchAddress = () => {
-//   const address = document.getElementById("address").value;
-
-//   // 네이버 지도에서 주소로 좌표 검색 (geocode 사용)
-//   naver.maps.Service.geocode(
-//     {
-//       query: address, // 검색할 주소
-//     },
-//     function (status, response) {
-//       if (status === naver.maps.Service.Status.OK) {
-//         const result = response.result.items[0];
-//         const latlng = new naver.maps.LatLng(result.y, result.x); // 위도와 경도
-
-//         const map = new naver.maps.Map("map", {
-//           center: latlng, // 검색한 주소의 위치로 지도 중심 이동
-//           zoom: 17, // 줌 레벨
-//         });
-
-//         // 마커 생성 (검색한 주소에 마커 표시)
-//         const marker = new naver.maps.Marker({
-//           position: latlng, // 검색한 위치
-//           map: map, // 마커를 표시할 지도
-//         });
-
-//         // 주소를 화면에 표시
-//         const addressElement = document.getElementById("result-address");
-//         addressElement.innerText = "검색한 주소: " + result.address;
-//       } else {
-//         alert("주소 검색에 실패했습니다.");
-//       }
-//     }
-//   );
-// };
-// // 현재위치 버튼 클릭시 현재위치로 이동
-// document.getElementById("showMap").addEventListener("click", function (e) {
-//   e.preventDefault();
-//   moveCurrnet();
-//   // addAddress("현재 위치 주소");
-// });
-
-// // 검색창에 검색한 주소 넣기
-// const addAddress = (address) => {
-//   document.getElementById("address").value = address;
-//   window.localStorage.setItem("name", address);
-// };
-
-// // 지도에 마커를 표시하는 함수
-// function insertAddress(address, latitude, longitude) {
-//   addAddress(address);
-//   var marker = new naver.maps.Marker({
-//     position: new naver.maps.LatLng(latitude, longitude),
-//     map: map,
-//     title: address,
-//   });
-// }
-
-// // 지도를 이동시키는 함수
-// function moveMap(lat, lng) {
-//   var center = new naver.maps.LatLng(lat, lng);
-//   map.panTo(center);
-//   map.setZoom(17);
-// }
-// // 지도 부분 끝
-let map; // 전역 변수로 map 객체를 관리
-let currentMarker = null; // 전역 변수로 마커를 관리
+// 지도 부분
+let map; // 전역 변수로 map 객체 관리
+let currentMarker = null; // 전역 변수로 마커 관리
 
 // 지도 생성 및 현재 위치로 이동
 const moveCurrnet = () => {
@@ -221,7 +42,7 @@ const moveCurrnet = () => {
             center: new naver.maps.LatLng(lat, lon), // 현재 위치로 지도의 중심 설정
             zoom: 17, // 초기 줌 레벨 설정
             minZoom: 7, // 최소 줌 레벨
-            zoomControl: true, // 줌 컨트롤 표시 여부
+            zoomControl: true, // 줌 컨트롤 표시
             zoomControlOptions: {
               position: naver.maps.Position.TOP_RIGHT,
             },
@@ -293,6 +114,18 @@ const moveCurrnet = () => {
   }
 };
 
+// 현재 위치 버튼 클릭 시
+document.getElementById("showMap").addEventListener("click", function (e) {
+  e.preventDefault();
+  moveCurrnet();
+});
+
+// 주소를 화면에 표시하고 로컬 스토리지에 저장
+const addAddress = (address) => {
+  document.getElementById("address").value = address;
+  window.localStorage.setItem("name", address);
+};
+
 // 주소로부터 현재 위치를 얻어오기 (Reverse Geocoding)
 const getAddressFromLatLng = (latlng, callback) => {
   naver.maps.Service.reverseGeocode(
@@ -302,84 +135,13 @@ const getAddressFromLatLng = (latlng, callback) => {
     function (status, response) {
       if (status === naver.maps.Service.Status.OK) {
         const address = response.result.items[0].address; // 가장 가까운 주소
-        addAddress(address);
+        callback(address);
       } else {
         callback("위치를 찾지 못했습니다.");
       }
     }
   );
 };
-
-// 주소를 화면에 표시하고 로컬 스토리지에 저장
-const addAddress = (address) => {
-  document.getElementById("address").value = address;
-  window.localStorage.setItem("name", address);
-};
-
-// 주소를 검색하여 지도에 표시하고 마커 생성
-const searchAddressdaum = (address) => {
-  console.log("검색할 주소:", address); // 입력받은 주소 확인
-
-  naver.maps.Service.geocode(
-    {
-      query: address, // 검색할 주소
-    },
-    function (status, response) {
-      console.log("Geocode 응답 상태:", status); // 상태 코드 확인
-      console.log("Geocode 응답 내용:", response); // 응답 내용 확인
-
-      // 응답 상태가 OK인 경우에만 처리
-      if (
-        status === naver.maps.Service.Status.OK &&
-        response.v2.addresses.length > 0
-      ) {
-        const result = response.v2.addresses[0]; // 첫 번째 검색 결과
-        const lat = result.y; // 위도
-        const lng = result.x; // 경도
-        console.log("위도:", lat, "경도:", lng); // 위도, 경도 값 확인
-
-        // 좌표로 지도와 마커 표시
-        const latlng = new naver.maps.LatLng(lat, lng);
-
-        // 지도 중심을 검색된 위치로 이동 (기존 지도 객체 사용)
-        if (map) {
-          map.setCenter(latlng); // 기존 지도에서 중심만 변경
-        } else {
-          // 지도 객체가 없다면 새로 생성
-          map = new naver.maps.Map("map", {
-            center: latlng,
-            zoom: 17,
-          });
-        }
-
-        // 기존 마커가 있으면 삭제
-        if (currentMarker) {
-          currentMarker.setMap(null);
-        }
-
-        // 새 마커 생성
-        currentMarker = new naver.maps.Marker({
-          position: latlng, // 마커 위치
-          map: map, // 마커가 표시될 지도
-          title: address, // 마커의 타이틀
-        });
-        console.log("마커가 지도에 추가되었습니다.");
-
-        // 화면에 주소 표시
-        addAddress(address);
-      } else {
-        console.error("주소 변환 실패", status, response); // 실패 시 상태와 응답 출력
-        alert("주소 검색에 실패했습니다.");
-      }
-    }
-  );
-};
-
-// 현재 위치 버튼 클릭 시
-document.getElementById("showMap").addEventListener("click", function (e) {
-  e.preventDefault();
-  moveCurrnet();
-});
 
 // 네이버 지도에서 주소로 좌표 검색 후 마커 찍기
 const searchAddress = () => {
@@ -431,14 +193,73 @@ function changeInputText() {
   new daum.Postcode({
     oncomplete: function (data) {
       const addr = data.address; // 선택한 주소
-      console.log("선택된 주소:", addr); // 선택된 주소 확인
       // 주소로 네이버 지도 검색 및 표시
       searchAddressdaum(addr); // 주소로 좌표 검색하여 지도에 표시
     },
   }).open();
 }
 
-//음식 종류 박스 넣기
+// 주소를 검색하여 지도에 표시하고 마커 생성(다음주소api에서 사용할 함수)
+const searchAddressdaum = (address) => {
+  naver.maps.Service.geocode(
+    {
+      query: address, // 검색할 주소
+    },
+    function (status, response) {
+      // 응답 상태가 OK인 경우에만 처리
+      if (
+        status === naver.maps.Service.Status.OK &&
+        response.v2.addresses.length > 0
+      ) {
+        const result = response.v2.addresses[0]; // 첫 번째 검색 결과
+        const lat = result.y; // 위도
+        const lng = result.x; // 경도
+
+        // 좌표로 지도와 마커 표시
+        const latlng = new naver.maps.LatLng(lat, lng);
+
+        // 지도 중심을 검색된 위치로 이동 (기존 지도 객체 사용)
+        if (map) {
+          map.setCenter(latlng); // 기존 지도에서 중심만 변경
+        } else {
+          // 지도 객체가 없다면 새로 생성
+          map = new naver.maps.Map("map", {
+            center: latlng,
+            zoom: 17,
+          });
+        }
+
+        // 기존 마커가 있으면 삭제
+        if (currentMarker) {
+          currentMarker.setMap(null);
+        }
+
+        // 새 마커 생성
+        currentMarker = new naver.maps.Marker({
+          position: latlng, // 마커 위치
+          map: map, // 마커가 표시될 지도
+          title: address, // 마커의 타이틀
+        });
+
+        // 화면에 주소 표시
+        addAddress(address);
+      } else {
+        alert("주소 검색에 실패했습니다.");
+      }
+    }
+  );
+};
+// 지도 부분 끝
+
+//음식 종류 박스 넣는 부분
+// 스크롤시 카테고리 메뉴 생성
+window.addEventListener("scroll", () => {
+  const winTop = window.scrollY;
+  if (winTop >= 100) {
+    document.getElementById("foodtypeList").classList.add("revealed");
+  }
+});
+
 //div를 만들어 추가하는 함수
 const addMenuBox = () => {
   const dropMenuGroup = document.getElementById("foodtypeList");
@@ -447,9 +268,11 @@ const addMenuBox = () => {
     const divs = document.createElement("div");
     divs.className = "menuBox";
 
-    //   divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="textBox"><img src=${data[i].img} alt=${data[i].name} /></div>
-    // <div class="imgBox"><img src=${data[i].url} alt=${data[i].name} /></div></a>`;
-    divs.innerHTML = `<a href=orderPage.html${data[i].path}><div class="imgBox"><img src=${data[i].img} alt=${data[i].name} /></div></a>`;
+    //div요소 밑에 요소 추가
+    divs.innerHTML = `<a href=orderPage.html${data[i].path}>
+    <div class="imgBox"><img src=${data[i].img} alt=${data[i].name} />
+    </div></a>`;
+
     //div 요소도 부모 밑에 넣음
     dropMenuGroup.appendChild(divs);
   }
@@ -546,3 +369,4 @@ const data = [
     img: "../image/cafeicon.png",
   },
 ];
+//음식 종류 박스 넣는 부분 끝

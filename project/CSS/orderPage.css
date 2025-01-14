@@ -58,6 +58,7 @@ h3 {
 }
 .locationIcon {
   width: 50px;
+  margin-left: 10px;
 }
 .locationIcon:hover {
   background-color: #04a39d;
@@ -76,12 +77,8 @@ h3 {
 #adressbox {
   color: white;
   font-size: 20px;
-  /* font-weight: bolder; */
   margin: 0 0px 0 50px;
   font-family: "Hanna";
-}
-#adressbox:hover {
-  cursor: pointer;
 }
 
 /* 헤더 */
@@ -105,9 +102,10 @@ a {
 }
 /* 동적으로 추가하거나 제거 */
 #nav.fixed {
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 0;
+  z-index: 1000;
 }
 
 .nav-box {
@@ -214,7 +212,6 @@ section.common {
   text-align: left;
   font-weight: bold;
   font-size: 1em;
-  /* color: white; */
 }
 
 .cardTitle {
@@ -259,7 +256,6 @@ section.common {
     font-size: 14px;
     .title {
       font-size: 16px;
-      /* color: white; */
     }
   }
   .bar {
@@ -306,7 +302,7 @@ section.common {
 .banner {
   width: 500px;
 }
-.cardindex{
+.cardindex {
   display: none;
 }
 
@@ -315,8 +311,24 @@ section.common {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media screen and (max-width: 798px) {
+  /* 셀렉트박스 */
+  .menu-select {
+    position: absolute;
+    top: 275px;
+    opacity: 1;
+    pointer-events: auto;
+    width: 98%;
+  }
+  .nav {
+    position: relative;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .card-list-title {
+    padding-top: 0px;
+  }
 
-@media screen and (max-width: 768px) {
   /* 헤더 */
   .headname {
     width: 130px;
@@ -331,15 +343,17 @@ section.common {
     display: block;
   }
   /* 헤더 */
+
   .banner {
     width: 400px;
   }
-
   .swiper-button-next,
   .swiper-button-prev {
     display: absolute;
     top: 180px;
   }
+}
+@media screen and (max-width: 768px) {
   #adressbox {
     font-size: 15px;
   }
@@ -349,18 +363,27 @@ section.common {
   .loginicon {
     width: 45px;
   }
-
-  /* 셀렉트박스 */
-  .menu-select {
-    opacity: 1;
-    pointer-events: auto;
-    width: 100%; /* 셀렉트 박스가 전체 너비를 차지하도록 설정 */
+}
+@media screen and (max-width: 574px) {
+  #adressbox {
+    display: none;
   }
-  .nav {
-    opacity: 0;
-    pointer-events: none;
+  .cardtext {
+    font-size: 0.8em;
   }
-  .card-list-title {
-    padding-top: 30px;
+  .cardTitle {
+    font-size: 17px;
+  }
+  .textWrap {
+    display: block;
+    .titleWrap {
+      font-size: 12px;
+      .title {
+        font-size: 14px;
+      }
+    }
+    .bar {
+      display: none;
+    }
   }
 }

@@ -92,9 +92,9 @@
   padding-bottom: 100px;
 }
 .scrollbox {
-  /* width: 850px; */
   display: flex;
   justify-content: center;
+  margin: 20px 0;
 }
 
 /* 주소쪽 전체 상자 */
@@ -246,8 +246,7 @@
     cursor: pointer;
   }
   #map {
-    width: 530px;
-    height: 400px;
+    width: 500px;
   }
   .menu {
     width: 100%;
@@ -255,5 +254,11 @@
   }
   .loginicon {
     width: 45px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  #map {
+    width: 350px;
   }
 }

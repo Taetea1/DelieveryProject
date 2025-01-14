@@ -1,21 +1,11 @@
 window.onload = () => {
   searchedLocation();
 };
-//작아졌을때 셀렉트
-function changeMenuFromSelect(selectElement) {
-  const selectedValue = selectElement.value; // 셀렉트 박스에서 선택된 값
-  changeMenu(selectedValue.replace("#", "")); // 'changeMenu' 함수에 ID 값 전달 (값에서 '#'을 제외한)
-}
-// 셀렉트 메뉴 활성화
-function updateselect(type) {
-  const menuSelect = document.getElementById("menuSelect");
-  menuSelect.value = `#${type}`;
-}
 
+// 주소부분
 //검색했던 위치 넣기
 const searchedLocation = () => {
   // 값 불러오기
-
   var loadedName = window.localStorage.getItem("name");
   if (loadedName) {
     addAddress(loadedName);
@@ -35,11 +25,61 @@ function changeInputtext() {
     },
   }).open();
 }
+
 // 검색창에 검색한 주소 넣기
 const addAddress = (address) => {
   document.getElementById("adressbox").innerText = address;
 };
-// 지도 부분 끝
+// 주소 부분 끝
+
+// 준비중 함수
+const readyalert = () => {
+  Swal.fire({
+    icon: "info",
+    title: "로그인기능은 준비중입니다.",
+  });
+};
+
+// 쿠폰부분
+// 쿠폰클릭시 실행되는 함수
+const sAlert = (txt) => {
+  Swal.fire({
+    title: "쿠폰 ",
+    text: "쿠폰을 다운받으시겠어요?",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "네",
+    cancelButtonText: "아니요",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "받았습니다!",
+        text: "My쿠폰함에서 확인해주세요",
+        icon: "success",
+      });
+    }
+  });
+};
+// 쿠폰 스와이퍼
+var swiper = new Swiper(".swiper-container", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    type: "fraction",
+  },
+  loop: true, // 루프 기능
+  autoplay: {
+    delay: 3000, // 3초마다 자동 재생
+  },
+  watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+});
+// 쿠폰부분끝
 
 // 메뉴 시작
 const marker = document.querySelector(".marker");
@@ -67,6 +107,7 @@ function setMarker(e) {
   marker.style.left = e.offsetLeft + "px";
   marker.style.width = e.offsetWidth + "px";
 }
+
 //메뉴 항목을 가운데로 이동시키는 함수
 function centerMenuItem(menu) {
   const navBox = menu.closest(".nav-box");
@@ -85,6 +126,7 @@ function centerMenuItem(menu) {
     behavior: "smooth",
   });
 }
+
 // 메뉴 클릭 시 해당하는 섹션으로 스크롤 이동 및 스타일 변경
 // 메뉴 항목 클릭 시
 menus.forEach((menu) => {
@@ -116,39 +158,24 @@ const changeMenu = (type) => {
 
     const restaurantHTML = selectedCategory.rt
       .map(
-        (restaurant) => `
-      <div class="card">
-        <div class="logo-box">
-        <div class="cardindex">${
-          restaurant.menutype ? restaurant.menutype : ""
-        }</div>
-          <div class="time">${restaurant.time}</div>
-          <img src="${restaurant.logo}" class="logoImg" />
-        </div>
-        <div class="cardtext">
-          <div class="cardTitle">${restaurant.name}</div>
-          <span class="review">
-            <img src="../image/star.png" alt="review" class="reviewImg" />
-            <span>${restaurant.star}</span>
-          </span>
-          <div class="textWrap">
-            <div class="titleWrap">
-              <div class="title">리뷰</div>
-              <div class = "cardReview">${restaurant.review}</div>
-            </div>
-            <div class="bar">|</div>
-            <div class="titleWrap">
-              <div class="title">사장님 댓글</div>
-              <div class="cardBoss">${restaurant.boss}</div>
-            </div>
-          </div>
-          <div class="happyCoupon">${restaurant.coupon}</div>
-        </div>
-      </div>
-    `
+        (restaurant) =>
+          `<div class="card"><div class="logo-box"><div class="cardindex">${
+            restaurant.menutype ? restaurant.menutype : ""
+          }</div><div class="time">${restaurant.time}</div><img src="${
+            restaurant.logo
+          }" class="logoImg" /></div><div class="cardtext"><div class="cardTitle">${
+            restaurant.name
+          }</div><div class="review"><img src="../image/star.png" alt="review" class="reviewImg" /><div>${
+            restaurant.star
+          }</div></div><div class="textWrap"><div class="titleWrap"><div class="title">리뷰</div><div class = "cardReview">${
+            restaurant.review
+          }</div></div><div class="bar">|</div><div class="titleWrap"><div class="title">사장님 댓글</div><div class="cardBoss">${
+            restaurant.boss
+          }</div></div></div><div class="happyCoupon">${
+            restaurant.coupon
+          }</div></div></div>`
       )
       .join("");
-
     sectionBox.innerHTML += sectionHTML + restaurantHTML + `</div></section>`;
   } else {
     console.log("해당 카테고리가 없습니다.");
@@ -216,53 +243,24 @@ window.addEventListener("load", handleHashChange);
 // URL 해시가 변경될 때마다 실행
 window.addEventListener("hashchange", handleHashChange);
 
-// 쿠폰 스와이퍼
-var swiper = new Swiper(".swiper-container", {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    type: "fraction",
-  },
-  loop: true, // 루프 기능
-  autoplay: {
-    delay: 3000, // 3초마다 자동 재생
-  },
-  watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
-});
+// 셀렉트부분
+//작아졌을때 셀렉트
+function changeMenuFromSelect(selectElement) {
+  // 셀렉트 박스에서 선택된 값
+  const selectedValue = selectElement.value;
 
-// 준비중 함수
-const readyalert = (name) => {
-  if (name === "") {
-    alert("기능 준비중입니다.");
-  } else {
-    alert(`${name}기능 준비중입니다.`);
-  }
-};
-const sAlert = (txt) => {
-  Swal.fire({
-    title: "쿠폰 ",
-    text: "쿠폰을 다운받으시겠어요?",
-    icon: "question",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "네",
-    cancelButtonText: "아니요",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire({
-        title: "받았습니다!",
-        text: "My쿠폰함에서 확인해주세요",
-        icon: "success",
-      });
-    }
-  });
-};
+  // 'changeMenu' 함수에 ID 값 전달 (값에서 '#'을 제외한)
+  changeMenu(selectedValue.replace("#", ""));
+}
 
+// 셀렉트 메뉴 활성화
+function updateselect(type) {
+  const menuSelect = document.getElementById("menuSelect");
+  menuSelect.value = `#${type}`;
+}
+// 셀렉트부분 끝
+
+// 데이터
 const rt_data = [
   {
     type: "1인분",
