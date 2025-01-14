@@ -102,13 +102,15 @@ const changeMenu = (type) => {
     const sectionHTML = `<section id="${selectedCategory.id}" class="common">
     <h3 class="card-list-title">${selectedCategory.type}</h3>
     <div class="card-box">`;
-    
+
     const restaurantHTML = selectedCategory.rt
       .map(
         (restaurant) => `
       <div class="card">
         <div class="logo-box">
-        <div class="cardindex">${restaurant.menutype?restaurant.menutype:''}</div>
+        <div class="cardindex">${
+          restaurant.menutype ? restaurant.menutype : ""
+        }</div>
           <div class="time">${restaurant.time}</div>
           <img src="${restaurant.logo}" class="logoImg" />
         </div>
@@ -145,24 +147,26 @@ const changeMenu = (type) => {
 };
 
 // 카드 선택하면 이미지, 이름, 보스, 리뷰 받아서 스토리지 저장받고 페이지 이동
-document.querySelector("#sectionBox").addEventListener("click", (cardSelect) =>{
-  const selectcard = cardSelect.target.closest(".card")
-  if(selectcard){
-    const cardname = selectcard.querySelector(".cardTitle").textContent
-    const cardimg = selectcard.querySelector(".logoImg").src
-    const cardBoss = selectcard.querySelector(".cardBoss").textContent
-    const cardReview = selectcard.querySelector(".cardReview").textContent
-    const cardindex = selectcard.querySelector(".cardindex").textContent
-    
-    window.localStorage.setItem("cardname",cardname)
-    window.localStorage.setItem("cardimg",cardimg)
-    window.localStorage.setItem("cardBoss",cardBoss)
-    window.localStorage.setItem("cardReview",cardReview)
-    window.localStorage.setItem("cardindex",cardindex)
-    
-    window.location.href = "./shoppingcartpage.html"
-  }
-})
+document
+  .querySelector("#sectionBox")
+  .addEventListener("click", (cardSelect) => {
+    const selectcard = cardSelect.target.closest(".card");
+    if (selectcard) {
+      const cardname = selectcard.querySelector(".cardTitle").textContent;
+      const cardimg = selectcard.querySelector(".logoImg").src;
+      const cardBoss = selectcard.querySelector(".cardBoss").textContent;
+      const cardReview = selectcard.querySelector(".cardReview").textContent;
+      const cardindex = selectcard.querySelector(".cardindex").textContent;
+
+      window.localStorage.setItem("cardname", cardname);
+      window.localStorage.setItem("cardimg", cardimg);
+      window.localStorage.setItem("cardBoss", cardBoss);
+      window.localStorage.setItem("cardReview", cardReview);
+      window.localStorage.setItem("cardindex", cardindex);
+
+      window.location.href = "./shoppingcartpage.html";
+    }
+  });
 
 // 메뉴 활성화 및 마커 이동
 function updateMenuAndMarker(type) {
@@ -228,13 +232,21 @@ const readyalert = (name) => {
 };
 const sAlert = (txt) => {
   Swal.fire({
-    title: "쿠폰을 다운받을까요?",
-    icon: "question",
-    iconHtml: "?",
-    confirmButtonText: "نعم",
-    cancelButtonText: "لا",
+    title: "쿠폰 ",
+    text: "You won't be able to revert this!",
+    icon: "warning",
     showCancelButton: true,
-    showCloseButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success",
+      });
+    }
   });
 };
 
