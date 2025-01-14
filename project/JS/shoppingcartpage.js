@@ -85,8 +85,8 @@ function detailsmenuclick(menu){
 }
 function Unimplemented(){
     Swal.fire({
-        icon: "error",
-        // title: "준비중인 기능입니다.",
+        icon: "success",
+        title: "잘 담겼습니다."
       });
 }
 
