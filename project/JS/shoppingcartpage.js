@@ -1,7 +1,17 @@
 window.onload = () => {
   searchedLocation();
-  //검색했던 위치 넣기(아직 테스트 안 해봄)
   getloaded();
+};
+const loginBtn = document.querySelector(".loginicon");
+loginBtn.addEventListener("click", function () {
+  readyalert();
+});
+// 준비중 함수
+const readyalert = () => {
+  Swal.fire({
+    icon: "info",
+    title: "로그인기능은 준비중입니다.",
+  });
 };
 
 const searchedLocation = () => {
@@ -14,17 +24,7 @@ const searchedLocation = () => {
     addAddress("주소를 입력해주세요");
   }
 };
-//주소텍스트변경
-// function changeInputtext() {
-//     new daum.Postcode({
-//       oncomplete: function (data) {
-//         var addr = data.address; // 최종 주소 변수
 
-//         // 주소 정보를 해당 필드에 넣는다.
-//         addAddress(addr);
-//       },
-//     }).open();
-//   }
 // 검색창에 검색한 주소 넣기
 const addAddress = (address) => {
   document.getElementById("adressbox").innerText = address;

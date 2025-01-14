@@ -268,12 +268,9 @@ li {
 }
 .locationIcon {
   width: 50px;
+  margin-left: 10px;
 }
-/* .locationIcon:hover {
-  background-color: #04a39d;
-  border-radius: 50%;
-  cursor: pointer;
-} */
+
 /* 주소쪽 전체 상자 */
 .controlBtn {
   position: relative;
@@ -286,12 +283,9 @@ li {
 #adressbox {
   color: white;
   font-size: 20px;
-  font-weight: bolder;
   margin: 0 0px 0 50px;
+  font-family: "Hanna";
 }
-/* #adressbox:hover {
-  cursor: pointer;
-} */
 
 /* 헤더 */
 /* 메뉴바 */
@@ -394,6 +388,7 @@ section.common {
 .cart-menuname {
   margin-right: 20%;
 }
+
 @media screen and (max-width: 768px) {
   /* 헤더 */
   .headname {
@@ -410,6 +405,15 @@ section.common {
   }
   .locationIcon {
     display: block;
+  }
+  #adressbox {
+    font-size: 15px;
+  }
+  .locationIcon {
+    width: 45px;
+  }
+  .loginicon {
+    width: 45px;
   }
   /* 헤더 */
   .banner {
@@ -498,6 +502,11 @@ section.common {
   }
   .banner-box-box {
     min-width: 140px;
+  }
+}
+@media screen and (max-width: 574px) {
+  #adressbox {
+    display: none;
   }
 }
 @media screen and (max-width: 450px) {
