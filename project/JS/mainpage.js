@@ -25,7 +25,7 @@ window.addEventListener(
     if (page < 0) {
       page = 0;
     } else if (page > lastPage) {
-      page = lastPage + 1; // 마지막 페이지보다 더 넘어가지지 않도록
+      page = lastPage; // 마지막 페이지보다 더 넘어가지지 않도록
     }
     scrollvh(); //스크롤을 했을 때 페이지 컨텐츠 추가 
     wrap.style.top = page * -100 + "vh";
