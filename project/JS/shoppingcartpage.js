@@ -84,7 +84,10 @@ function detailsmenuclick(menu){
         });
 }
 function Unimplemented(){
-    alert('미구현 기능입니다. ')
+    Swal.fire({
+        icon: "error",
+        // title: "준비중인 기능입니다.",
+      });
 }
 
 
@@ -110,7 +113,7 @@ function getloaded(){
     const cardimg = window.localStorage.getItem("cardimg")
     const cardBoss = window.localStorage.getItem("cardBoss")
     const cardReview = window.localStorage.getItem("cardReview")
-    const cardindex = window.localStorage.getItem("cardindex")
+    const cardindex = window.localStorage.getItem("cardindex") //이 값으로 어떤 가게인지 전달받음
     // 메뉴이름은 여기에
     const wrapwrap = document.querySelector(".wrapwrap")
     wrapwrap.innerHTML = ''
@@ -137,14 +140,14 @@ function getloaded(){
     if(cardindex === "Pizzahut"){
         createMenuButtons(storeMenus.PizzaHut)
     }
-    if(cardindex === "McDonalds"){
+    if(cardindex === "Mcdonalds"){
         createMenuButtons(storeMenus.McDonalds)
     }
     else if (cardindex == ''){
         createMenuButtons()
     }
 }
-let savedCategory;
+let savedCategory; //전역 변수로 클릭된 가게 카테고리명 저장
 let menuNames = []; //실험용
 
 //초기에 가게에 따른 메뉴 버튼 나오게

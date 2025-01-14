@@ -213,6 +213,9 @@ li{
   background-color: rgb(153, 231, 239);
   border-radius: 16px;
 }
+.Detailed-menu-cartbtn:hover{
+  cursor: pointer;
+}
 .Detailed-menu-box{
   margin-top: 30px;
   font-size: 10px;
