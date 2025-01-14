@@ -306,6 +306,9 @@ section.common {
 .banner {
   width: 500px;
 }
+.cardindex{
+  display: none;
+}
 
 @media screen and (max-width: 1119px) {
   .card-box {
