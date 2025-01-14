@@ -5,6 +5,17 @@
 h3 {
   font-family: "Hanna";
 }
+/* 셀렉트 */
+.menu-select {
+  opacity: 0;
+  pointer-events: none;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
 .cardindex {
   display: none;
 }
@@ -334,5 +345,19 @@ section.common {
   }
   .loginicon {
     width: 45px;
+  }
+
+  /* 셀렉트박스 */
+  .menu-select {
+    opacity: 1;
+    pointer-events: auto;
+    width: 100%; /* 셀렉트 박스가 전체 너비를 차지하도록 설정 */
+  }
+  .nav {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .card-list-title {
+    padding-top: 30px;
   }
 }

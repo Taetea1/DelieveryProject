@@ -1,6 +1,17 @@
 window.onload = () => {
   searchedLocation();
 };
+//작아졌을때 셀렉트
+function changeMenuFromSelect(selectElement) {
+  const selectedValue = selectElement.value; // 셀렉트 박스에서 선택된 값
+  changeMenu(selectedValue.replace("#", "")); // 'changeMenu' 함수에 ID 값 전달 (값에서 '#'을 제외한)
+}
+// 셀렉트 메뉴 활성화
+function updateselect(type) {
+  const menuSelect = document.getElementById("menuSelect");
+  menuSelect.value = `#${type}`;
+}
+
 //검색했던 위치 넣기
 const searchedLocation = () => {
   // 값 불러오기
@@ -144,6 +155,7 @@ const changeMenu = (type) => {
   }
   // 메뉴 활성화 및 마커 위치 변경
   updateMenuAndMarker(type);
+  updateselect(type);
 };
 
 // 카드 선택하면 이미지, 이름, 보스, 리뷰 받아서 스토리지 저장받고 페이지 이동
@@ -233,17 +245,18 @@ const readyalert = (name) => {
 const sAlert = (txt) => {
   Swal.fire({
     title: "쿠폰 ",
-    text: "You won't be able to revert this!",
-    icon: "warning",
+    text: "쿠폰을 다운받으시겠어요?",
+    icon: "question",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, delete it!",
+    confirmButtonText: "네",
+    cancelButtonText: "아니요",
   }).then((result) => {
     if (result.isConfirmed) {
       Swal.fire({
-        title: "Deleted!",
-        text: "Your file has been deleted.",
+        title: "받았습니다!",
+        text: "My쿠폰함에서 확인해주세요",
         icon: "success",
       });
     }
