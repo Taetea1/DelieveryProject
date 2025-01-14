@@ -2,88 +2,85 @@
 <html lang="en">
 
 <head>
-	<link rel="stylesheet" href="../CSS/locationPage.css" />
-	<link rel="stylesheet" href="../CSS/footer.css" />
-	<!-- 네이버 지도 API 로드 -->
-	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ne9zw04ntz"></script>
-	<script type="text/javascript"
-		src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ne9zw04ntz&submodules=geocoder"></script>
-	<!-- 다음 우편번호 서비스 API 로드 -->
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <link rel="stylesheet" href="../CSS/locationPage.css" />
+  <link rel="stylesheet" href="../CSS/footer.css" />
+  <!-- 네이버 지도 API 로드 -->
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ne9zw04ntz"></script>
+  <script type="text/javascript"
+    src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ne9zw04ntz&submodules=geocoder"></script>
+  <!-- 다음 우편번호 서비스 API 로드 -->
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-	<!-- alert창 CDN -->
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- alert창 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>배달의 민족</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배달의 민족</title>
 </head>
+<!-- loading 화면 HTML Start -->
+<div id="loadDiv">
+  <img src="../image/rider.png" alt="loading...">
+</div>
+<!-- loading 화면 HTML End -->
 
-<body>
-	<!-- loading 화면 HTML Start -->
-	<div id="loadDiv">
-		<img src="../image/rider.png" alt="loading...">
-	</div>
-	<!-- loading 화면 HTML End -->
+</div>
+<div class="boxWrap">
+  <!-- 헤더 -->
+  <div class="header">
+    <div class="nav">
+      <img src="../image/headname.png" alt="headname" class="headname"
+        onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
+      <div>
+        <img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" onclick="readyalert()" />
+      </div>
+      <div id="loginBtn">
+        <div class="login" onclick="readyalert()">로그인</div>
+      </div>
+    </div>
+  </div>
+  <div class="whereBox">
+    <!-- 버튼 -->
+    <div class="controlBtn">
+      <div id="showMap">
+        <img src="../image/currentlocation.png" alt="현재위치" class="cl" />
+      </div>
+      <div id="adressContaioner" onclick="changeInputText()">
+        <input id="address" readonly type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
+        <img id="submit" src="../image/search.png" alt="검색" />
+      </div>
+    </div>
+    <!-- 지도 영역 -->
+    <div class="mapwrap">
+      <div class="mapbox">
+        <div id="map"></div>
+        <div class="scrollbox">
+          <img class="scroll" src="../image/scroll.png" alt="scroll" />
+        </div>
+      </div>
+    </div>
+    <!-- 음식 종류들 -->
+    <div class="foodtype">
+      <div class="menu" id="foodtypeList">
+        <!-- JS로 요소 동적 추가 -->
+      </div>
+    </div>
 
-	</div>
-	<div class="boxWrap">
-		<!-- 헤더 -->
-		<div class="header">
-			<div class="nav">
-				<img src="../image/headname.png" alt="headname" class="headname"
-					onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
-				<div>
-					<img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" onclick="readyalert()" />
-				</div>
-				<div id="loginBtn">
-					<div class="login" onclick="readyalert()">로그인</div>
-				</div>
-			</div>
-		</div>
-		<div class="whereBox">
-			<!-- 버튼 -->
-			<div class="controlBtn">
-				<div id="showMap">
-					<img src="../image/currentlocation.png" alt="현재위치" class="cl" />
-				</div>
-				<div id="adressContaioner" onclick="changeInputText()">
-					<input id="address" readonly type="text" placeholder="건물명, 도로명, 지번으로 검색하세요." />
-					<img id="submit" src="../image/search.png" alt="검색" />
-				</div>
-			</div>
-			<!-- 지도 영역 -->
-			<div class="mapwrap">
-				<div class="mapbox">
-					<div id="map"></div>
-					<div class="scrollbox">
-						<img class="scroll" src="../image/scroll.png" alt="scroll" />
-					</div>
-				</div>
-			</div>
-			<!-- 음식 종류들 -->
-			<div class="foodtype">
-				<div class="menu" id="foodtypeList">
-					<!-- JS로 요소 동적 추가 -->
-				</div>
-			</div>
-
-		</div>
-		<div class="containerfooter">
-			<div class="footergap">
-				<span class="footerbold">(주)우아한청년들</span>
-				<a class="footerbold" href="">개인정보처리방침</a>
-				<a href="">공지사항</a>
-			</div>
-			<ul class="footerul">
-				<li>대표 : 김병우</li>
-				<li>사업자번호 : 417-87-00193</li>
-				<li>서울특별시 송파구 올림픽로35다길 32 9층</li>
-				<li>문의 : 카카오톡 채널(@배민커넥트)</li>
-			</ul>
-		</div>
-	</div>
+  </div>
+  <div class="containerfooter">
+    <div class="footergap">
+      <span class="footerbold">(주)우아한청년들</span>
+      <a class="footerbold" href="">개인정보처리방침</a>
+      <a href="">공지사항</a>
+    </div>
+    <ul class="footerul">
+      <li>대표 : 김병우</li>
+      <li>사업자번호 : 417-87-00193</li>
+      <li>서울특별시 송파구 올림픽로35다길 32 9층</li>
+      <li>문의 : 카카오톡 채널(@배민커넥트)</li>
+    </ul>
+  </div>
+</div>
 
 </body>
 

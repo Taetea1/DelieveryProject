@@ -1,184 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel = "stylesheet" href = "../CSS/connectpage.css"/>
-    <link rel = "stylesheet" href = "../CSS/footer.css"/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="../CSS/connectpage.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-    <button  class = "fixed-btn">앱 다운로드</button> <!-- fixed -->
-    <div class = "backdrop"><img class = "commonpopup" src = "../image/common__popup.png" alt = "popup" /></div> 
-    <!-- onclick = "appclick()" -->
-    <div class = "wrap">
-         
-        
-        <div class = "intro-box">
-            <h ><img class = "intro-img" src = "../image/logo__white.png" alt = "baminconnect"/></h>
-            <h3 class = "intro-headtext">원할 때, 원하는 만큼</h3>
-            <h3 class = "intro-headtext">일상에서 만드는 나만의 수입</h3>
-            <p class = "intro-text">대학생, 프리랜서, 직장인까지! 원할 때 자유롭게 배달해요</p>
-            <button class = "intro-btn">앱 다운로드</button>
-        </div>
-        <div class = "containerFirst"> <!-- 1페이지 -->
-            <h class = "fp-text">언제든 자유롭게</h>
-            <h class = "fp-text">원하는 만큼 일해요</h>
-            <ul class = "fp-ul">
-                <li class = "fp-li">
-                        <div><img class = "fp-imgicon" src = "../image/icon__num.png" alt = "icon"/><span class="fp-li-num">01</span></div>
-                        <p class = "fp-p">배달의 민족 주문을 <br>배달해요<br><span class="fp-p-text">(알뜰배달, 한집배달 등)</span></p>
-                </li>
-                <li class = "fp-li fp-margin">
-                    <div><img class = "fp-imgicon" src = "../image/icon__num.png" alt = "icon"/><span class="fp-li-num">02</span></div>
-                    <p class = "fp-p">매주 계좌로<br>정산 받아요</p>
-                </li>
-                <li class = "fp-li fp-margin">
-                    <div><img class = "fp-imgicon" src = "../image/icon__num.png" alt = "icon"/><span class="fp-li-num">03</span></div>
-                    <p class = "fp-p">프로모션으로<br>보너스까지!</p>
-                </li>
-            </ul>
-        </div>
-        <div class = "containerSecond"> <!-- 2페이지 -->
-            <h class = "sp-text">누구나 앱 하나로 수입을 만들어요</h>
-            <div class ="sp-box">
-                <div class="sp-box-box">
-                    <div class = "sp-box-inbox"><p class = "sp-p">앱 다운로드 수</p></div>
-                        <div class = "sp-spanbox">
-                            <span class = "sp-num"><span class = "sp-count">0</span></span>
-                            <span class = "sp-num"><span class = "sp-count1">0</span></span>
-                            <span class = "sp-num"><span class = "sp-count2">0</span></span>
-<!-- <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li> 숫자 애니메이션 넣다가 못 씀 -->
-                            <span class = "sp-text">만</span><span class = "sp-text1">건</span>
-                        </div>
-                        <div class = "sp-box-column">
-                            <div><img class = "sp-box-img" src = "../image/icon__num01.png" alt = icon /></div>
-                            <span class = "sp-box-text">*2024년 9월 누적 앱 설치 수 기준</span>
-                        </div>
-                </div>
-                <div class="sp-box-box1">
-                    <div class = "sp-centerline"></div>
-                    <div class = "sp-box-inbox"><p class = "sp-p">배민커넥트 배달 지역</p></div>
-                        <div class = "sp-spanbox">
-                            <span class = "sp-num"><span class = "sp-count3">0</span></span>
-                            <span class = "sp-num"><span class = "sp-count4">0</span></span>
-                            <span class = "sp-text">개</span><span class = "sp-text1">도시</span>
-                        </div>
-                        <div class = "sp-box-column">
-                            <div><img class = "sp-box-img" src = "../image/icon__num02.png" alt = icon /></div>
-                            <span class = "sp-box-text">*2024년 9월 기준</span>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div class = "containerThird"> <!-- 3페이지 -->
-            <div class = thp-inner>
-                <h class = "thp-text">초보자도 베테랑도</h>
-                <h class = "thp-text1">나에게 맞는 이동수단으론 부담 없이!</h>
-                <div class = thp-box>
-                    <div class = "thp-box-box">
-                        <div class = "thp-content-box">
-                            <img class = "thp-img" src = "../image/icon__trans01.png" alt = "icon"/>
-                            <div class = "thp-tag"><span>자동차</span></div>
-                        </div>
-                        <div class = "thp-content-box"><div class = "thp-line"></div>
-                            <img class = "thp-img" src = "../image/icon__trans02.png" alt = "icon"/>
-                            <div class = "thp-tag"><span>오토바이</span></div>
-                        </div>
-                        <div class = "thp-content-box"><div class = "thp-line"></div>
-                            <img class = "thp-img" src = "../image/icon__trans03.png" alt = "icon"/>
-                            <div class = "thp-tag"><span>자전거</span></div>
-                        </div>
-                        <div class = "thp-content-box"><div class = "thp-line"></div>
-                            <img class = "thp-img" src = "../image/icon__trans04.png" alt = "icon"/>
-                            <div class = "thp-tag"><span>킥보드</span></div>
-                        </div>
-                        <div class = "thp-content-box"><div class = "thp-line"></div>
-                            <img class = "thp-img" src = "../image/icon__trans05.png" alt = "icon"/>
-                            <div class = "thp-tag"><span>도보</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class = "containerFourth"> <!-- 4페이지 -->
-            <div class = "fop-flex">
-                <div class = four-inner>
-                    <h class = "fop-text">배달부터 생활까지!</h>
-                    <h class = "fop-text">제휴 혜택도 놓치지 마세요</h>
-                    <h class = "fop-text1">배민커넥트만의 배-네핏</h>
-                </div>
-                <div class = "fop-box">
-                    <div class = "fop-box-box"><img class = "fop-img" src = "../image/icon__benefit01.png" alt = "benefit"/><span class = "fop-box-text">배달물품<br>할인/특가</span></div>
-                    <div class = "fop-box-box"><img class = "fop-img" src = "../image/icon__benefit02.png" alt = "benefit"/><span class = "fop-box-text">금융 우대<br>혜택</span></div>
-                    <div class = "fop-box-box"><img class = "fop-img" src = "../image/icon__benefit03.png" alt = "benefit"/><span class = "fop-box-text">주유 할인</span></div>
-                </div>
-                <div class ="fop-btnbox"><button class = "fop-btn appdownload">배민커넥트 앱 다운로드</button></div>
-            </div>
-        </div>
-        <div class = "containerFifth"> <!-- 5페이지 -->
-            <h class = "ffp-text">가입도 쉽고 편안하게</h>
-            <h class = "ffp-text1">3가지 포인트만 기억해요!</h>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class = "slide-img" src = "../image/guide__screen01.png" alt = "guide"/></div>
-                    <p class = "swiper-text">1. 정산받을 계좌를입력해요</p>
-                </div>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class = "slide-img" src = "../image/guide__screen02.png" alt = "guide"/></div>
-                    <p class = "swiper-text">2. 지역과 배달수단을 고르고</p>
-                </div>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class = "slide-img" src = "../image/guide__screen03.png" alt = "guide"/></div>
-                    <p class = "swiper-text">3. 안전을 위해 교육을 꼭~들어요!</p>
-                </div>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class = "slide-img" src = "../image/guide__screen04.png" alt = "guide"/></div>
-                    <p class = "swiper-text">이제 배달 준비 끝!</p>
-                </div>
-            </div>
-            <div class = "swiper-btnbox">
-                <span class = "swiper-btn"></span><span class = "swiper-btn"></span><span class = "swiper-btn"></span><span class = "swiper-btn"></span>
-            </div>
-            <div class ="ffp-btnbox"><button class = "ffp-btn">배민커넥트 앱 다운로드</button></div>
-        </div>
-        <div class = "containerSixth"> <!-- 6페이지 -->
-                <h class = "thp-text">원하는 곳 어디든</h>
-                <h class = "thp-text1">집 앞에서도 퇴근길에도, 앱을 켜면 시작!</h>
-                <div class = "sip-searchbox">
-                    <div class = "sip-iconb">
-                        <div class = "sip-boxtext"><span class = "sip-text">내가 원하는 곳에서<br>부담 없이 시작해보세요</span></div>
-                        <input class = "sip-input" placeholder = "활동 가능 지역을 찾아보세요! (예: 신천동)" type = "text" list = "search" />
-                        <div class = "sip-input-list" id = "sip-input-list"></div>
-                        <div onclick = "enterkey()" class = "sip-searchicon"></div><br>
-                        <span class = "sip-text1">일부 법정동은 배달권역에서 추가/제외될 수 있으며, 기상 및 도로 사정에 따라 변경될 수 있습니다.</span>
-                    </div>
-                    <div class = "sip-searchinbox">
-                        <div class = "sip-absolute"><p class = "sip-search-box-text2">이 지역에서는 아직 활동이 어려워요.<br>
-                            <span class = "sip-search-box-text3">주변 지역으로 다시 검색해 보세요!</span></p></div>
-                        <div class = "sip-searchin-text"></div>
-                        <div class = "sip-searchinbox-text">
-                            <p class = "sip-search-box-text">이 지역은 배달이 가능해요<br><span class = "sip-search-box-text1">앱을 다운로드 하고 배달을 시작해보세요!</span></p>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <div class = "outro"></div>
-        <div class = "containerfooter">
-            <div class = "footergap">
-                <span class = "footerbold">(주)우아한청년들</span>
-                <a class = "footerbold" href = "">개인정보처리방침</a>
-                <a href = "">공지사항</a>
-            </div>
-                <ul class = "footerul">
-                    <li>대표 : 김병우</li>
-                    <li>사업자번호 : 417-87-00193</li>
-                    <li>서울특별시 송파구 올림픽로35다길 32 9층</li>
-                    <li>문의 : 카카오톡 채널(@배민커넥트)</li>
-                </ul>
-        </div>
+  </head>
+  <body>
+    <button class="fixed-btn">앱 다운로드</button>
+    <!-- fixed -->
+    <div class="backdrop">
+      <img class="commonpopup" src="../image/common__popup.png" alt="popup" />
     </div>
-    <script src = "../JS/connectpage.js"></script>
-</body>
+    <!-- onclick = "appclick()" -->
+    <div class="wrap">
+      <div class="intro-box">
+        <h
+          ><img
+            class="intro-img"
+            src="../image/logo__white.png"
+            alt="baminconnect"
+        /></h>
+        <h3 class="intro-headtext">원할 때, 원하는 만큼</h3>
+        <h3 class="intro-headtext">일상에서 만드는 나만의 수입</h3>
+        <p class="intro-text">
+          대학생, 프리랜서, 직장인까지! 원할 때 자유롭게 배달해요
+        </p>
+        <button class="intro-btn">앱 다운로드</button>
+      </div>
+      <div class="containerFirst">
+        <!-- 1페이지 -->
+        <h class="fp-text">언제든 자유롭게</h>
+        <h class="fp-text">원하는 만큼 일해요</h>
+        <ul class="fp-ul">
+          <li class="fp-li">
+            <div>
+              <img
+                class="fp-imgicon"
+                src="../image/icon__num.png"
+                alt="icon"
+              /><span class="fp-li-num">01</span>
+            </div>
+            <p class="fp-p">
+              배달의 민족 주문을 <br />배달해요<br /><span class="fp-p-text"
+                >(알뜰배달, 한집배달 등)</span
+              >
+            </p>
+          </li>
+          <li class="fp-li fp-margin">
+            <div>
+              <img
+                class="fp-imgicon"
+                src="../image/icon__num.png"
+                alt="icon"
+              /><span class="fp-li-num">02</span>
+            </div>
+            <p class="fp-p">매주 계좌로<br />정산 받아요</p>
+          </li>
+          <li class="fp-li fp-margin">
+            <div>
+              <img
+                class="fp-imgicon"
+                src="../image/icon__num.png"
+                alt="icon"
+              /><span class="fp-li-num">03</span>
+            </div>
+            <p class="fp-p">프로모션으로<br />보너스까지!</p>
+          </li>
+        </ul>
+      </div>
+      <div class="containerSecond">
+        <!-- 2페이지 -->
+        <h class="sp-text">누구나 앱 하나로 수입을 만들어요</h>
+        <div class="sp-box">
+          <div class="sp-box-box">
+            <div class="sp-box-inbox"><p class="sp-p">앱 다운로드 수</p></div>
+            <div class="sp-spanbox">
+              <span class="sp-num"><span class="sp-count">0</span></span>
+              <span class="sp-num"><span class="sp-count1">0</span></span>
+              <span class="sp-num"><span class="sp-count2">0</span></span>
+              <!-- <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li> 숫자 애니메이션 넣다가 못 씀 -->
+              <span class="sp-text">만</span><span class="sp-text1">건</span>
+            </div>
+            <div class="sp-box-column">
+              <div>
+                <img
+                  class="sp-box-img"
+                  src="../image/icon__num01.png"
+                  alt="icon"
+                />
+              </div>
+              <span class="sp-box-text">*2024년 9월 누적 앱 설치 수 기준</span>
+            </div>
+          </div>
+          <div class="sp-box-box1">
+            <div class="sp-centerline"></div>
+            <div class="sp-box-inbox">
+              <p class="sp-p">배민커넥트 배달 지역</p>
+            </div>
+            <div class="sp-spanbox">
+              <span class="sp-num"><span class="sp-count3">0</span></span>
+              <span class="sp-num"><span class="sp-count4">0</span></span>
+              <span class="sp-text">개</span><span class="sp-text1">도시</span>
+            </div>
+            <div class="sp-box-column">
+              <div>
+                <img
+                  class="sp-box-img"
+                  src="../image/icon__num02.png"
+                  alt="icon"
+                />
+              </div>
+              <span class="sp-box-text">*2024년 9월 기준</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="containerThird">
+        <!-- 3페이지 -->
+        <div class="thp-inner">
+          <h class="thp-text">초보자도 베테랑도</h>
+          <h class="thp-text1">나에게 맞는 이동수단으론 부담 없이!</h>
+          <div class="thp-box">
+            <div class="thp-box-box">
+              <div class="thp-content-box">
+                <img
+                  class="thp-img"
+                  src="../image/icon__trans01.png"
+                  alt="icon"
+                />
+                <div class="thp-tag"><span>자동차</span></div>
+              </div>
+              <div class="thp-content-box">
+                <div class="thp-line"></div>
+                <img
+                  class="thp-img"
+                  src="../image/icon__trans02.png"
+                  alt="icon"
+                />
+                <div class="thp-tag"><span>오토바이</span></div>
+              </div>
+              <div class="thp-content-box">
+                <div class="thp-line"></div>
+                <img
+                  class="thp-img"
+                  src="../image/icon__trans03.png"
+                  alt="icon"
+                />
+                <div class="thp-tag"><span>자전거</span></div>
+              </div>
+              <div class="thp-content-box">
+                <div class="thp-line"></div>
+                <img
+                  class="thp-img"
+                  src="../image/icon__trans04.png"
+                  alt="icon"
+                />
+                <div class="thp-tag"><span>킥보드</span></div>
+              </div>
+              <div class="thp-content-box">
+                <div class="thp-line"></div>
+                <img
+                  class="thp-img"
+                  src="../image/icon__trans05.png"
+                  alt="icon"
+                />
+                <div class="thp-tag"><span>도보</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="containerFourth">
+        <!-- 4페이지 -->
+        <div class="fop-flex">
+          <div class="four-inner">
+            <h class="fop-text">배달부터 생활까지!</h>
+            <h class="fop-text">제휴 혜택도 놓치지 마세요</h>
+            <h class="fop-text1">배민커넥트만의 배-네핏</h>
+          </div>
+          <div class="fop-box">
+            <div class="fop-box-box">
+              <img
+                class="fop-img"
+                src="../image/icon__benefit01.png"
+                alt="benefit"
+              /><span class="fop-box-text">배달물품<br />할인/특가</span>
+            </div>
+            <div class="fop-box-box">
+              <img
+                class="fop-img"
+                src="../image/icon__benefit02.png"
+                alt="benefit"
+              /><span class="fop-box-text">금융 우대<br />혜택</span>
+            </div>
+            <div class="fop-box-box">
+              <img
+                class="fop-img"
+                src="../image/icon__benefit03.png"
+                alt="benefit"
+              /><span class="fop-box-text">주유 할인</span>
+            </div>
+          </div>
+          <div class="fop-btnbox">
+            <button class="fop-btn appdownload">배민커넥트 앱 다운로드</button>
+          </div>
+        </div>
+      </div>
+      <div class="containerFifth">
+        <!-- 5페이지 -->
+        <h class="ffp-text">가입도 쉽고 편안하게</h>
+        <h class="ffp-text1">3가지 포인트만 기억해요!</h>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                class="slide-img"
+                src="../image/guide__screen01.png"
+                alt="guide"
+              />
+            </div>
+            <p class="swiper-text">1. 정산받을 계좌를입력해요</p>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                class="slide-img"
+                src="../image/guide__screen02.png"
+                alt="guide"
+              />
+            </div>
+            <p class="swiper-text">2. 지역과 배달수단을 고르고</p>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                class="slide-img"
+                src="../image/guide__screen03.png"
+                alt="guide"
+              />
+            </div>
+            <p class="swiper-text">3. 안전을 위해 교육을 꼭~들어요!</p>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                class="slide-img"
+                src="../image/guide__screen04.png"
+                alt="guide"
+              />
+            </div>
+            <p class="swiper-text">이제 배달 준비 끝!</p>
+          </div>
+        </div>
+        <div class="swiper-btnbox">
+          <span class="swiper-btn"></span><span class="swiper-btn"></span
+          ><span class="swiper-btn"></span><span class="swiper-btn"></span>
+        </div>
+        <div class="ffp-btnbox">
+          <button class="ffp-btn" onclick="onclickapp()">
+            배민커넥트 앱 다운로드
+          </button>
+        </div>
+      </div>
+      <div class="containerSixth">
+        <!-- 6페이지 -->
+        <h class="thp-text">원하는 곳 어디든</h>
+        <h class="thp-text1">집 앞에서도 퇴근길에도, 앱을 켜면 시작!</h>
+        <div class="sip-searchbox">
+          <div class="sip-iconb">
+            <div class="sip-boxtext">
+              <span class="sip-text"
+                >내가 원하는 곳에서<br />부담 없이 시작해보세요</span
+              >
+            </div>
+            <div class="sip-inputbox">
+              <input
+                class="sip-input"
+                placeholder="활동 가능 지역을 찾아보세요! (예: 신천동)"
+                type="text"
+                list="search"
+              />
+              <div onclick="enterkey()" class="sip-searchicon"></div>
+            </div>
+            <div class="sip-input-list" id="sip-input-list"></div>
+            <br />
+            <span class="sip-text1"
+              >일부 법정동은 배달권역에서 추가/제외될 수 있으며, 기상 및 도로
+              사정에 따라 변경될 수 있습니다.</span
+            >
+          </div>
+          <div class="sip-searchinbox">
+            <div class="sip-absolute">
+              <p class="sip-search-box-text2">
+                이 지역에서는 아직 활동이 어려워요.<br />
+                <span class="sip-search-box-text3"
+                  >주변 지역으로 다시 검색해 보세요!</span
+                >
+              </p>
+            </div>
+            <div class="sip-searchin-text"></div>
+            <div class="sip-searchinbox-text">
+              <p class="sip-search-box-text">
+                이 지역은 배달이 가능해요<br /><span
+                  class="sip-search-box-text1 appdownload"
+                  >앱을 다운로드 하고 배달을 시작해보세요!</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="outro"></div>
+      <div class="containerfooter">
+        <div class="footergap">
+          <span class="footerbold">(주)우아한청년들</span>
+          <a class="footerbold" href="">개인정보처리방침</a>
+          <a href="">공지사항</a>
+        </div>
+        <ul class="footerul">
+          <li>대표 : 김병우</li>
+          <li>사업자번호 : 417-87-00193</li>
+          <li>서울특별시 송파구 올림픽로35다길 32 9층</li>
+          <li>문의 : 카카오톡 채널(@배민커넥트)</li>
+        </ul>
+      </div>
+    </div>
+    <script src="../JS/connectpage.js"></script>
+  </body>
 </html>
