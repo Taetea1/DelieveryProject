@@ -1,114 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- 스와이퍼 라이브러리 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<head>
-  <!-- 스와이퍼 라이브러리 CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- alert창 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../CSS/orderPage.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배달의 민족</title>
+  </head>
 
-  <!-- alert창 CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="../CSS/orderPage.css" />
-  <link rel="stylesheet" href="../CSS/footer.css" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>배달의 민족</title>
-</head>
+  <body>
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="header-box">
+        <img
+          src="../image/headname.png"
+          alt="headname"
+          class="headname"
+          onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'"
+        />
 
-<body>
-
-  <!-- 헤더 -->
-  <header class="header">
-    <div class="header-box">
-      <img src="../image/headname.png" alt="headname" class="headname"
-        onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
-
-      <div class="controlBtn">
-        <div id="adressbox" onclick="changeInputtext()"></div>
-        <img src="../image/locationIcon.png" alt="locationIcon" title="주소입력" class="locationIcon"
-          onclick="changeInputtext()" />
-        <img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" onclick="readyalert('로그인')" />
-      </div>
-    </div>
-  </header>
-
-
-  <div class="cupon">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="../image/banner1.png" alt="banner" class="banner" onclick="sAlert()" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../image/banner2.png" alt="banner" class="banner" onclick="sAlert()" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../image/banner3.png" alt="banner" class="banner" onclick="sAlert()" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../image/banner4.png" alt="banner" class="banner" onclick="sAlert()" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../image/banner5.png" alt="banner" class="banner" onclick="sAlert()" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../image/banner6.png" alt="banner" class="banner" onclick="sAlert()" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../image/banner7.png" alt="banner" class="banner" onclick="sAlert()" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../image/banner8.png" alt="banner" class="banner" onclick="sAlert()" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../image/banner9.png" alt="banner" class="banner" onclick="sAlert()" />
+        <div class="controlBtn">
+          <div id="adressbox" onclick="changeInputtext()"></div>
+          <img
+            src="../image/locationIcon.png"
+            alt="locationIcon"
+            title="주소입력"
+            class="locationIcon"
+            onclick="changeInputtext()"
+          />
+          <img
+            src="../image/personicon.png"
+            alt="login"
+            title="로그인"
+            class="loginicon"
+            onclick="readyalert('로그인')"
+          />
         </div>
       </div>
-      <!-- 내비게이션 화살표 -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+    </header>
+
+    <div class="cupon">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="../image/banner1.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../image/banner2.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../image/banner3.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../image/banner4.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../image/banner5.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../image/banner6.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../image/banner7.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../image/banner8.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../image/banner9.png"
+              alt="banner"
+              class="banner"
+              onclick="sAlert()"
+            />
+          </div>
+        </div>
+        <!-- 내비게이션 화살표 -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
     </div>
-  </div>
-  <!-- 메뉴 -->
-  <nav id="nav" class="nav">
-    <div class="nav-box">
-      <ul class="nav_menu">
-        <li><a href="#two" class="nav_menu-foused" onclick="changeMenu('two')"><img src="../image/solo.png"
-              alt="1인분" /></a></li>
-        <li><a href="#three" onclick="changeMenu('three')"><img src="../image/fran.png" alt="1인분" /></a></li>
-        <li><a href="#four" onclick="changeMenu('four')"><img src="../image/chicken.png" alt="1인분" /></a></li>
-        <li><a href="#five" onclick="changeMenu('five')"><img src="../image/pizzaicon.png" alt="1인분" /></a></li>
-        <li><a href="#six" onclick="changeMenu('six')"><img src="../image/chiicon.png" alt="1인분" /></a></li>
-        <li><a href="#seven" onclick="changeMenu('seven')"><img src="../image/hanicon.png" alt="1인분" /></a></li>
-        <li><a href="#eight" onclick="changeMenu('eight')"><img src="../image/japicon.png" alt="1인분" /></a></li>
-        <li><a href="#nine" onclick="changeMenu('nine')"><img src="../image/pigicon.png" alt="1인분" /></a></li>
-        <li><a href="#ten" onclick="changeMenu('ten')"><img src="../image/nighticon.png" alt="1인분" /></a></li>
-        <li><a href="#eleven" onclick="changeMenu('eleven')"><img src="../image/gimbobicon.png" alt="1인분" /></a></li>
-        <li><a href="#twelve" onclick="changeMenu('twelve')"><img src="../image/cafeicon.png" alt="1인분" /></a></li>
-        <div class="marker"></div>
-      </ul>
-    </div>
-  </nav>
+    <!-- 메뉴 -->
+    <nav id="nav" class="nav">
+      <div class="nav-box">
+        <ul class="nav_menu">
+          <li>
+            <a href="#two" class="nav_menu-foused" onclick="changeMenu('two')"
+              ><img src="../image/solo.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#three" onclick="changeMenu('three')"
+              ><img src="../image/fran.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#four" onclick="changeMenu('four')"
+              ><img src="../image/chicken.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#five" onclick="changeMenu('five')"
+              ><img src="../image/pizzaicon.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#six" onclick="changeMenu('six')"
+              ><img src="../image/chiicon.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#seven" onclick="changeMenu('seven')"
+              ><img src="../image/hanicon.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#eight" onclick="changeMenu('eight')"
+              ><img src="../image/japicon.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#nine" onclick="changeMenu('nine')"
+              ><img src="../image/pigicon.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#ten" onclick="changeMenu('ten')"
+              ><img src="../image/nighticon.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#eleven" onclick="changeMenu('eleven')"
+              ><img src="../image/gimbobicon.png" alt="1인분"
+            /></a>
+          </li>
+          <li>
+            <a href="#twelve" onclick="changeMenu('twelve')"
+              ><img src="../image/cafeicon.png" alt="1인분"
+            /></a>
+          </li>
+          <div class="marker"></div>
+        </ul>
+      </div>
+    </nav>
 
-  <!-- 메뉴 셀렉트 박스 -->
-  <select id="menuSelect" class="menu-select" onchange="changeMenuFromSelect(this)">
-    <option value="#two">1인분</option>
-    <option value="#three">패스트푸드</option>
-    <option value="#four">치킨</option>
-    <option value="#five">피자</option>
-    <option value="#six">중식</option>
-    <option value="#seven">찜 탕 찌개</option>
-    <option value="#eight">돈까스 회 일식</option>
-    <option value="#nine">족발 보쌈</option>
-    <option value="#ten">야식</option>
-    <option value="#eleven">분식</option>
-    <option value="#twelve">카페 디저트</option>
-  </select>
+    <!-- 메뉴 셀렉트 박스 -->
+    <select
+      id="menuSelect"
+      class="menu-select"
+      onchange="changeMenuFromSelect(this)"
+    >
+      <option value="#two">1인분</option>
+      <option value="#three">패스트푸드</option>
+      <option value="#four">치킨</option>
+      <option value="#five">피자</option>
+      <option value="#six">중식</option>
+      <option value="#seven">찜 탕 찌개</option>
+      <option value="#eight">돈까스 회 일식</option>
+      <option value="#nine">족발 보쌈</option>
+      <option value="#ten">야식</option>
+      <option value="#eleven">분식</option>
+      <option value="#twelve">카페 디저트</option>
+    </select>
 
-
-  <!-- <nav id="nav" class="nav">
+    <!-- <nav id="nav" class="nav">
     <div class="nav-box">
       <ul class="nav_menu">
         <li><a href="#two" class="nav_menu-foused" onclick="changeMenu('two')">1인분</a></li>
@@ -127,25 +233,22 @@
     </div>
   </nav> -->
 
-
-  <div id="sectionBox">
-    <!-- js로 요소 추가 -->
-  </div>
-  <div class="containerfooter">
-    <div class="footergap">
-      <span class="footerbold">(주)우아한청년들</span>
-      <a class="footerbold" href="">개인정보처리방침</a>
-      <a href="">공지사항</a>
+    <div id="sectionBox">
+      <!-- js로 요소 추가 -->
     </div>
-    <ul class="footerul">
-      <li>대표 : 김병우</li>
-      <li>사업자번호 : 417-87-00193</li>
-      <li>서울특별시 송파구 올림픽로35다길 32 9층</li>
-      <li>문의 : 카카오톡 채널(@배민커넥트)</li>
-    </ul>
-  </div>
-
-</body>
-<script src="../JS/orderPage.js"></script>
-
+    <div class="containerfooter">
+      <div class="footergap">
+        <span class="footerbold">(주)우아한청년들</span>
+        <a class="footerbold" href="">개인정보처리방침</a>
+        <a href="">공지사항</a>
+      </div>
+      <ul class="footerul">
+        <li>대표 : 김병우</li>
+        <li>사업자번호 : 417-87-00193</li>
+        <li>서울특별시 송파구 올림픽로35다길 32 9층</li>
+        <li>문의 : 카카오톡 채널(@배민커넥트)</li>
+      </ul>
+    </div>
+  </body>
+  <script src="../JS/orderPage.js"></script>
 </html>

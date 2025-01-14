@@ -100,6 +100,7 @@ input::placeholder {
 
 .intro-box{
     width: 100%;
+    aspect-ratio: 1/1;
     height: 800px;
     padding-left : 5%;
     background-image: url("../image/batang.jpg");
@@ -675,6 +676,11 @@ input::placeholder {
     background-color: #fff;
     outline: none;
 }
+.sip-inputbox{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
 .sip-input:focus{
     border: 2px solid #00C4BD;
 }
@@ -812,6 +818,9 @@ input::placeholder {
     .wrap{
         padding: 0, 20% ;
     }
+    .intro-box{
+        height: 400px;
+    }
     .intro-headtext{
         font-size: 30px;
         margin-top : 10px;
@@ -889,6 +898,11 @@ input::placeholder {
     .sip-input{
         width: 80%;
     }
+    .sip-inputbox{
+        width: 400px;
+        margin-left:40px;
+    }
+    
     .sip-boxtext{
         right: -40px;
         bottom: 100px;

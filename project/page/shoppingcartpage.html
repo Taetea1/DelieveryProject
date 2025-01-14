@@ -1,102 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="../CSS/shoppingcartpage.css"/>
-    <link rel = "stylesheet" href ="../CSS/footer.css" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/shoppingcartpage.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-  <header class="header">
-    <div class="header-box">
-      <img src="../image/headname.png" alt="headname" class="headname"
-        onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-box">
+        <img
+          src="../image/headname.png"
+          alt="headname"
+          class="headname"
+          onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'"
+        />
 
-      <div class="controlBtn">
-        <div id="adressbox" onclick="changeInputtext()">하이</div>
-        <img src="../image/locationIcon.png" alt="locationIcon" title="주소입력" class="locationIcon"
-          onclick="changeInputtext()" />
-        <img src="../image/personicon.png" alt="login" title="로그인" class="loginicon" onclick="readyalert('로그인')" />
+        <div class="controlBtn">
+          <div id="adressbox" onclick="changeInputtext()">하이</div>
+          <img
+            src="../image/locationIcon.png"
+            alt="locationIcon"
+            title="주소입력"
+            class="locationIcon"
+            onclick="changeInputtext()"
+          />
+          <img
+            src="../image/personicon.png"
+            alt="login"
+            title="로그인"
+            class="loginicon"
+            onclick="readyalert('로그인')"
+          />
+        </div>
       </div>
-    </div>
-  </header>
-      
-      <div class = "Detailed-menu">
-        <!-- <div class = "Detailed-menu-title">메뉴상세</div>
+    </header>
+
+    <div class="Detailed-menu">
+      <!-- <div class = "Detailed-menu-title">메뉴상세</div>
         <div><img class = "Detailed-menu-img"src = "../image/menu/추천메뉴/두툼버거.png"/></div>
         <div class = "Detailed-menu-name">두툼버거</div>
         <div class = "Detailed-menu-middle">불맛 더블 치즈 버거를 작은 사이즈로 즐길 수 있는 주니어 버전, 매운맛과 풍성한 치즈의 만남</div>
         <div class = "Detailed-menu-price"><span class = "Detailed-menu-text">가격</span><span class = "Detailed-menu-text">10000원</span></div>
         <div class = "Detailed-menu-box">추가메뉴 기능 텍스트 여기부터</div>
         <div class = "Detailed-menu-cart"><div class = "Detailed-menu-cartbtn">담기</div></div> -->
-      </div>
-      <div class = "wrap">
-        <div class = "wrapwrap">
-            <div class = "banner-box">
-                <!-- <div class = "banner-box-box">
+    </div>
+    <div class="wrap">
+      <div class="wrapwrap">
+        <div class="banner-box">
+          <!-- <div class = "banner-box-box">
                     <div class = "banner-img-box"><img class = "banner-img" src = "../image/orderlogo/프랜차이즈/버거킹.jpg" alt = "tag"/></div>
                     <div class = "banner-text">버거킹 신촌1점</div>
                     <div class = "banner-small-text"><span>리뷰 3,467</span> | 사장님 댓글 84</div>
                     <div class = "banner-small-text1">배달의 민족에서 빠르고 편리하게 주문하세요</div>
                 </div> -->
-            </div>
-            <div class = "menu-container">
-                <div class = "menu-box-btn">
-                    <!-- <div class = "menu-btn menu-btn-toggle" >추천메뉴</div><div class = "menu-btn">오리지널스&맥시멈</div><div class = "menu-btn">프리미엄</div><div class = "menu-btn">와퍼&주니어</div>
+        </div>
+        <div class="menu-container">
+          <div class="menu-box-btn">
+            <!-- <div class = "menu-btn menu-btn-toggle" >추천메뉴</div><div class = "menu-btn">오리지널스&맥시멈</div><div class = "menu-btn">프리미엄</div><div class = "menu-btn">와퍼&주니어</div>
                     <div class = "menu-btn">치킨&슈림프버거</div><div class = "menu-btn">올데이킹&킹모닝 사이드</div> -->
-                </div>
-                <ul class = "menu-box">
-                    <!-- <li class = "menu-box-box">
+          </div>
+          <div class="menu-box">
+            <!-- <li class = "menu-box-box">
                             <img class = "menu-img" src = "../image/menu/추천메뉴/풀드비프 와퍼.png" alt = "menuimg"/>
                             <div class = "menu-text menu-name">풀드비프 와퍼</div><div class = "menu-text menu-price">10000원</div>
                             <div class = "menu-middle">12345</div>
                     </li> -->
-                </ul>
-            </div>
-        </div>
-
-
-      </div>
-      <div class="swiper1 mySwiper">
-        <div class="swiper-wrapper mySwiper-wrapper">
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/1인분/노브랜드버거.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/분식/동대문엽기.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/1인분/맥도날드.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/1인분/와이스타브.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/치킨/bhc.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/치킨/그램치킨.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/피자/피자&양식/도미노.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/피자/피자&양식/피자보이시나.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/카페/디저트/guscato.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/카페/디저트/뚜레주르.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/치킨/바른.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/치킨/후참.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/카페/디저트/설빙.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/카페/디저트/백억커피.jpg" alt ="pizza"/></div>
-          <div class="swiper-slide slide"><img class = "swiper-img" src="../image/orderlogo/분식/Yellowcan.jpg" alt ="pizza"/></div>
+          </div>
         </div>
       </div>
-      <!-- 여기부터 -->
-    <div class = "containerfooter">
-            <div class = "footergap">
-                <span class = "footerbold">(주)우아한청년들</span>
-                <a class = "footerbold" href = "">개인정보처리방침</a>
-                <a href = "">공지사항</a>
-            </div>
-            <ul class = "footerul">
-                <li>대표 : 김병우</li>
-                <li>사업자번호 : 417-87-00193</li>
-                <li>서울특별시 송파구 올림픽로35다길 32 9층</li>
-                <li>문의 : 카카오톡 채널(@배민커넥트)</li>
-            </ul>
     </div>
-      <!-- 여기까지 -->
-        <script src = "../JS/global.js"></script>
-        <script type = "module" src = "../JS/shoppingcartpage.js"></script>         
-  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-</body>
+    <div class="swiper1 mySwiper">
+      <div class="swiper-wrapper mySwiper-wrapper">
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/1인분/노브랜드버거.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/분식/동대문엽기.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/1인분/맥도날드.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/1인분/와이스타브.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/치킨/bhc.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/치킨/그램치킨.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/피자/피자&양식/도미노.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/피자/피자&양식/피자보이시나.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/카페/디저트/guscato.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/카페/디저트/뚜레주르.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/치킨/바른.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/치킨/후참.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/카페/디저트/설빙.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/카페/디저트/백억커피.jpg"
+            alt="pizza"
+          />
+        </div>
+        <div class="swiper-slide slide">
+          <img
+            class="swiper-img"
+            src="../image/orderlogo/분식/Yellowcan.jpg"
+            alt="pizza"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- 여기부터 -->
+    <div class="containerfooter">
+      <div class="footergap">
+        <span class="footerbold">(주)우아한청년들</span>
+        <a class="footerbold" href="">개인정보처리방침</a>
+        <a href="">공지사항</a>
+      </div>
+      <ul class="footerul">
+        <li>대표 : 김병우</li>
+        <li>사업자번호 : 417-87-00193</li>
+        <li>서울특별시 송파구 올림픽로35다길 32 9층</li>
+        <li>문의 : 카카오톡 채널(@배민커넥트)</li>
+      </ul>
+    </div>
+    <!-- 여기까지 -->
+    <script src="../JS/global.js"></script>
+    <script type="module" src="../JS/shoppingcartpage.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  </body>
 </html>
