@@ -143,51 +143,6 @@ const getAddressFromLatLng = (latlng, callback) => {
   );
 };
 
-// 네이버 지도에서 주소로 좌표 검색 후 마커 찍기
-const searchAddress = () => {
-  const address = document.getElementById("address").value;
-
-  // 네이버 지도에서 주소로 좌표 검색 (geocode 사용)
-  naver.maps.Service.geocode(
-    {
-      query: address, // 검색할 주소
-    },
-    function (status, response) {
-      if (status === naver.maps.Service.Status.OK) {
-        const result = response.result.items[0];
-        const latlng = new naver.maps.LatLng(result.y, result.x); // 위도와 경도
-
-        // 기존 지도에서 중심을 검색된 위치로 변경
-        if (map) {
-          map.setCenter(latlng); // 기존 지도에서 중심만 변경
-        } else {
-          // 지도 객체가 없다면 새로 생성
-          map = new naver.maps.Map("map", {
-            center: latlng, // 검색한 주소의 위치로 지도 중심 이동
-            zoom: 17, // 줌 레벨
-          });
-        }
-
-        // 기존 마커가 있으면 삭제
-        if (currentMarker) {
-          currentMarker.setMap(null);
-        }
-
-        // 새 마커 생성
-        currentMarker = new naver.maps.Marker({
-          position: latlng, // 검색한 위치
-          map: map, // 마커를 표시할 지도
-        });
-
-        // 주소를 화면에 표시
-        addAddress(address);
-      } else {
-        alert("주소 검색에 실패했습니다.");
-      }
-    }
-  );
-};
-
 // 주소 검색 창에서 주소 선택 시
 function changeInputText() {
   new daum.Postcode({
