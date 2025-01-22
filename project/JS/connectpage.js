@@ -3,6 +3,16 @@ let lastpage = false;
 let countnum = false;
 let popupBtn = false;
 
+// 예제
+const sigungoodata = async () => {
+  const res = await fetch(
+    "https://sgisapi.kostat.go.kr/OpenAPI3/addr/stage.json"
+  );
+  const data = await res.json();
+  console.log(data);
+};
+sigungoodata();
+console.log(sigungoodata);
 window.scrollY;
 window.addEventListener("scroll", () => {
   const windowy = window.pageYOffset; //스크롤s- 위치
