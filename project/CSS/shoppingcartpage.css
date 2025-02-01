@@ -256,6 +256,15 @@ li {
   cursor: pointer;
 }
 
+.carticon {
+  width: 50px;
+  margin: 10px;
+}
+.carticon:hover {
+  background-color: #04a39d;
+  border-radius: 50%;
+  cursor: pointer;
+}
 /* 로그인버튼 */
 .loginicon {
   width: 50px;
@@ -287,6 +296,25 @@ li {
   font-family: "Hanna";
 }
 
+.numbox {
+  position: relative;
+}
+.circlenum {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #027d79;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 12px;
+  right: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 /* 헤더 */
 /* 메뉴바 */
 html {

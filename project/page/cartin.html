@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" href="../CSS/cartin.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>배달의 민족</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-box">
+        <img
+          src="../image/headname.png"
+          alt="headname"
+          class="headname"
+          onclick="location.href='http://127.0.0.1:5500/project/page/mainpage.html'"
+        />
+
+        <div class="controlBtn">
+          <div id="adressbox"></div>
+          <img
+            src="../image/locationIcon.png"
+            alt="locationIcon"
+            class="locationIcon"
+          />
+          <img
+            src="../image/personicon.png"
+            alt="login"
+            title="로그인"
+            class="loginicon"
+          />
+          <div class="numbox">
+            <img
+              src="../image/shoppingbagicon.png"
+              alt="shoppingbag"
+              class="carticon"
+              onclick="cartin()"
+            />
+            <div class="circlenum"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <hr />
+    <div class="main-wrap">
+      <!-- <div class="box">
+        <img
+          src="../image/menu/오리지널스&맥시멈/오리지널스 화이트 페타 더블.png"
+          alt="burger "
+        />
+        <div class="box-napr">
+          <div class="box-prna">이름 : 오리지널스 화이트 페타 더블</div>
+          <div class="box-prna">가격 : 10000원</div>
+        </div>
+        <div class="number">
+          <img src="../image/addicon.png" alt="plus" />
+          <span></span>
+          <img src="../image/removeicon.png" alt="minus" />
+        </div>
+      </div> -->
+      <!-- <div class="btnbox">
+        <span>장바구니 비우기</span>
+        <span>결제하기</span>
+      </div> -->
+    </div>
+    <script src="../JS/cartin.js"></script>
+  </body>
+</html>

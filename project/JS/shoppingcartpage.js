@@ -1,6 +1,9 @@
+let cartarr = JSON.parse(window.localStorage.getItem("cart")) || [];
+
 window.onload = () => {
   searchedLocation();
   getloaded();
+  numbercart();
 };
 const loginBtn = document.querySelector(".loginicon");
 loginBtn.addEventListener("click", function () {
@@ -44,7 +47,7 @@ function menuCreate(categoryName) {
     menubox.innerHTML += `
         <div class = "menu-box-box">
             <img class = "menu-img" src = "${menu.image}" alt = "menuimg"/>
-            <div class = "menu-text menu-name">${menu.name}</div><div class = "menu-text menu-price">${menu.price}원</div>
+            <div class = "menu-text menu-name">${menu.name}</div><div class = "menu-text menu-price">${menu.price}</div>
              <div class = "menu-middle">${menu.description}</div>
         </div>`;
   });
@@ -75,14 +78,33 @@ function detailsmenuclick(menu) {
   detailsmenu.style.display = "block";
   const cartBtn = detailsmenu.querySelector(".Detailed-menu-cartbtn");
   cartBtn.addEventListener("click", function () {
-    Unimplemented();
+    Unimplemented(menuname, menuimage, menuprice);
   });
 }
-function Unimplemented() {
+function Unimplemented(name, image, price) {
   Swal.fire({
     icon: "success",
     title: "잘 담겼습니다.",
   });
+
+  let check = false;
+  cartarr.map((i) => {
+    if (i.name == name) {
+      i.cnt += 1;
+      check = true;
+    }
+  });
+  if (!check) {
+    const data = {
+      name: name,
+      image: image,
+      price: price,
+      cnt: 1,
+    };
+    cartarr.push(data);
+    window.localStorage.setItem("cart", JSON.stringify(cartarr));
+  }
+  numbercart();
 }
 
 document.addEventListener("click", (event) => {
@@ -186,3 +208,8 @@ function createMenuButtons(item) {
 //   });
 //   btn.classList.add("menu-btn-toggle");
 // }
+
+// 바구니 넘버링
+function numbercart() {
+  document.querySelector(".circlenum").innerText = `${cartarr.length}`;
+}

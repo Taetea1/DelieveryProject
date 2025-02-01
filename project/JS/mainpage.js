@@ -27,11 +27,11 @@ window.addEventListener(
     } else if (page > lastPage) {
       page = lastPage; // 마지막 페이지보다 더 넘어가지지 않도록
     }
-    scrollvh(); //스크롤을 했을 때 페이지 컨텐츠 추가 
+    scrollvh(); //스크롤을 했을 때 페이지 컨텐츠 추가
     wrap.style.top = page * -100 + "vh";
   },
   { passive: false }
-); 
+);
 
 // 디폴트 기능 제거 - 스크롤
 // window.addEventListener(
@@ -66,12 +66,14 @@ window.addEventListener(
 //   { passive: false } // 디폴트 스크롤 방지
 // );
 
-
 function scrollClick(scroll) {
-  if (scroll == "1") wrap.style.top = 0 + "vh",page = 0, scrollvh();
-  else if (scroll == "2") wrap.style.top = -100 + "vh",page = 1, scrollvh();
-  else if (scroll == "3") wrap.style.top = -200 + "vh",page = 2, scrollvh();
-  else if (scroll == "4") wrap.style.top = -300 + "vh",page = 3, scrollvh();
+  if (scroll == "1") (wrap.style.top = 0 + "vh"), (page = 0), scrollvh();
+  else if (scroll == "2")
+    (wrap.style.top = -100 + "vh"), (page = 1), scrollvh();
+  else if (scroll == "3")
+    (wrap.style.top = -200 + "vh"), (page = 2), scrollvh();
+  else if (scroll == "4")
+    (wrap.style.top = -300 + "vh"), (page = 3), scrollvh();
 }
 
 function randomBackground() {
@@ -125,8 +127,8 @@ function store(item) {
   if (item == "app") alert("app store 다운로드");
   else if (item == "google") alert("google store 다운로드");
 }
-const btnbtn = document.querySelectorAll(".btn") // btn 활성화
-btnbtn[0].style.content = "url(../image/dotSelect@2x.c333164a.png)" // 첫 페이지부터 dot 표시
+const btnbtn = document.querySelectorAll(".btn"); // btn 활성화
+btnbtn[0].style.content = "url(../image/dotSelect@2x.c333164a.png)"; // 첫 페이지부터 dot 표시
 
 function scrollvh() {
   // 페이지 별 메뉴 등장 or 없애기
@@ -137,97 +139,90 @@ function scrollvh() {
   const imgB2 = document.getElementsByClassName("imgB2")[0];
   const imgB3 = document.getElementsByClassName("imgB3")[0];
 
-
-    if (page >= 1) {
+  if (page >= 1) {
     appDownload.style.display = "inline";
-    upicon.style.display = "inline"
-    btnbtn[0].style.content = "url(../image/dotScroll02@2x.32b98ae6.png)"
-    }
-    else {
+    upicon.style.display = "inline";
+    btnbtn[0].style.content = "url(../image/dotScroll02@2x.32b98ae6.png)";
+  } else {
     appDownload.style.display = "none"; // 숨기기
-    upicon.style.display = "none"
-    btnbtn[0].style.content = "url(../image/dotSelect@2x.c333164a.png)"
-    };
-    if (page === 1) {
-        imgB.style.right = "30%" 
-        imgB.style.opacity = "1"
-        imgB.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out"
-        btnbtn[1].style.content = "url(../image/dotSelect@2x.c333164a.png)"
-    }
-    else if (page !== 1) {
-      imgB.style.opacity = "0"
-      imgB.style.transition = "opacity 1s ease-in-out"
-      btnbtn[1].style.content = "url(../image/dotScroll02@2x.32b98ae6.png)"
-    }
+    upicon.style.display = "none";
+    btnbtn[0].style.content = "url(../image/dotSelect@2x.c333164a.png)";
+  }
+  if (page === 1) {
+    imgB.style.right = "30%";
+    imgB.style.opacity = "1";
+    imgB.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out";
+    btnbtn[1].style.content = "url(../image/dotSelect@2x.c333164a.png)";
+  } else if (page !== 1) {
+    imgB.style.opacity = "0";
+    imgB.style.transition = "opacity 1s ease-in-out";
+    btnbtn[1].style.content = "url(../image/dotScroll02@2x.32b98ae6.png)";
+  }
 
-    if (page === 2) {
-      console.log("2")
-      imgB2.style.right = "30%" 
-      imgB2.style.opacity = "1"
-      imgB2.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out"
-      btnbtn[2].style.content = "url(../image/dotSelect@2x.c333164a.png)"
-      console.log(page)
-      
-    }
-    else if(page !== 2){
-      imgB2.style.opacity = "0"
-      imgB2.style.transition = "opacity 1s ease-in-out"
-      btnbtn[2].style.content = "url(../image/dotScroll02@2x.32b98ae6.png)"
-    }
+  if (page === 2) {
+    console.log("2");
+    imgB2.style.right = "30%";
+    imgB2.style.opacity = "1";
+    imgB2.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out";
+    btnbtn[2].style.content = "url(../image/dotSelect@2x.c333164a.png)";
+    console.log(page);
+  } else if (page !== 2) {
+    imgB2.style.opacity = "0";
+    imgB2.style.transition = "opacity 1s ease-in-out";
+    btnbtn[2].style.content = "url(../image/dotScroll02@2x.32b98ae6.png)";
+  }
 
-    if (page === 3) {
-      console.log("2")
-      imgB3.style.right = "30%" 
-      imgB3.style.opacity = "1"
-      imgB3.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out"
-      btnbtn[3].style.content = "url(../image/dotSelect@2x.c333164a.png)"
-    }
-    else if(page !== 3){
-      imgB3.style.opacity = "0"
-      imgB3.style.transition = "opacity 1s ease-in-out"
-      btnbtn[3].style.content = "url(../image/dotScroll02@2x.32b98ae6.png)"
-    }
-    
+  if (page === 3) {
+    console.log("2");
+    imgB3.style.right = "30%";
+    imgB3.style.opacity = "1";
+    imgB3.style.transition = "opacity 1s ease-in-out,right 1s ease-in-out";
+    btnbtn[3].style.content = "url(../image/dotSelect@2x.c333164a.png)";
+  } else if (page !== 3) {
+    imgB3.style.opacity = "0";
+    imgB3.style.transition = "opacity 1s ease-in-out";
+    btnbtn[3].style.content = "url(../image/dotScroll02@2x.32b98ae6.png)";
+  }
 
-    const footerDropdown = document.querySelector(".dropdown") //position:fixd 
-    const footerDot = document.querySelector(".Navibar")
-    const footerNavibar = document.querySelector(".dot")
-    const footerScroll = document.querySelector(".scroll")
+  const footerDropdown = document.querySelector(".dropdown"); //position:fixd
+  const footerDot = document.querySelector(".Navibar");
+  const footerNavibar = document.querySelector(".dot");
+  const footerScroll = document.querySelector(".scroll");
 
-    if (footer <= page){  //마지막 페이지에서 fixed 사라지게
-        footerDropdown.style.transition = "all 1s ease-out"
-        footerDropdown.style.visibility = "hidden"
-        footerDropdown.style.opacity = "0"
-        footerDot.style.transition = "all 1s ease-out"
-        footerDot.style.visibility = "hidden"
-        footerDot.style.opacity = "0"
-        footerNavibar.style.transition = "all 1s ease-out"
-        footerNavibar.style.visibility = "hidden"
-        footerNavibar.style.opacity = "0"
-        footerScroll.style.transition = "all 1s ease-out"
-        footerScroll.style.visibility = "hidden"
-        footerScroll.style.opacity = "0"
-    }
-    else{
-        footerDropdown.style.transition = "all 1s ease"
-        footerDot.style.transition = "all 1s ease"
-        footerNavibar.style.transition = "all 1s ease"
-        footerScroll.style.transition = "all 1s ease"
-        footerDropdown.style.visibility = "visible"
-        footerDot.style.visibility = "visible"
-        footerNavibar.style.visibility = "visible"
-        footerScroll.style.visibility = "visible"
-        footerDropdown.style.opacity = "1"
-        footerDot.style.opacity = "1"
-        footerNavibar.style.opacity = "1"
-        footerScroll.style.opacity = "1"
-    }
+  if (footer <= page) {
+    //마지막 페이지에서 fixed 사라지게
+    footerDropdown.style.transition = "all 1s ease-out";
+    footerDropdown.style.visibility = "hidden";
+    footerDropdown.style.opacity = "0";
+    footerDot.style.transition = "all 1s ease-out";
+    footerDot.style.visibility = "hidden";
+    footerDot.style.opacity = "0";
+    footerNavibar.style.transition = "all 1s ease-out";
+    footerNavibar.style.visibility = "hidden";
+    footerNavibar.style.opacity = "0";
+    footerScroll.style.transition = "all 1s ease-out";
+    footerScroll.style.visibility = "hidden";
+    footerScroll.style.opacity = "0";
+  } else {
+    footerDropdown.style.transition = "all 1s ease";
+    footerDot.style.transition = "all 1s ease";
+    footerNavibar.style.transition = "all 1s ease";
+    footerScroll.style.transition = "all 1s ease";
+    footerDropdown.style.visibility = "visible";
+    footerDot.style.visibility = "visible";
+    footerNavibar.style.visibility = "visible";
+    footerScroll.style.visibility = "visible";
+    footerDropdown.style.opacity = "1";
+    footerDot.style.opacity = "1";
+    footerNavibar.style.opacity = "1";
+    footerScroll.style.opacity = "1";
+  }
 } //scrollvh() end
 
 const riderBtn = document.querySelector(".rider"); // 메뉴 아이콘 선택
 riderBtn.addEventListener("click", () => {
   //rider 메뉴 클릭시 우측 등장
-  
+
   console.log("1");
   const dropdown = document.querySelector(".dropdown");
 
@@ -244,7 +239,6 @@ riderBtn.addEventListener("click", () => {
   open = !open;
   console.log(riderBtn);
 });
-
 
 function orderpage() {
   window.location.href = "./locationPage.html";
