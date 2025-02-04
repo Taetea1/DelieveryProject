@@ -1,138 +1,100 @@
-
-.containerfooter{
-    height: 72px;
-    display: flex;
-    align-items: center;
-    /* padding: 0 80px; */
-    height: 72px;
-    /* white-space: nowrap; */
-    border-top : 1px solid black;
-    font-size: 14px;
-    margin-top:20px;
-    justify-content: space-around;
+@font-face {
+  font-family: "Hanna";
+  src: url("../font/BMHANNAPro.ttf");
 }
 
-a{
-    text-decoration: none;  
-    color: inherit;         
-    outline: none;          
-}
-.footerbold{
-    font-weight: bold;
+.containerfooter {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  /* padding: 0 80px; */
+  height: 72px;
+  /* white-space: nowrap; */
+  border-top: 1px solid black;
+  font-size: 14px;
+  margin-top: 20px;
+  justify-content: space-around;
+
+  font-family: "Hanna";
 }
 
-.footerul{
-    list-style: none;
-    display: flex;
-    gap : 10px;
-    /* margin-left:100px; */
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
 }
-.footerul li{
-    position: relative;
-    margin-left:25px;
+.footerbold {
+  font-weight: bold;
 }
-.footerul li:last-child::before{
-    content: none;
+
+.footerul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  /* margin-left:100px; */
+}
+.footerul li {
+  position: relative;
+  margin-left: 25px;
+}
+.footerul li:last-child::before {
+  content: none;
 }
 
 /* 세로줄 추가 */
-.footerul li+li::before { 
-    content: '';  
-    position: absolute;  
-    top: 10%;
-    right: -7%;  
-    width: 1px; 
-    height: 80%; 
-    background-color: #D9D9D9;  
+.footerul li + li::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -7%;
+  width: 1px;
+  height: 80%;
+  background-color: #d9d9d9;
 }
-
 
 /* 이 css로 높이 조정 */
-/* .swiper {
-      width: 100%;
-      height: 80%;
-      padding-bottom: 30px;
-} */
- /* 간격조절 */
-  .mySwiper{
-    /* max-width:1280px !important; */
-    width: 100%;
-    overflow: hidden;
-    margin: 0px auto;
- }
-.slide{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-/* .swiper-slide:hover {
-  transform: translateY(30px);
-} 
-hover시 세로로 슬레이트  
-*/ 
-.swiper-img{
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-}
-.slide{
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    transform: translate3d((0, 0, 0));
-    /* transition: transform 0.3s;   */
-}
-.mySwiper-wrapper{ 
-    transition-timing-function: linear;
-    column-gap: 50px;
-    margin-top: 50px;
-    
-}
 
 @media screen and (max-width: 768px) {
-    .footergap{
-        display: none;
-    }
-    .containerfooter{
-        max-width: 1280px;
-        /* width: 100%; */
-        height: 72px;
-        display: flex;
-        align-items: left;
-        padding: 0 5px;
-        height: 72px;
-        /* white-space: wrap; */
-        border-top : 1px solid black;
-        font-size: 12px;
-        margin-top:20px;
-        overflow: hidden;
-    }
-    .footerul li{
-        position: none;
-        margin-left:0;
-        width: 100px;
-    }
-    .footerul li:last-child::before{
-        content: none;
-    }
-    
-    .footerul li+li::before {
-        content: '';  
-        position: none;  
-        top: 10%;
-        right: -7%;  
-        width: 1px;  
-        height: 80%;  
-        background-color: #D9D9D9;  
-        display: none;
-    }
-    .footerul{
-        list-style: none;
-        display: flex;
-        gap : 10px;
-        margin-left: 0;
-    }
+  .footergap {
+    display: none;
+  }
+  .containerfooter {
+    max-width: 1280px;
+    /* width: 100%; */
+    height: 72px;
+    display: flex;
+    align-items: left;
+    padding: 0 5px;
+    height: 72px;
+    /* white-space: wrap; */
+    border-top: 1px solid black;
+    font-size: 12px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .footerul li {
+    position: none;
+    margin-left: 0;
+    width: 100px;
+  }
+  .footerul li:last-child::before {
+    content: none;
+  }
+
+  .footerul li + li::before {
+    content: "";
+    position: none;
+    top: 10%;
+    right: -7%;
+    width: 1px;
+    height: 80%;
+    background-color: #d9d9d9;
+    display: none;
+  }
+  .footerul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin-left: 0;
+  }
 }

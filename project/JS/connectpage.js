@@ -13,6 +13,7 @@ const sigungoodata = async () => {
 };
 sigungoodata();
 console.log(sigungoodata);
+
 window.scrollY;
 window.addEventListener("scroll", () => {
   const windowy = window.pageYOffset; //스크롤s- 위치

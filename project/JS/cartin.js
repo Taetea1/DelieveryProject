@@ -1,8 +1,8 @@
-const cartarr = JSON.parse(window.localStorage.getItem("cart")) || [];
+const cartarr = JSON.parse(window.localStorage.getItem("cart")) || false; // 장바구니에 담긴 물품
 
 window.onload = () => {
   searchedLocation();
-  numbercart();
+  if (cartarr) numbercart(); //바구니 넘버링
   menucreate(cartarr);
 };
 const loginBtn = document.querySelector(".loginicon");
@@ -73,6 +73,8 @@ function menucreate(data) {
     mainwrap.innerHTML = `<img class = "tung1" src = "../image/tung.png" alt = "tung" />`;
   }
 }
+
+// 카트 plus
 function plus(i) {
   cartarr[i].cnt += 1;
 
@@ -81,6 +83,8 @@ function plus(i) {
   const data = JSON.parse(window.localStorage.getItem("cart"));
   menucreate(data);
 }
+
+// 카트 minus
 function minus(i) {
   if (cartarr[i].cnt > 1) cartarr[i].cnt -= 1;
   window.localStorage.setItem("cart", JSON.stringify(cartarr));
@@ -89,12 +93,15 @@ function minus(i) {
   menucreate(data);
 }
 
+// 카트 비우기
 function reset() {
   localStorage.removeItem("cart");
   const data = JSON.parse(window.localStorage.getItem("cart"));
   menucreate(data);
+  numbercart();
 }
 
+// 카트 결제
 function checkOut() {
   let price = 0;
   cartarr.forEach((item) => {

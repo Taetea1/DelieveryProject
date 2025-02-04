@@ -145,8 +145,8 @@ function getloaded() {
         <div class = "menu-box-btn">
 
         </div>
-        <ul class = "menu-box">
-        </ul>
+        <div class = "menu-box">
+        </div>
     </div>      `;
   // 가게 데이터가 있으면 정보 넘겨주기
   if (cardindex === "Burgerking") {
@@ -182,13 +182,13 @@ function createMenuButtons(item) {
     // 새로운 버튼 생성
     menus.forEach((menuName, index) => {
       const menuBtn = document.createElement("div");
-      menuBtn.className = "menu-btn";
+      menuBtn.classList.add("menu-btn");
+
       if (index === 0) {
         menuBtn.classList.add("menu-btn-toggle"); // 첫 번째 버튼 활성화
       }
       menuBtn.textContent = menuName;
       menuNames.push(menuName);
-      console.log(menuNames);
       menuBtn.addEventListener("click", function () {
         menuCreate(menuName); // 클릭한 카테고리 이름을 전달
         const btn = document.querySelectorAll(".menu-btn");
