@@ -31,7 +31,7 @@ const moveCurrnet = () => {
   // 위치 정보를 얻기 위해 Geolocation API 사용
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      function (position) {
+      (position) => {
         // 사용자의 현재 위치 가져오기
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
@@ -49,7 +49,7 @@ const moveCurrnet = () => {
           });
 
           // 지도 클릭 시 마커를 찍고 주소를 받아오기
-          naver.maps.Event.addListener(map, "click", function (e) {
+          naver.maps.Event.addListener(map, "click", (e) => {
             const latlng = e.coord; // 클릭한 좌표
 
             // 기존 마커가 있으면 삭제
@@ -87,7 +87,7 @@ const moveCurrnet = () => {
         // 현재 위치의 주소를 받아오기
         getAddressFromLatLng(new naver.maps.LatLng(lat, lon), addAddress);
       },
-      function (error) {
+      (error) => {
         let errorMessage = "";
         switch (error.code) {
           case error.PERMISSION_DENIED:
@@ -144,15 +144,15 @@ const getAddressFromLatLng = (latlng, callback) => {
 };
 
 // 주소 검색 창에서 주소 선택 시
-function changeInputText() {
+const changeInputText = () => {
   new daum.Postcode({
-    oncomplete: function (data) {
+    oncomplete: (data) => {
       const addr = data.address; // 선택한 주소
       // 주소로 네이버 지도 검색 및 표시
       searchAddressdaum(addr); // 주소로 좌표 검색하여 지도에 표시
     },
   }).open();
-}
+};
 
 // 주소를 검색하여 지도에 표시하고 마커 생성(다음주소api에서 사용할 함수)
 const searchAddressdaum = (address) => {
@@ -160,7 +160,7 @@ const searchAddressdaum = (address) => {
     {
       query: address, // 검색할 주소
     },
-    function (status, response) {
+    (status, response) => {
       // 응답 상태가 OK인 경우에만 처리
       if (
         status === naver.maps.Service.Status.OK &&
