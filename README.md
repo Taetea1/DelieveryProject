@@ -1,4 +1,4 @@
-# Delievery Web Project
+# 🚛 Delievery Web Project
 
 > **목차**
 > 1. [프로젝트 기술 스택 및 개발 환경](#프로젝트-기술-스택-및-개발-환경)
@@ -10,24 +10,24 @@
 
 </br>
 
-## 💻프로젝트 기술 스택 및 개발 환경
-### 기술 스택
+## 🔍 프로젝트 기술 스택 및 개발 환경
+### 🛠️ 기술 스택
 <img 
 src="https://img.shields.io/badge/html5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" />
 <img src="https://img.shields.io/badge/css3-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" />
 <img src="https://img.shields.io/badge/javascript-%23F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=black" />
-### 개발 환경
+### 💻 개발 환경
 <img src="https://img.shields.io/badge/visual%20studio%20code-%23007ACC.svg?&style=for-the-badge&logo=visual%20studio%20code&logoColor=white" /> <img src="https://img.shields.io/badge/github-%23181717.svg?&style=for-the-badge&logo=github&logoColor=white" /> <img src="https://img.shields.io/badge/slack-%234A154B.svg?&style=for-the-badge&logo=slack&logoColor=white" />
 
 
 ## 시연 영상
 
-## 소개
+## 📝 소개
 <img width="838" alt="Image" src="https://github.com/user-attachments/assets/30291b23-aebb-4667-ace1-8cd3a7036f7a" />
 
 기존 배달의 민족 웹사이트에서 **주문하기** 기능을 추가한 웹사이트입니다!
 
-## 주요 기능
+## 💎 주요 기능
 1. **메인페이지**</br><img width="1280" alt="Image" src="https://github.com/user-attachments/assets/bed17461-c58f-4528-944f-74d68ffd0c86" /></br>메인 페이지에서는 스크롤을 내릴 때 **한 페이지씩** 이동하며, 각 페이지는 **애니메이션 효과**를 통해 콘텐츠가 등장하는 방식으로 시각적 효과를 줍니다. 이를 통해 페이지의 요소들이 **부드럽게 전환**되며, 사용자는 각 콘텐츠를 더욱 인상 깊게 경험할 수 있습니다.
 
 
@@ -49,7 +49,7 @@ src="https://img.shields.io/badge/html5-%23E34F26.svg?&style=for-the-badge&logo=
 
 </br>
 
-## 사용된 라이브러리 및 API
+## 📑 사용된 라이브러리 및 API
 ### 라이브러리
 - [Swiper](https://swiperjs.com/)
   - 이미지 및 콘텐츠 슬라이드 구현
@@ -62,7 +62,7 @@ src="https://img.shields.io/badge/html5-%23E34F26.svg?&style=for-the-badge&logo=
 - [Daum 우편번호 서비스 API](https://postcode.map.daum.net/guide)
   - 우편번호 검색 및 주소 자동 입력 기능
 
-## 역할 분담
+## 👥 역할 분담
 
 **권태연 [<a href="https://github.com/Taetea1" target="_blank">Taetea1</a>]** 
 <div style="background-color: whitesmoke; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
