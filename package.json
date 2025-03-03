@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "node": "^23.8.0",
+    "path": "^0.12.7"
+  },
+  "name": "delieveryproject",
+  "version": "1.0.0",
+  "description": "> **목차**\r > 1. [프로젝트 기술 스택 및 개발 환경](#프로젝트-기술-스택-및-개발-환경)\r > 2. [시연 영상](#시연-영상)\r > 3. [소개](#소개)\r > 4. [주요 기능](#주요-기능)\r > 5. [사용된 라이브러리 및 API](#사용된-라이브러리-및-api)\r > 6. [역할 분담](#역할-분담)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taetea1/DelieveryProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taetea1/DelieveryProject/issues"
+  },
+  "homepage": "https://github.com/Taetea1/DelieveryProject#readme"
+}
